@@ -1,8 +1,8 @@
 紹介動画などをGoogleDriveに乗せています。
 よろしければご覧ください。  
 
-[https://drive.google.com/drive/u/2/my-drive
-](https://drive.google.com/drive/folders/1hves9S92GN-W4T33oAAAWKv8aqBl0saN?usp=drive_link)
+https://drive.google.com/drive/folders/1hves9S92GN-W4T33oAAAWKv8aqBl0saN?usp=drive_link
+
 **紹介動画等、参考GIF**
 >EnemyMaker
 >
