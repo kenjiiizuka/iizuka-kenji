@@ -1,9 +1,9 @@
-﻿#include "EnemyAttackCollisionAttachNotifyState.h"
+﻿//----------- INCLUDES -----------
+#include "EnemyAttackCollisionAttachNotifyState.h"
 #include "../../Component/SkeletalMeshComponent/SkeletalMeshComponent.h"
 #include "../GameObject.h"
 #include "../../Component/CollisionComponent/EnemyAttackCapsuleCollisionComponent.h"
 #include "../../Resource/Skeleton.h"
-
 
 EnemyAttackCollisionAttachNotifyState::EnemyAttackCollisionAttachNotifyState(
 	SkeletalMeshAnimationClip* _attachAnimation,
@@ -15,6 +15,7 @@ EnemyAttackCollisionAttachNotifyState::EnemyAttackCollisionAttachNotifyState(
 	, mDamage(0)
 	, mHitReaction(CrossCharacter::HitReaction_Small)
 {
+	// 処理なし
 }
 
 void EnemyAttackCollisionAttachNotifyState::NotifyBegin()

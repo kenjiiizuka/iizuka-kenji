@@ -74,6 +74,16 @@ private:
 	static DirectX::SimpleMath::Vector3 AbsVector(DirectX::SimpleMath::Vector3 _vector);
 	
 	static DirectX::SimpleMath::Vector3 RotationInterpTo(DirectX::SimpleMath::Vector3 _currnet, DirectX::SimpleMath::Vector3 _target, float _deltaTime, float _interpSpeed);
+
+	/**
+	* @fn LerpQuaternion
+	* @brief クォータニオンを線形補間し、回転を返す
+	* @param DirectX::SimpleMath::Quaternion (_quat1) 補間元
+	* @param DirectX::SimpleMath::Quaternion (_quat2) 補間先
+	* @param float (_deltaTime)                       デルタタイム
+	* @param float (_interpSpeed)                     補間速度
+	* @return DirectX::SimpleMath::Vector3 補間後の回転
+	*/
 	static DirectX::SimpleMath::Vector3 LerpQuaternion(DirectX::SimpleMath::Quaternion _quat1, DirectX::SimpleMath::Quaternion _quat2, float _deltaTime, float _interpSpeed);
 	static bool VectorIsZero(DirectX::SimpleMath::Vector3 _vector);
 	static bool VectorIsNearyZero(DirectX::SimpleMath::Vector3 _vector, float _near = 10.f);
@@ -281,6 +291,14 @@ private:
 	*/
 	static uint8_t GetDigitValue(const uint16_t _number, const uint8_t _digit) noexcept;
 
+	/**
+	* @fn LookAtYaw
+	* @brief _pos1から_pos2に向くYawを計算する
+	* @param const DirectX::SimpleMath::Vector3 (_pos1)
+	* @param const DirectX::SimpleMath::Vector3 (_pos2)
+	* @return void
+	*/
+	static float LookAtYaw(const DirectX::SimpleMath::Vector3 _pos1, const DirectX::SimpleMath::Vector3 _pos2);
 
 };
 

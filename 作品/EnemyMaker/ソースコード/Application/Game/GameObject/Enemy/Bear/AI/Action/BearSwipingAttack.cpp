@@ -1,4 +1,5 @@
-﻿#include "BearSwipingAttack.h"
+﻿//----------- INCLUDES -------------
+#include "BearSwipingAttack.h"
 #include "../../../../../../Utility/MathLibrary.h"
 #include "../../../../../../Utility/DetectorUtility.h"
 #include "../../../EnemyBase.h"

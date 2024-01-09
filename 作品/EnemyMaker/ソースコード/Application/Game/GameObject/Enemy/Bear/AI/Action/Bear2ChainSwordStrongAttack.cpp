@@ -27,6 +27,12 @@ EnemyActionResult Bear2ChainSwordStrongAttack::UpdateActionExecution()
 	// 親クラス内で時間の計測をしているので呼び出す
 	BearAttackAction::UpdateActionExecution();
 
+	// 追従処理
+	if (GetCurrentAnimationSection() == "FollowStart")
+	{
+		FollowRotation();
+	}
+
 	// アニメーションの終了判定があれば成功を返す、それ以外は実行中
 	std::shared_ptr<AnimationPlayer> animPlayer = mAnimInstance.lock()->GetAnimationPlayer();
 	if (!animPlayer->IsPlay() || animPlayer->IsEndOnNextFrame())

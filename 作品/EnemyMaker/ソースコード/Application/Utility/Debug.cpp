@@ -1,4 +1,5 @@
-﻿#include "Debug.h"
+﻿//----------- INCLUDES ------------
+#include "Debug.h"
 
 void CoutVector3(DirectX::SimpleMath::Vector3 _vector)
 {

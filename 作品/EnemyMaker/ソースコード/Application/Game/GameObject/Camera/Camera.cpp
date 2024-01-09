@@ -1,4 +1,5 @@
-﻿#include "Camera.h"
+﻿//------------ INCLUDES ------------
+#include "Camera.h"
 #include "../../Component/MoveComponent/MoveComponent.h"
 #include "../../../System/InputSystem/Input.h"
 #include "../../../Utility/Debug.h"
@@ -8,7 +9,7 @@
 
 using namespace DirectX::SimpleMath;
 
-DirectX::SimpleMath::Matrix Camera::view_Projection[2];
+DirectX::SimpleMath::Matrix Camera::mViewProjection[2];
 
 Camera::Camera()
 	:  mAspectRatio(0.0f)
@@ -48,7 +49,7 @@ void Camera::Init()
 		mFarClip
 	);
 
-	view_Projection[1] = mProjectionMatrix.Transpose();
+	mViewProjection[1] = mProjectionMatrix.Transpose();
 }
 
 void Camera::Update(const double _deltaTime)
@@ -70,9 +71,9 @@ void Camera::Draw()
 {
 	// View行列の作成
 	mViewMatrix = DirectX::XMMatrixLookAtLH(mTransform.lock()->GetPosition(), mFocusPosition, mUpVector);	
-	view_Projection[0] = mViewMatrix.Transpose();
+	mViewProjection[0] = mViewMatrix.Transpose();
 
-	Shader::WriteView_ProjectionMatrix(&view_Projection);
+	Shader::WriteView_ProjectionMatrix(&mViewProjection);
 }
 
 void Camera::CameraShake(const uint8_t _shakeLevel, const DirectX::SimpleMath::Vector2 _maxShakeVector, const double _shakeTime)

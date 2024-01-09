@@ -20,8 +20,6 @@ void GeneDataSaver::SaveGene(const GeneticAlgorithmInf::GeneSaveData& _saveData)
 	// バックアップ用ファイルの作成
 	std::shared_ptr<AssetHandle> backUpFileHandle = AssetManager::GetInstance().Load<BinaryFileProvider>("assets/Genetic/GeneBackUp.bin");
 
-
-
 	if (!fileHandle->IsValid())
 	{
 		std::cout << "遺伝学習データ保存用のファイルが開けません" << std::endl;

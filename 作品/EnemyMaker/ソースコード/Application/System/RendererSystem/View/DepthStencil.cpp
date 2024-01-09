@@ -1,9 +1,11 @@
-﻿#include "DepthStencil.h"
+﻿//------------ INCLUDES -----------
+#include "DepthStencil.h"
 #include "../Renderer.h"
 
 DepthStencil::DepthStencil()
 	:mDepthStencilView(nullptr)
 {
+	// 処理なし
 }
 
 DepthStencil::~DepthStencil()

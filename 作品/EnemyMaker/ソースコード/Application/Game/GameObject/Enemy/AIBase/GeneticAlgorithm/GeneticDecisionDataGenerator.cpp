@@ -1,4 +1,5 @@
-﻿#include <random>
+﻿//------------ INCLUDES -----------
+#include <random>
 #include <typeindex>
 #include "GeneticDecisionDataGenerator.h"
 #include "Gene/Gene.h"

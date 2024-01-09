@@ -1,4 +1,5 @@
-﻿#include "EnemyWeapon.h"
+﻿//----------- INCLUDES ------------
+#include "EnemyWeapon.h"
 #include "../../Component/CollisionComponent/EnemyAttackCapsuleCollisionComponent.h"
 #include "../../../System/InputSystem/Input.h"
 #include "../../../ImGui/ImGuiUtility.h"
@@ -23,7 +24,6 @@ void EnemyWeapon::Init(const std::string& _filePath, std::shared_ptr<Bone> _atta
 	mAttackCollision.lock()->SetCollisionTypes(collisionTypes);
 
 	mAttackCollision.lock()->SetDebugDraw(true);
-
 }
 
 void EnemyWeapon::SetCollisonActive(bool _active)

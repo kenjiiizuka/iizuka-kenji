@@ -37,7 +37,7 @@ void BattleManager::Init(const std::shared_ptr<Player> _player, const std::share
 
 	// バトル開始ステート処理をバインド	
 	mCurrentStateUpdate = std::bind(&BattleManager::StartStateUpdate, this);
-	mStartLogo = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<BattleStartLogo>(ELayer::ObjectLayer);
+	mStartLogo = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<BattleStartLogo>();
 
 	// BGM,SEの初期化	
 	std::shared_ptr<AudioComponent> battleBGM = AddComponent<AudioComponent>();
@@ -47,7 +47,6 @@ void BattleManager::Init(const std::shared_ptr<Player> _player, const std::share
 	std::shared_ptr<AudioComponent> clear = AddComponent<AudioComponent>();
 	clear->Init("assets/Battle/Audio/Clear.wav");
 	mClearSE = clear;
-	
 }
 
 void BattleManager::Update(const double _deltaTime)
@@ -174,7 +173,7 @@ void BattleManager::LoseUpdate()
 	// リザルトロゴの生成
 	if (!mResultLogo.lock())
 	{
-		mResultLogo = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<LoseLogo>(ELayer::ObjectLayer);
+		mResultLogo = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<LoseLogo>();
 	}
 
 	std::shared_ptr<LoseLogo> logo = std::static_pointer_cast<LoseLogo>(mResultLogo.lock());
@@ -201,7 +200,7 @@ void BattleManager::WinUpdate()
 	// リザルトロゴの生成
 	if (!mResultLogo.lock())
 	{
-		mResultLogo = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<WinLogo>(ELayer::ObjectLayer);
+		mResultLogo = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<WinLogo>();
 	}
 	
 	std::shared_ptr<WinLogo> logo = std::static_pointer_cast<WinLogo>(mResultLogo.lock());

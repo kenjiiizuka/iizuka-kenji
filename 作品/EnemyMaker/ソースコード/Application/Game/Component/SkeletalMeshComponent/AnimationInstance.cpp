@@ -10,6 +10,7 @@ AnimationInstance::AnimationInstance()
 	: bPlayAnimation(false)
 	, mOwner(nullptr)
 {
+	// 処理なし
 }
 
 void AnimationInstance::AnimationUpdate()
@@ -75,7 +76,7 @@ GameObject* AnimationInstance::GetOwner()
 	return mOwner ? mOwner : nullptr;
 }
 
-std::shared_ptr<AnimationPlayer> AnimationInstance::GetAnimationPlayer()
+std::shared_ptr<AnimationPlayer> AnimationInstance::GetAnimationPlayer() const
 {
 	return mAnimPlayer.lock();
 }

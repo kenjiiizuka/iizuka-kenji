@@ -19,16 +19,6 @@ class CameraManager;
 template<class Object>
 concept DrivedObject = std::derived_from<Object, GameObject>;
 
-/* 各レイヤー*/
-enum class ELayer : uint8_t
-{
-	BaseLayer = 0,
-	ObjectLayer = 1,
-	UILayer = 2,
-	CustomLayer = 3,
-	LayerMax = 4
-};
-
 /**
 * @class Scene
 * @brief シーンに共通する機能を持ち、すべてのシーンの基底クラスとなる
@@ -48,7 +38,7 @@ public:
 
 private:
 	/** シーン内で生成したゲームオブジェクトを保持するリスト */
-	 std::array<std::list<std::shared_ptr<GameObject>>,static_cast<size_t>(ELayer::LayerMax)> mpGameObjectList;
+	std::list<std::shared_ptr<GameObject>> mpGameObjectList;
 
 protected:
 	/** カメラを管理するマネージャー */
@@ -136,7 +126,7 @@ public:
 	* @return std::shared_ptr<Object> 追加したオブジェクト
 	*/
 	template <DrivedObject Object>
-	inline std::shared_ptr<Object> AddGameObject(ELayer _layer);
+	inline std::shared_ptr<Object> AddGameObject();
 
 	/**
 	* @fn GetGameObject
@@ -144,7 +134,7 @@ public:
 	* @return std::shared_ptr<Object> GameObject
 	*/
 	template <DrivedObject Object>
-	std::shared_ptr<Object> GetGameObject(ELayer _layer);
+	inline std::shared_ptr<Object> GetGameObject();
 	
 	/**
 	* @fn CameraManager
@@ -157,20 +147,22 @@ public:
 //----------- INLINES ------------
 
 template <DrivedObject Object>
-inline std::shared_ptr<Object> Scene::AddGameObject(ELayer _layer)
+inline std::shared_ptr<Object> Scene::AddGameObject()
 {
+	
 	std::shared_ptr<Object> gameObject = std::make_shared<Object>();
 	std::static_pointer_cast<GameObject>(gameObject)->InitBase();
-	mpGameObjectList[(int)_layer].push_back(gameObject);
+	mpGameObjectList.emplace_back(gameObject);
 	return gameObject;
 };
 
 template <DrivedObject Object>
-std::shared_ptr<Object> Scene::GetGameObject(ELayer _layer)
+inline std::shared_ptr<Object> Scene::GetGameObject()
 {
-	for (std::shared_ptr<GameObject> obj : mpGameObjectList[(int)_layer])
+	for (std::shared_ptr<GameObject> obj : mpGameObjectList)
 	{
-		if (typeid(*obj) == typeid(Object)) {
+		if (typeid(*obj) == typeid(Object)) 
+		{
 			return std::static_pointer_cast<Object>(obj);
 		}
 	}

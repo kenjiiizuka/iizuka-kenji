@@ -37,7 +37,6 @@ void AudioComponent::Update(const double _deltaTime)
 	{
 		FadeOut(_deltaTime);
 	}
-
 }
 
 void AudioComponent::FadeIn(const double _deltaTime)

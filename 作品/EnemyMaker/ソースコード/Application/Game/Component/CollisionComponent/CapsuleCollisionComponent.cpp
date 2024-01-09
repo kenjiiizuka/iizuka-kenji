@@ -11,7 +11,7 @@
 #include "../../../System/RendererSystem/DebugRenderer/DebugRendererManager.h"
 #include "../../GameObject/GameObject.h"
 
-
+//-------------- NAMESPACEAILIAS --------------
 using namespace DirectX::SimpleMath;
 
 CapsuleCollisionComponent::CapsuleCollisionComponent()

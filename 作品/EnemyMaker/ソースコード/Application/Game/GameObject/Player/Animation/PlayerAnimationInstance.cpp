@@ -525,7 +525,6 @@ void PlayerAnimationInstance::SetupAnimationClip()
 	}
 
 	mAnimationClips["Guarding"]->SetLoop(true);
-
 	mAnimationClips["Roll"]->SetSynchroPosition(true);
 	mAnimationClips["RightStep"]->SetSynchroPosition(true);
 	mAnimationClips["LeftStep"]->SetSynchroPosition(true);

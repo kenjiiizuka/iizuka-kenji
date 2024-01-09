@@ -1,4 +1,5 @@
-﻿#include "DetectorUtility.h"
+﻿//------------ INCLUDES -----------
+#include "DetectorUtility.h"
 #include "../System/RendererSystem/DebugRenderer/DebugRendererManager.h"
 #include "MathLibrary.h"
 

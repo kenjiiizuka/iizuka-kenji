@@ -55,6 +55,9 @@ private:
 	/** ルートボーンのトランスフォーム */
 	Transform mRootBoneTrans;
 
+	/** メッシュを持っているゲームオブジェクトのトランスフォーム */
+	Transform mMeshOwnerObjectTrans;
+
 	/** ゲームオブジェクトからRootBoneへの差分ベクトル */
 	DirectX::SimpleMath::Vector3 mObjectToRootBone;
 

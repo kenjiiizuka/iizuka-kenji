@@ -1,9 +1,8 @@
-﻿#include "CameraManager.h"
+﻿//------------ INCLUDES -----------
+#include "CameraManager.h"
 #include "DebugCamera.h"
 #include "../../../System/InputSystem/Input.h"
 #include "Camera2D.h"
-
-
 
 void CameraManager::Init()
 {

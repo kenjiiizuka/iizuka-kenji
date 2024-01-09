@@ -27,7 +27,6 @@ void AudioListener::Init()
 	mListener.Velocity = DirectX::SimpleMath::Vector3::Zero;
 
 	mListenerTransformComponent = transform;
-
 }
 
 void AudioListener::Update(const double _deltaTime)

@@ -1,4 +1,5 @@
-﻿#include "LightBase.h"
+﻿//----------- INCLUDES -----------
+#include "LightBase.h"
 #include "../../../System/InputSystem/Input.h"
 #include "../../../System/FPSController/FPSController.h"
 #include "../../../../main.h"

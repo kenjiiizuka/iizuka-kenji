@@ -158,7 +158,7 @@ public:
 	 * @brief 現在再生しているアニメーションのゲッター
 	 * @return std::shared_ptr<SkeletalMeshAnimation> 現在再生しているアニメーション
 	*/
-	inline std::weak_ptr<SkeletalMeshAnimationClip> GetPlayAnimation();
+	inline std::weak_ptr<SkeletalMeshAnimationClip> GetPlayAnimation() const;
 
 	/**
 	 * @fn　IsEndOnNextFrame
@@ -177,7 +177,7 @@ public:
 
 //--------------------- INLINES --------------------------
 
-inline std::weak_ptr<SkeletalMeshAnimationClip> AnimationPlayer::GetPlayAnimation()
+inline std::weak_ptr<SkeletalMeshAnimationClip> AnimationPlayer::GetPlayAnimation() const
 {
 	return mAnimPlayBackData.mAnimationClip;
 }

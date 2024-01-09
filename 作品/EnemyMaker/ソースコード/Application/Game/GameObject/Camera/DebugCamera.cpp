@@ -1,4 +1,5 @@
-﻿#include "DebugCamera.h"
+﻿//----------- INCLUDES ----------
+#include "DebugCamera.h"
 #include "../../Component/MoveComponent/MoveComponent.h"
 #include "../../../System/InputSystem/Input.h"
 

@@ -33,10 +33,10 @@ TitleScene::~TitleScene()
 void TitleScene::Initialize()
 {
 	// ライトの位置調整
-	GetGameObject<LightBase>(ELayer::BaseLayer)->SetPosition({ 72.0f,100.0f,61.0f });
+	GetGameObject<LightBase>()->SetPosition({ 72.0f,100.0f,61.0f });
 
 	// タイトル背景の追加(Titleロゴつき)
-	AddGameObject<TitleBackGround>(ELayer::ObjectLayer);
+	AddGameObject<TitleBackGround>();
 			
 	// カメラの設定
 	std::shared_ptr<Camera> mainCamera = mpCameraManager->CreateCamera<Camera>("TitleCamera");
@@ -45,11 +45,11 @@ void TitleScene::Initialize()
 	mpCameraManager->SetMainCameraByName("TitleCamera");
 
 	// コマンドセレクター作成
-	std::shared_ptr<CommandSelector> commandSelector = AddGameObject<CommandSelector>(ELayer::ObjectLayer);
+	std::shared_ptr<CommandSelector> commandSelector = AddGameObject<CommandSelector>();
 
 	// コマンド作成
-	std::shared_ptr<CommandObject> startCommand =  AddGameObject<CommandObject>(ELayer::ObjectLayer);
-	std::shared_ptr<CommandObject> endCommand = AddGameObject<CommandObject>(ELayer::ObjectLayer);
+	std::shared_ptr<CommandObject> startCommand =  AddGameObject<CommandObject>();
+	std::shared_ptr<CommandObject> endCommand = AddGameObject<CommandObject>();
 
 	// 中央下に配置
 	DirectX::SimpleMath::Vector2 startCommandPos = 
@@ -76,16 +76,16 @@ void TitleScene::Initialize()
 	mCommandSelector = commandSelector;
 
 	// フェードオブジェクトの追加
-	mFade = AddGameObject<Fade>(ELayer::ObjectLayer);
+	mFade = AddGameObject<Fade>();
 	// フェードイン
 	mFade.lock()->FadeIn(mFadeSpeed * 0.8f); // 開始のフェードはすこし遅くする
 
 	// タイトル用のエネミ-
-	std::shared_ptr<TitleEnemy> enemy = AddGameObject<TitleEnemy>(ELayer::ObjectLayer);
+	std::shared_ptr<TitleEnemy> enemy = AddGameObject<TitleEnemy>();
 	enemy->SetPosition({ 100,0,100 });
 	// 背景の小物 - 1
 	{
-		std::shared_ptr<StaticMeshObject> prop = AddGameObject<StaticMeshObject>(ELayer::ObjectLayer);
+		std::shared_ptr<StaticMeshObject> prop = AddGameObject<StaticMeshObject>();
 		prop->Init("assets/Player/Weapon/Katana.fbx");
 		prop->SetPosition({ -15.0f + 100, 8.0f, -24.0f  + 100});
 		prop->SetScale({ 0.1f });
@@ -95,7 +95,7 @@ void TitleScene::Initialize()
 
 	// 背景の小物 - 1
 	{
-		std::shared_ptr<StaticMeshObject> prop = AddGameObject<StaticMeshObject>(ELayer::ObjectLayer);
+		std::shared_ptr<StaticMeshObject> prop = AddGameObject<StaticMeshObject>();
 		prop->Init("assets/Title/Prop/Field.fbx");
 		prop->SetPosition({ -40.0f + 100, -0.0f, 69.0f + 100 });
 		prop->SetScale({ 0.1f });
@@ -104,7 +104,7 @@ void TitleScene::Initialize()
 	}
 
 	// オーディオ再生用のオブジェクト
-	std::shared_ptr<GameObject> audioObject = AddGameObject<GameObject>(ELayer::ObjectLayer);
+	std::shared_ptr<GameObject> audioObject = AddGameObject<GameObject>();
 	std::shared_ptr<AudioComponent> audioComp = audioObject->AddComponent<AudioComponent>();
 	audioComp->Init("assets/Title/Audio/TitleBGM.wav", true);
 	audioComp->PlaySound2D(0.2f, true);

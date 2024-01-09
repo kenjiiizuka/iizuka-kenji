@@ -1,5 +1,4 @@
-﻿
-//----------- INCLUDES ----------------
+﻿//----------- INCLUDES ----------------
 #include "BearSwordSwingDownAttack.h"
 #include "../../../../../../Utility/MathLibrary.h"
 #include "../../../EnemyBase.h"

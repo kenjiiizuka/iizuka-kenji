@@ -1,4 +1,5 @@
-﻿#include "DecisionEvaluator.h"
+﻿//-------------- INCLUDES --------------
+#include "DecisionEvaluator.h"
 #include "Gene/Gene.h"
 #include "../../../../../Utility/MathLibrary.h"
 #include "GeneticInfomation.h"
@@ -7,6 +8,7 @@
 DecisionEvaluator::DecisionEvaluator(std::shared_ptr<BlackBoard> _blackboard)
 	: mBlackBoard(_blackboard)
 {
+	// 処理なし
 }
 
 void DecisionEvaluator::EvaluateGenetics(std::shared_ptr<BlackBoard> _blackboard, std::vector<std::shared_ptr<Gene>>& _genes, const size_t _evaluateIndex)

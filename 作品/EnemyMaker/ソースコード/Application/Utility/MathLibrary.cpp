@@ -284,6 +284,13 @@ uint8_t MathLibrary::GetDigitValue(const uint16_t _number, const uint8_t _digit)
     return  (_number / deviser) % 10;
 }
 
+float MathLibrary::LookAtYaw(const DirectX::SimpleMath::Vector3 _pos1, const DirectX::SimpleMath::Vector3 _pos2)
+{
+    Vector3 toPos2 = _pos2 - _pos1;
+    toPos2.Normalize(); 
+    return Conv_VectorToRotation(toPos2).y; 
+}
+
 DirectX::SimpleMath::Matrix MathLibrary::MakeWorldMatrix(const Transform& _transform)
 {
     Matrix translation = Matrix::CreateTranslation(_transform.mPosition.x, _transform.mPosition.y, _transform.mPosition.z);

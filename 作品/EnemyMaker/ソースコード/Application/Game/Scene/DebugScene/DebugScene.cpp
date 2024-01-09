@@ -18,7 +18,7 @@ std::weak_ptr<StaticMeshObject> mFrustumTest;
 
 void DebugScene::Initialize()
 {
-	std::shared_ptr<StaticMeshObject> mesh = AddGameObject<StaticMeshObject>(ELayer::ObjectLayer);
+	std::shared_ptr<StaticMeshObject> mesh = AddGameObject<StaticMeshObject>();
 	mesh->AddComponent<DebugMoveComponent>();
 	mesh->Init("assets/Player/Weapon/weapon.FBX");
 	mesh->SetScale(0.1f);
@@ -38,14 +38,6 @@ void DebugScene::Update()
 	MathLibrary::CreateTranslationMatrix(pos, mat);
 	mat *= mFrustumTest.lock()->GetComponent<TransformComponent>()->GetWorldMatrix().Transpose();
 	MathLibrary::GetTranslationFromMatrix(mat, pos);
-
-	/*DirectX::SimpleMath::Vector4 fpos = 
-	{
-		pos.x * fm._11 + pos.y * fm._21 + pos.z * fm._31 + 1 * fm._41,
-		pos.x * fm._12 + pos.y * fm._22 + pos.z * fm._32 + 1 * fm._42,
-		pos.x * fm._13 + pos.y * fm._23 + pos.z * fm._33 + 1 * fm._43,
-		pos.x * fm._14 + pos.y * fm._24 + pos.z * fm._34 + 1 * fm._44
-	};*/
 
 	DirectX::SimpleMath::Vector4 fpos =
 	{

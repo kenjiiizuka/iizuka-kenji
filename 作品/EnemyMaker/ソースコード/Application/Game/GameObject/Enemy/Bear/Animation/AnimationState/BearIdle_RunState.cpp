@@ -1,11 +1,12 @@
-﻿#include "BearIdle_RunState.h"
+﻿//--------- INCLUDES ---------
+#include <iostream>
+#include "BearIdle_RunState.h"
 #include "../../../../../Component/SkeletalMeshComponent/AnimationInstance.h"
 #include "../../../../GameObject.h"
 #include "../../../../../Component/MoveComponent/CharacterMovementComponent.h"
 #include "../../../../../../System/AnimationSystem/AnimationPlayer.h"
 #include "../BearAnimationinstance.h"
 #include "../../../../../Resource/BlendAnimationClip.h"
-#include <iostream>
 
 BearIdle_RunState::BearIdle_RunState(AnimationInstance* _animInstance)
 	: AnimationStateContext(_animInstance)

@@ -10,7 +10,6 @@
 #include "../../../Utility/CurveFloat.h"
 
 std::shared_ptr<AudioClip> audioClip;
-
 std::shared_ptr<CurveFloat> curve;
 
 AudioTestScene::AudioTestScene()

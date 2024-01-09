@@ -13,11 +13,16 @@ class Bear2ChainSwordAttack : public BearAttackAction
 {
 public:
 	/**
-    * 引数ありコンストラクタ
+    * コンストラクタ
     *
     * @param std::shared_ptr<BlackBoard> (_blackBoard)
     */
 	Bear2ChainSwordAttack(std::shared_ptr<BlackBoard> _blackBoard);
+
+	/**
+	* デストラクタ
+	*/
+	~Bear2ChainSwordAttack();
 
 public:
 	/**

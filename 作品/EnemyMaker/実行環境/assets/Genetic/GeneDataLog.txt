@@ -33250,3 +33250,326 @@
 2024y 1m 5d  19:11:16  { GenerateAttackGene : class BearSwipingAttack }
 2024y 1m 5d  19:11:16  { GenerateAttackGene : class BearRoarAttack }
 2024y 1m 5d  19:11:16  { GenerateAttackGene : class BearBackJumpSlash }
+2024y 1m 7d  5:36:52  { [Transition] To HitReaction }
+2024y 1m 7d  5:36:55  { [Transition] To Pulled }
+2024y 1m 7d  5:37:7  { [Transition] To HitReaction }
+2024y 1m 7d  5:37:9  { [Transition] To Pulled }
+2024y 1m 7d  5:37:42  { [Transition] To HitReaction }
+2024y 1m 7d  5:37:44  { [Transition] To Pulled }
+2024y 1m 7d  6:13:38  { Entry AttackAnimationState }
+2024y 1m 7d  6:13:41  { [Transition] To Step }
+2024y 1m 7d  6:13:41  { [Transition] To Pulled }
+2024y 1m 7d  6:13:42  { [Transition] To Step }
+2024y 1m 7d  6:13:42  { [Transition] To Pulled }
+2024y 1m 7d  6:13:43  { [Transition] To Pulled }
+2024y 1m 7d  6:13:44  { Entry AttackAnimationState }
+2024y 1m 7d  6:13:45  { [Transition] To Step }
+2024y 1m 7d  6:13:45  { [Transition] To Pulled }
+2024y 1m 7d  6:13:46  { Entry AttackAnimationState }
+2024y 1m 7d  6:13:47  { [Transition] To Step }
+2024y 1m 7d  6:13:48  { [Transition] To Pulled }
+2024y 1m 7d  6:13:48  { [Transition] To Step }
+2024y 1m 7d  6:13:49  { [Transition] To Pulled }
+2024y 1m 7d  6:13:50  { [Transition] To HitReaction }
+2024y 1m 7d  6:13:52  { [Transition] To Pulled }
+2024y 1m 7d  6:13:53  { [Transition] To Step }
+2024y 1m 7d  6:13:53  { [Transition] To Pulled }
+2024y 1m 7d  6:13:54  { Entry AttackAnimationState }
+2024y 1m 7d  6:13:56  { [Transition] To Step }
+2024y 1m 7d  6:13:57  { [Transition] To Pulled }
+2024y 1m 7d  6:13:57  { [Transition] To Pulled }
+2024y 1m 7d  6:13:57  { Entry AttackAnimationState }
+2024y 1m 7d  6:13:58  { [Transition] To Step }
+2024y 1m 7d  6:13:59  { [Transition] To Pulled }
+2024y 1m 7d  6:14:0  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:1  { [Transition] To Step }
+2024y 1m 7d  6:14:1  { [Transition] To Pulled }
+2024y 1m 7d  6:14:3  { [Transition] To HitReaction }
+2024y 1m 7d  6:14:5  { [Transition] To Pulled }
+2024y 1m 7d  6:14:5  { [Transition] To Step }
+2024y 1m 7d  6:14:6  { [Transition] To Pulled }
+2024y 1m 7d  6:14:6  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:7  { [Transition] To Step }
+2024y 1m 7d  6:14:7  { [Transition] To HitReaction }
+2024y 1m 7d  6:14:10  { [Transition] To Pulled }
+2024y 1m 7d  6:14:10  { [Transition] To Step }
+2024y 1m 7d  6:14:11  { [Transition] To Pulled }
+2024y 1m 7d  6:14:12  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:14  { [Transition] To Step }
+2024y 1m 7d  6:14:15  { [Transition] To Pulled }
+2024y 1m 7d  6:14:15  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:16  { [Transition] To Step }
+2024y 1m 7d  6:14:17  { [Transition] To Pulled }
+2024y 1m 7d  6:14:17  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:19  { [Transition] To Step }
+2024y 1m 7d  6:14:20  { [Transition] To Pulled }
+2024y 1m 7d  6:14:20  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:21  { [Transition] To Step }
+2024y 1m 7d  6:14:21  { [Transition] To Pulled }
+2024y 1m 7d  6:14:22  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:24  { [Transition] To Step }
+2024y 1m 7d  6:14:24  { [Transition] To Pulled }
+2024y 1m 7d  6:14:25  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:27  { [Transition] To Step }
+2024y 1m 7d  6:14:27  { [Transition] To Pulled }
+2024y 1m 7d  6:14:28  { [Transition] To HitReaction }
+2024y 1m 7d  6:14:30  { [Transition] To Pulled }
+2024y 1m 7d  6:14:31  { [Transition] To Step }
+2024y 1m 7d  6:14:31  { [Transition] To Pulled }
+2024y 1m 7d  6:14:32  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:34  { [Transition] To Step }
+2024y 1m 7d  6:14:34  { [Transition] To Pulled }
+2024y 1m 7d  6:14:34  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:35  { [Transition] To Step }
+2024y 1m 7d  6:14:35  { [Transition] To Pulled }
+2024y 1m 7d  6:14:36  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:37  { [Transition] To HitReaction }
+2024y 1m 7d  6:14:40  { [Transition] To Pulled }
+2024y 1m 7d  6:14:40  { [Transition] To Step }
+2024y 1m 7d  6:14:40  { [Transition] To Pulled }
+2024y 1m 7d  6:14:41  { [Transition] To Step }
+2024y 1m 7d  6:14:42  { [Transition] To Pulled }
+2024y 1m 7d  6:14:43  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:44  { [Transition] To Step }
+2024y 1m 7d  6:14:45  { [Transition] To Pulled }
+2024y 1m 7d  6:14:46  { [Transition] To Pulled }
+2024y 1m 7d  6:14:46  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:47  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:48  { [Transition] To HitReaction }
+2024y 1m 7d  6:14:50  { [Transition] To Pulled }
+2024y 1m 7d  6:14:50  { [Transition] To Step }
+2024y 1m 7d  6:14:51  { [Transition] To Pulled }
+2024y 1m 7d  6:14:52  { [Transition] To Step }
+2024y 1m 7d  6:14:53  { [Transition] To Pulled }
+2024y 1m 7d  6:14:54  { Entry AttackAnimationState }
+2024y 1m 7d  6:14:56  { [Transition] To Step }
+2024y 1m 7d  6:14:57  { [Transition] To Pulled }
+2024y 1m 7d  6:14:57  { [Transition] To Step }
+2024y 1m 7d  6:14:58  { [Transition] To Pulled }
+2024y 1m 7d  6:14:59  { [Transition] To Step }
+2024y 1m 7d  6:15:0  { [Transition] To Pulled }
+2024y 1m 7d  6:15:1  { [Transition] To Step }
+2024y 1m 7d  6:15:2  { [Transition] To Pulled }
+2024y 1m 7d  6:15:4  { [Transition] To Step }
+2024y 1m 7d  6:15:4  { [Transition] To Pulled }
+2024y 1m 7d  6:15:5  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:7  { [Transition] To Step }
+2024y 1m 7d  6:15:7  { [Transition] To Pulled }
+2024y 1m 7d  6:15:7  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:9  { [Transition] To Step }
+2024y 1m 7d  6:15:10  { [Transition] To Pulled }
+2024y 1m 7d  6:15:10  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:12  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:13  { [Transition] To Step }
+2024y 1m 7d  6:15:14  { [Transition] To Pulled }
+2024y 1m 7d  6:15:15  { [Transition] To Step }
+2024y 1m 7d  6:15:16  { [Transition] To Pulled }
+2024y 1m 7d  6:15:17  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:18  { [Transition] To Step }
+2024y 1m 7d  6:15:19  { [Transition] To HitReaction }
+2024y 1m 7d  6:15:21  { [Transition] To Pulled }
+2024y 1m 7d  6:15:22  { [Transition] To Step }
+2024y 1m 7d  6:15:22  { [Transition] To Pulled }
+2024y 1m 7d  6:15:23  { [Transition] To Step }
+2024y 1m 7d  6:15:24  { [Transition] To Pulled }
+2024y 1m 7d  6:15:25  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:26  { [Transition] To Step }
+2024y 1m 7d  6:15:26  { [Transition] To HitReaction }
+2024y 1m 7d  6:15:29  { [Transition] To Pulled }
+2024y 1m 7d  6:15:30  { [Transition] To Step }
+2024y 1m 7d  6:15:31  { [Transition] To Pulled }
+2024y 1m 7d  6:15:31  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:33  { [Transition] To HitReaction }
+2024y 1m 7d  6:15:36  { [Transition] To Pulled }
+2024y 1m 7d  6:15:36  { [Transition] To Step }
+2024y 1m 7d  6:15:37  { [Transition] To Pulled }
+2024y 1m 7d  6:15:38  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:41  { [Transition] To Step }
+2024y 1m 7d  6:15:42  { [Transition] To HitReaction }
+2024y 1m 7d  6:15:44  { [Transition] To Pulled }
+2024y 1m 7d  6:15:44  { [Transition] To Step }
+2024y 1m 7d  6:15:45  { [Transition] To Pulled }
+2024y 1m 7d  6:15:46  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:48  { [Transition] To Step }
+2024y 1m 7d  6:15:49  { [Transition] To Pulled }
+2024y 1m 7d  6:15:49  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:51  { [Transition] To Step }
+2024y 1m 7d  6:15:51  { [Transition] To Pulled }
+2024y 1m 7d  6:15:52  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:54  { Entry AttackAnimationState }
+2024y 1m 7d  6:15:55  { [Transition] To Step }
+2024y 1m 7d  6:15:56  { [Transition] To Pulled }
+2024y 1m 7d  6:15:58  { [Transition] To Pulled }
+2024y 1m 7d  6:15:59  { Entry AttackAnimationState }
+2024y 1m 7d  6:16:0  { [Transition] To Step }
+2024y 1m 7d  6:16:0  { [Transition] To Pulled }
+2024y 1m 7d  6:16:1  { Entry AttackAnimationState }
+2024y 1m 7d  6:16:3  { [Transition] To Step }
+2024y 1m 7d  6:16:3  { [Transition] To Pulled }
+2024y 1m 7d  6:16:4  { Entry AttackAnimationState }
+2024y 1m 7d  6:16:5  { [Transition] To Step }
+2024y 1m 7d  6:16:6  { [Transition] To Pulled }
+2024y 1m 7d  6:16:7  { [Transition] To Pulled }
+2024y 1m 7d  6:16:8  { [Transition] To Step }
+2024y 1m 7d  6:16:8  { [Transition] To Pulled }
+2024y 1m 7d  6:16:9  { Entry AttackAnimationState }
+2024y 1m 7d  6:16:10  { [Transition] To Step }
+2024y 1m 7d  6:16:10  { [Transition] To Pulled }
+2024y 1m 7d  6:16:11  { [Transition] To Pulled }
+2024y 1m 7d  6:16:12  { Entry AttackAnimationState }
+2024y 1m 7d  6:16:13  { [Transition] To Step }
+2024y 1m 7d  6:16:14  { [Transition] To Pulled }
+2024y 1m 7d  6:16:14  { Entry AttackAnimationState }
+2024y 1m 7d  6:16:15  { [Transition] To Step }
+2024y 1m 7d  6:16:15  { [Transition] To Pulled }
+2024y 1m 7d  6:16:18  { [Transition] To Pulled }
+2024y 1m 7d  6:16:19  { DataCollectionCount : 1 }
+2024y 1m 7d  6:16:19  { AttackGene RiskType }
+2024y 1m 7d  6:16:19  { EffectivenessToPlayer : 0.900000 }
+2024y 1m 7d  6:16:19  { ReceptivityToPlayer : 0.216158 }
+2024y 1m 7d  6:16:19  { class BearBackJumpSlash : AttackAction_LowRisk_HighReturn }
+2024y 1m 7d  6:16:19  { EffectivenessToPlayer : 1.000000 }
+2024y 1m 7d  6:16:19  { ReceptivityToPlayer : 1.000000 }
+2024y 1m 7d  6:16:19  { class Bear3ChainSwordAttack : AttackAction_HighRisk_HighReturn }
+2024y 1m 7d  6:16:19  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 7d  6:16:19  { ReceptivityToPlayer : 0.400900 }
+2024y 1m 7d  6:16:19  { class BearSwordSwingDownAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 7d  6:16:19  { EffectivenessToPlayer : 0.375000 }
+2024y 1m 7d  6:16:19  { ReceptivityToPlayer : 0.281176 }
+2024y 1m 7d  6:16:19  { class BearDownwardSlashStrong : AttackAction_LowRisk_LowReturn }
+2024y 1m 7d  6:16:19  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 7d  6:16:19  { ReceptivityToPlayer : 0.347040 }
+2024y 1m 7d  6:16:19  { class BearSwipingAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 7d  6:16:19  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 7d  6:16:19  { ReceptivityToPlayer : 0.274001 }
+2024y 1m 7d  6:16:19  { class BearJumpSlash : AttackAction_LowRisk_LowReturn }
+2024y 1m 7d  6:16:19  { EffectivenessToPlayer : 0.787500 }
+2024y 1m 7d  6:16:19  { ReceptivityToPlayer : 0.278859 }
+2024y 1m 7d  6:16:19  { class Bear2ChainAttack_StrongLow : AttackAction_LowRisk_HighReturn }
+2024y 1m 7d  6:16:19  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 7d  6:16:19  { ReceptivityToPlayer : 0.635744 }
+2024y 1m 7d  6:16:19  { class BearKickAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 7d  6:16:19  { GoalRatio }
+2024y 1m 7d  6:16:19  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 7d  6:16:19  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 7d  6:16:19  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 7d  6:16:19  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 7d  6:16:19  { CurrentRatio }
+2024y 1m 7d  6:16:19  { AttackAction_HighRisk_HighReturn : 0.125000 }
+2024y 1m 7d  6:16:19  { AttackAction_HighRisk_LowReturn : 0.125000 }
+2024y 1m 7d  6:16:19  { AttackAction_LowRisk_HighReturn : 0.250000 }
+2024y 1m 7d  6:16:19  { AttackAction_LowRisk_LowReturn : 0.500000 }
+2024y 1m 7d  6:16:19  { EvaluationValue : 0.875000 }
+2024y 1m 7d  6:16:19  { [EvaluateGene] GeneIndex : 1 }
+2024y 1m 7d  6:16:19  { [Transition] To Pulled }
+2024y 1m 7d  6:16:19  { [Transition] To Death }
+2024y 1m 7d  6:53:36  { DataCollectionCount : 1 }
+2024y 1m 7d  6:53:36  { AttackGene RiskType }
+2024y 1m 7d  6:53:36  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 7d  6:53:36  { ReceptivityToPlayer : 0.582875 }
+2024y 1m 7d  6:53:36  { class BearJumpSlash : AttackAction_HighRisk_LowReturn }
+2024y 1m 7d  6:53:36  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 7d  6:53:36  { ReceptivityToPlayer : 0.561597 }
+2024y 1m 7d  6:53:36  { class BearDownwardSlashStrong : AttackAction_HighRisk_LowReturn }
+2024y 1m 7d  6:53:36  { EffectivenessToPlayer : 1.000000 }
+2024y 1m 7d  6:53:36  { ReceptivityToPlayer : 0.659774 }
+2024y 1m 7d  6:53:36  { class Bear2ChinaBackAndFront : AttackAction_HighRisk_HighReturn }
+2024y 1m 7d  6:53:36  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 7d  6:53:36  { ReceptivityToPlayer : 1.000000 }
+2024y 1m 7d  6:53:36  { class BearSwordSwingDownAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 7d  6:53:36  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 7d  6:53:36  { ReceptivityToPlayer : 0.963985 }
+2024y 1m 7d  6:53:36  { class BearSwordSwingUpAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 7d  6:53:36  { EffectivenessToPlayer : 0.288000 }
+2024y 1m 7d  6:53:36  { ReceptivityToPlayer : 0.617429 }
+2024y 1m 7d  6:53:36  { class BearBackJumpSlash : AttackAction_HighRisk_LowReturn }
+2024y 1m 7d  6:53:36  { EffectivenessToPlayer : 0.248889 }
+2024y 1m 7d  6:53:36  { ReceptivityToPlayer : 0.786865 }
+2024y 1m 7d  6:53:36  { class BearSwipingAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 7d  6:53:36  { EffectivenessToPlayer : 0.213333 }
+2024y 1m 7d  6:53:36  { ReceptivityToPlayer : 0.334963 }
+2024y 1m 7d  6:53:36  { class BearKickAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 7d  6:53:36  { GoalRatio }
+2024y 1m 7d  6:53:36  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 7d  6:53:36  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 7d  6:53:36  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 7d  6:53:36  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 7d  6:53:36  { CurrentRatio }
+2024y 1m 7d  6:53:36  { AttackAction_HighRisk_HighReturn : 0.125000 }
+2024y 1m 7d  6:53:36  { AttackAction_HighRisk_LowReturn : 0.750000 }
+2024y 1m 7d  6:53:36  { AttackAction_LowRisk_HighReturn : 0.000000 }
+2024y 1m 7d  6:53:36  { AttackAction_LowRisk_LowReturn : 0.125000 }
+2024y 1m 7d  6:53:36  { EvaluationValue : 0.725000 }
+2024y 1m 7d  6:53:36  { [EvaluateGene] GeneIndex : 2 }
+2024y 1m 9d  12:36:40  { DataCollectionCount : 1 }
+2024y 1m 9d  12:36:40  { AttackGene RiskType }
+2024y 1m 9d  12:36:40  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 9d  12:36:40  { ReceptivityToPlayer : 0.792623 }
+2024y 1m 9d  12:36:40  { class BearSwordSwingUpAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 9d  12:36:40  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 9d  12:36:40  { ReceptivityToPlayer : 0.485441 }
+2024y 1m 9d  12:36:40  { class BearDownwardSlashStrong : AttackAction_LowRisk_LowReturn }
+2024y 1m 9d  12:36:40  { EffectivenessToPlayer : 0.400000 }
+2024y 1m 9d  12:36:40  { ReceptivityToPlayer : 0.684455 }
+2024y 1m 9d  12:36:40  { class BearKickAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 9d  12:36:40  { EffectivenessToPlayer : 0.750000 }
+2024y 1m 9d  12:36:40  { ReceptivityToPlayer : 0.503113 }
+2024y 1m 9d  12:36:40  { class Bear2ChainSwordAttack : AttackAction_HighRisk_HighReturn }
+2024y 1m 9d  12:36:40  { EffectivenessToPlayer : 1.000000 }
+2024y 1m 9d  12:36:40  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 9d  12:36:40  { class Bear3ChainSwordAttack : AttackAction_LowRisk_HighReturn }
+2024y 1m 9d  12:36:40  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 9d  12:36:40  { ReceptivityToPlayer : 0.558300 }
+2024y 1m 9d  12:36:40  { class BearSwipingAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 9d  12:36:40  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 9d  12:36:40  { ReceptivityToPlayer : 1.000000 }
+2024y 1m 9d  12:36:40  { class BearRoarAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 9d  12:36:40  { EffectivenessToPlayer : 0.225000 }
+2024y 1m 9d  12:36:40  { ReceptivityToPlayer : 0.555237 }
+2024y 1m 9d  12:36:40  { class BearBackJumpSlash : AttackAction_HighRisk_LowReturn }
+2024y 1m 9d  12:36:40  { GoalRatio }
+2024y 1m 9d  12:36:40  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 9d  12:36:40  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 9d  12:36:40  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 9d  12:36:40  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 9d  12:36:40  { CurrentRatio }
+2024y 1m 9d  12:36:40  { AttackAction_HighRisk_HighReturn : 0.125000 }
+2024y 1m 9d  12:36:40  { AttackAction_HighRisk_LowReturn : 0.625000 }
+2024y 1m 9d  12:36:40  { AttackAction_LowRisk_HighReturn : 0.125000 }
+2024y 1m 9d  12:36:40  { AttackAction_LowRisk_LowReturn : 0.125000 }
+2024y 1m 9d  12:36:40  { EvaluationValue : 0.787500 }
+2024y 1m 9d  12:36:40  { [EvaluateGene] GeneIndex : 3 }
+2024y 1m 9d  12:36:40  {  [Genetic]  }
+2024y 1m 9d  12:36:40  { [RadomGenerateGene] }
+2024y 1m 9d  12:36:40  { [RadomGenerateSituation] }
+2024y 1m 9d  12:36:40  { [RadomGenerateAttackGenes] }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChinaBackAndFront }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearJumpSlash }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearKickAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearRoarAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearSwordSwingUpAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearDownwardSlashStrong }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearSwordSwingDownAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChainSwordAttack }
+2024y 1m 9d  12:36:40  { [RadomGenerateGene] }
+2024y 1m 9d  12:36:40  { [RadomGenerateSituation] }
+2024y 1m 9d  12:36:40  { [RadomGenerateAttackGenes] }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChainAttack_StrongLow }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearSwipingAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChainSwordAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChinaBackAndFront }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChainSwordStrongAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearSwordSwingDownAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearKickAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearBackJumpSlash }
+2024y 1m 9d  12:36:40  { [RadomGenerateGene] }
+2024y 1m 9d  12:36:40  { [RadomGenerateSituation] }
+2024y 1m 9d  12:36:40  { [RadomGenerateAttackGenes] }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearSwipingAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChinaBackAndFront }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear3ChainSwordAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearSlashWeak }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChainAttack_StrongLow }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class Bear2ChainSwordStrongAttack }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearBackJumpSlash }
+2024y 1m 9d  12:36:40  { GenerateAttackGene : class BearJumpSlash }

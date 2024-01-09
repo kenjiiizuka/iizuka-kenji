@@ -1,4 +1,5 @@
-﻿#include "BearSwipingAnimNotifyState.h"
+﻿//-------------- INCLUDES -------------
+#include "BearSwipingAnimNotifyState.h"
 #include "../../../../../Resource/SkeletalMesh.h"
 #include "../../../../GameObject.h"
 #include "../../../../../Component/CollisionComponent/EnemyAttackCapsuleCollisionComponent.h"
@@ -9,16 +10,14 @@ BearSwipingAnimNotifyState::BearSwipingAnimNotifyState(
 	uint16_t _attachEndFrame)
 	: AnimationNotifyState(_attachAnimation, _attachStartFrame, _attachEndFrame)
 {
+	// 処理なし
 }
-
 
 void BearSwipingAnimNotifyState::NotifyBegin()
 {
 	GameObject* owner = mSkeletalMesh.lock()->GetOwnerObject();
 	mCollision = owner->AddComponent<EnemyAttackCapsuleCollisionComponent>();
 	mCollision.lock()->Init(3, 4, 30, CrossCharacter::HitReaction_Small);
-	// mCollision.lock()->AttachBone(mSkeletalMesh.lock()->GetBoneByName("mixamorig:LeftForeArm"));
-
 	mCollision.lock()->SetCollisionChannel(Collision::Channel_EnemyAttack);
 	mCollision.lock()->SetCollisionTypes(Collision::Channel_Player, Collision::Type_Overlap);
 }

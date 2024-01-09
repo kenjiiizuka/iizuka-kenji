@@ -10,8 +10,6 @@
 #include <string>
 #include "PlayerAttackData.h"
 #include "../GameObject.h"
-#include "../ObjectInterface/IDamageAble.h"
-#include "../../../System/InputSystem/InputData.h"
 #include "PlayerStateObserver.h"
 #include "PlayerStateController.h"
 
@@ -32,7 +30,7 @@ class EffectComponent;
 * @class Player
 * @brief このゲームのプレイヤークラス
 */
-class Player : public GameObject , public IDamageAble
+class Player : public GameObject
 {
 public:
 	/**
@@ -108,15 +106,6 @@ private:
 
 	/** カプセルコリジョンの高さ */
 	float mCapsuleCollisionHeight;
-
-	/** Y攻撃ボタン */
-	Pad mYAttackButton;
-
-	/** B攻撃ボタン */
-	Pad mBAttackButton;
-
-	/** 回避ボタン */
-	Pad mRollingButton;
 
 	/** カメラの方向に基づいた左スティックの倒れている方向 */
 	DirectX::SimpleMath::Vector3 mCameraAlignedLStickDirection;
@@ -271,6 +260,16 @@ private:
 	PlayerData::GuardResult CheckGuard(const DirectX::SimpleMath::Vector3 _hitCollisionPos, float& _damage);
 
 	/**
+	* @fn GuardingHit
+	* @brief ガード中に攻撃をくらった時の処理
+	* @param float& (_damage)                                       ダメージ
+	* @param const DirectX::SimpleMath::Vector3 (_hitPosition)      ヒット位置
+	* @param const const CrossCharacter::HitReaction (_hitReaction) くらった攻撃のヒットリアクション
+	* @return void
+	*/
+	void GuardingHit(float& _damage, const DirectX::SimpleMath::Vector3 _hitPosition, const CrossCharacter::HitReaction _hitReaction);
+
+	/**
 	* @fn IsExecuteStep
 	* @brief ステップを実行するか確認する関数
 	* @return true ステップ実行 false 実行しない
@@ -312,7 +311,7 @@ private:
 	 * @param float (_damage) ダメージ
 	 * @return void
 	*/
-	void TakenDamage(float _damage) override;
+	void TakenDamage(float _damage);
 
 	/**
 	* @fn CheckHP
@@ -323,11 +322,11 @@ private:
 
 	/**
 	* @fn CalcuBlowVector
-	* @brief ヒットしたコリジョンの座標から吹っ飛ぶ方向を計算する
-	* @param PrimitiveComponent* (_hitCollision)
+	* @brief ヒットした位置から吹っ飛び方向を計算する
+	* @param const DirectX::SimpleMath::Vector3& (_hitPosition) ヒットした位置
 	* @return void
 	*/
-	void CalcuBlowVector(PrimitiveComponent* _hitCollision);
+	void CalcuBlowVector(const DirectX::SimpleMath::Vector3& _hitPosition);
 
 public:
 	/**

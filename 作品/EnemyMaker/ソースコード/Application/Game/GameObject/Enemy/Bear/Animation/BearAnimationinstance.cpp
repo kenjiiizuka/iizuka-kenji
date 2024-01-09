@@ -310,10 +310,7 @@ void BearAnimationInstance::SetupNotifies()
 	SettingCameraShakeNotify(110, attackData->GetAttack(BearEnemyAttackData::JumpSlash), 0.3f, { 0.2f,1.0f });
 	SettingCameraShakeNotify(152, attackData->GetAttack(BearEnemyAttackData::BackAndFrontSlash), 0.3f, { 0.1f,0.6f });
 
-
-	
 	// エフェクト再生通知付け
-
 	// 振り向き斬り
 	{
 		SettingPlayEffectNotify
@@ -535,6 +532,7 @@ void BearAnimationInstance::SetupAnimationClips()
 	// 攻撃データの取得
 	std::shared_ptr<BearEnemyAttackData> attackData = std::static_pointer_cast<BearEnemyAttackData>(mEnemy->GetAttackData().lock());
 
+	// アニメーションの設定 ループ、同期など
 	mAnimationClips["IdleToRun"]->SetLoop(true);
 	mAnimationClips["HitReaction"]->SetSynchroPosition(true);
 	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::JumpSlash).mAnimationClipName]->SetSynchroPosition(true);
@@ -552,6 +550,22 @@ void BearAnimationInstance::SetupAnimationClips()
 	mAnimationClips["TurnRight"]->SetSynchroRotation(true);
 	mAnimationClips["TurnLeft"]->SetSynchroRotation(true);
 	
+	// アニメーションのセクションの設定
+	// ２連撃 下
+	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::DoubleSlash_StrongLow).mAnimationClipName]->AddSection(10, "FollowStart");
+	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::DoubleSlash_StrongLow).mAnimationClipName]->AddSection(150, "FollowEnd");
+
+	// ２連撃 
+	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::DoubleSlash_Strong).mAnimationClipName]->AddSection(60, "FollowStart");
+	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::DoubleSlash_Strong).mAnimationClipName]->AddSection(170, "FollowEnd");
+
+	// ジャンプ切り
+	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::JumpSlash).mAnimationClipName]->AddSection(5, "FollowStart");
+	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::JumpSlash).mAnimationClipName]->AddSection(80, "FollowEnd");
+
+	// 斬り下がり
+	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::BackJumpSlash).mAnimationClipName]->AddSection(5, "FollowStart");
+	mAnimationClips[attackData->GetAttack(BearEnemyAttackData::BackJumpSlash).mAnimationClipName]->AddSection(60, "FollowEnd");
 }
 
 void BearAnimationInstance::SettingAttackNotifyState(const EnemyAttack& _attackInformation)

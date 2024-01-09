@@ -45,7 +45,7 @@ protected:
     DirectX::SimpleMath::Vector3 mShakeVector;
 
     /** ビュー、プロジェクション変換行列 */
-    static DirectX::SimpleMath::Matrix view_Projection[2];
+    static DirectX::SimpleMath::Matrix mViewProjection[2];
 
     /** 視野 */
     float mFieldOfView;

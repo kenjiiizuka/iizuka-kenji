@@ -1,4 +1,5 @@
-﻿#include "EnemyAIController.h"
+﻿//------------ INCLUDES ------------
+#include "EnemyAIController.h"
 #include "EnemyActionSelector.h"
 #include "EnemyActionProcessor.h"
 #include "BlackBoard.h"
@@ -66,16 +67,25 @@ void EnemyAIController::Update()
 	}
 
 	std::weak_ptr<Scene> currentScene = SceneManager::GetInstance().GetCurrentScene();
-	std::shared_ptr<Player> target = currentScene.lock()->GetGameObject<Player>(ELayer::ObjectLayer);
+	std::shared_ptr<Player> target = currentScene.lock()->GetGameObject<Player>();
 	// ブラックボードに必要なデータを書き込み	
+
+	// 操作しているエネミー
 	mBlackBoard->SetValue<EnemyBase*>(mControlledEnemy,"OwnerEnemy");
 
+	// 前回フレームのプレイヤーの位置
+	Vector3 prevPlayerPos = mBlackBoard->GetValue<Vector3>("TargetPosition");
+	mBlackBoard->SetValue<Vector3>(prevPlayerPos,"PrevTargetPosition");
+
+	// プレイヤーの位置
 	Vector3 targetPosition = target->GetComponent<TransformComponent>()->GetPosition();
+	mBlackBoard->SetValue<Vector3>(targetPosition, "TargetPosition");
+
+	// プレイヤーへのベクトル
 	Vector3 enemyPosition = mControlledEnemy->GetComponent<TransformComponent>()->GetPosition();
 	Vector3 vectorToTarget = targetPosition - enemyPosition;
 	mBlackBoard->SetValue<Vector3>(vectorToTarget, "VectorToTarget");	
-	mBlackBoard->SetValue<Vector3>(targetPosition, "TargetPosition");
-
+	
 	
 	// 行動を実行していなければ行動を選択する
 	if (mActionProcessor->IsActionSettable())

@@ -1,4 +1,5 @@
-﻿#include "Input.h"
+﻿//---------- INCLUDES ---------
+#include "Input.h"
 
 BYTE Input::mKeyState[256];
 BYTE Input::mOldKeyState[256];

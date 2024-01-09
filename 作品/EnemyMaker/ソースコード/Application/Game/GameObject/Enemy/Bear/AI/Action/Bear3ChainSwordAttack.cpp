@@ -24,7 +24,6 @@ void Bear3ChainSwordAttack::BeginActionExecution(EnemyBase* _enemy)
 	AnimationPlaySetting setting = 0;
 	mAnimInstance.lock()->PlayAnimationClip(mAnimationClipName,1.0f,0.2f);
 	mAnimInstance.lock()->SetAttack(true);
-
 }
 
 EnemyActionResult Bear3ChainSwordAttack::UpdateActionExecution()

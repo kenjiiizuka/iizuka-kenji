@@ -9,7 +9,6 @@
 //--------------- 名前空間エイリアス ---------------
 namespace DXSimpleMath = DirectX::SimpleMath;
 
-
 void CollisionDetector3D::DetectorOverlap(PrimitiveComponent* _subject1, PrimitiveComponent* _subject2)
 {
 	// 重なり検出をする必要がないなら早期リターン

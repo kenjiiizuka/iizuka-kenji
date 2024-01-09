@@ -46,9 +46,6 @@ Player::Player()
 	, mCapsuleCollisionOffSet(Transform({ 0.f,4.0f,0.0f }, { 1.0f, 1.0f, 1.0f }, { 0.0f, 0.0f, 0.0f }))
 	, mCapsuleCollisionHeight(2.8f)
 	, mCapsuleCollisionRadius(1.6f)
-	, mRollingButton(Pad::A)
-	, mYAttackButton(Pad::Y)
-	, mBAttackButton(Pad::B)
 	, mHitReaction(CrossCharacter::HitReaction_Small)
 	, mStepAnimationInterpStartTime(0.0f)
 	, mBehavior(State_IdleMove)
@@ -149,54 +146,33 @@ void Player::BeginHit(GameObject* _hitObject, PrimitiveComponent* _hitComponent)
 	{
 		return;
 	}
-
 	float damage = enemyAttackCollision->GetDamage();
 
-	// ガード中ならガードできているか確認する
-	GuardResult result = GuardResult::Result_Faild;
-	if (mBehavior == PlayerBehaviorState::State_Guard)
+	// カウンター攻撃中ならヒットリアクションを取らずに軽減したダメージだけを受ける
+	if (mBehavior == PlayerBehaviorState::State_Counter)
 	{
-		result = CheckGuard(_hitComponent->GetTransform().mPosition, damage);
-
-		// 通常ガード
-		if (result == GuardResult::Result_Guard)
-		{
-			damage *= 0.5f;
-			mGuardAudio.lock()->PlaySound3D(mTransform.lock()->GetPosition(), { 0,0,0 });
-			DirectX::SimpleMath::Vector3 effectPosition = mTransform.lock()->GetPosition() + mTransform.lock()->GetForwardVector() * 1.0f;
-			effectPosition.y = 4.0f;
-			mGuardEffect.lock()->PlayEffect(effectPosition, { 1,1,1 }, mTransform.lock()->GetRotation().y);
-		}
-		// ジャストガード
-		else if (result == GuardResult::Result_JustGuard)
-		{
-			damage = 0.0f;
-			mJustGuardAudio.lock()->PlaySound3D(mTransform.lock()->GetPosition(), {0,0,0});
-			XInput::Vibration(0.7f, XInput::mMaxVibration, XInput::mMaxVibration);
-
-			DirectX::SimpleMath::Vector3 effectPosition = mTransform.lock()->GetPosition() + mTransform.lock()->GetForwardVector() * 1.0f;
-			effectPosition.y = 4.0f;
-			mJustGuardEffect.lock()->PlayEffect(effectPosition, { 1,1,1 }, mTransform.lock()->GetRotation().y);
-
-			// ジャスガしたらカウンター可能状態に
-			mJustGuardElapsedTime = 0.0f;
-		}
+		damage *= 0.3f;
 	}
-
-	// 処理が多くないからインターフェースつかわなくてもいいかも
-	TakenDamage(damage);
-		
-	// ガードが失敗していればヒットリアクションを取る
-	if (result == GuardResult::Result_Faild)
+	// ガード中ならガード中用のヒット処理をする
+	else if (mBehavior == PlayerBehaviorState::State_Guard)
 	{
+		GuardingHit(damage, _hitComponent->GetTransform().mPosition, enemyAttackCollision->GetHitReaction());
+	}	
+	// ガード中でないなら通常のヒット処理
+	else
+	{
+		// ヒットリアクションステートに移行
 		mBehavior = PlayerBehaviorState::State_HitReaction;
 
 		// この攻撃のヒットリアクションの取得
 		mHitReaction = enemyAttackCollision->GetHitReaction();
 
 		// ふっとび方向の計算
-		CalcuBlowVector(_hitComponent);
+		CalcuBlowVector(_hitComponent->GetTransform().mPosition);
 	}
+	
+	// ダメージを貰う
+	TakenDamage(damage);
 
 	// コントローラー振動処理
 	if (damage >= 13)
@@ -204,6 +180,7 @@ void Player::BeginHit(GameObject* _hitObject, PrimitiveComponent* _hitComponent)
 		XInput::Vibration(0.18f, 2000 * damage, 2000 * damage);
 	}	
 
+	// Hpがあるか確認する
 	CheckHP();
 }
 
@@ -357,6 +334,48 @@ PlayerData::GuardResult Player::CheckGuard(const DirectX::SimpleMath::Vector3 _h
 	return guardState->CheckGuard(_hitCollisionPos);	
 }
 
+void Player::GuardingHit(float& _damage, const DirectX::SimpleMath::Vector3 _hitPosition, const CrossCharacter::HitReaction _hitReaction)
+{
+	// ガードの結果を確認する 
+	GuardResult result = GuardResult::Result_Faild;	
+	result = CheckGuard(_hitPosition, _damage);
+
+	// 通常ガード
+	if (result == GuardResult::Result_Guard)
+	{
+		_damage *= 0.5f;
+		mGuardAudio.lock()->PlaySound3D(mTransform.lock()->GetPosition(), { 0,0,0 });
+		DirectX::SimpleMath::Vector3 effectPosition = mTransform.lock()->GetPosition() + mTransform.lock()->GetForwardVector() * 1.0f;
+		effectPosition.y = 4.0f;
+		mGuardEffect.lock()->PlayEffect(effectPosition, { 1,1,1 }, mTransform.lock()->GetRotation().y);
+	}
+	// ジャストガード
+	else if (result == GuardResult::Result_JustGuard)
+	{
+		_damage = 0.0f;
+		mJustGuardAudio.lock()->PlaySound3D(mTransform.lock()->GetPosition(), { 0,0,0 });
+		XInput::Vibration(0.7f, XInput::mMaxVibration, XInput::mMaxVibration);
+
+		DirectX::SimpleMath::Vector3 effectPosition = mTransform.lock()->GetPosition() + mTransform.lock()->GetForwardVector() * 1.0f;
+		effectPosition.y = 4.0f;
+		mJustGuardEffect.lock()->PlayEffect(effectPosition, { 1,1,1 }, mTransform.lock()->GetRotation().y);
+
+		// ジャスガしたらカウンター可能状態に
+		mJustGuardElapsedTime = 0.0f;
+	}	
+	// ガードが失敗していればヒットリアクションを取る
+	else if (result == GuardResult::Result_Faild)
+	{
+		mBehavior = PlayerBehaviorState::State_HitReaction;
+
+		// この攻撃のヒットリアクションの取得
+		mHitReaction = _hitReaction;
+
+		// ふっとび方向の計算
+		CalcuBlowVector(_hitPosition);
+	}
+}
+
 bool Player::IsExecuteStep() const noexcept
 {
 	return mInputController.lock()->IsInput(PlayerInputControllerComponent::Operation_Step);
@@ -431,9 +450,9 @@ bool Player::CheckHP()
 	return true;
 }
 
-void Player::CalcuBlowVector(PrimitiveComponent* _hitCollision)
+void Player::CalcuBlowVector(const DirectX::SimpleMath::Vector3& _hitPosition)
 {
-	mBlowVector = mTransform.lock()->GetPosition() - _hitCollision->GetTransform().mPosition;
+	mBlowVector = mTransform.lock()->GetPosition() - _hitPosition;
 }
 
 void Player::HitReaction(CrossCharacter::HitReaction _hitReaction)

@@ -64,5 +64,20 @@ public:
 	*/
 	virtual bool IsExecuteAble() override;
 
+protected:
+	/**
+	* @fn FollowRotation
+	* @brief プレイヤーの方を向く処理 
+	* @param const float (_followLevel) 向く際の追従(回転)の速度
+	* @return void
+	*/
+	void FollowRotation(const float _followLevel = 0.1f);
+
+	/**
+	* @fn GetCurrentAnimationSection
+	* @brief 現在再生されているアニメーションのセクションを返す
+	* @return std::string 現在のセクション
+	*/
+	std::string GetCurrentAnimationSection() const noexcept;
 };
 

@@ -21,8 +21,6 @@ void CircleBlockObject::Init()
 	ringCollision->SetCollisionChannel(Collision::Channel_Static);
 	ringCollision->SetCollisionTypes(Collision::Channel_Enemy, Collision::Type_Block);
 	ringCollision->SetCollisionTypes(Collision::Channel_Player, Collision::Type_Block);
-
-
 	mTransform.lock()->SetPosition({ 100.0f,0.0f ,100.0f });
 }
 

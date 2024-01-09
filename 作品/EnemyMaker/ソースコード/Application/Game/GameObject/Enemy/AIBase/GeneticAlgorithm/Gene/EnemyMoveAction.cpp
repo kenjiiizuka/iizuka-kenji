@@ -1,4 +1,5 @@
-﻿#include "EnemyMoveAction.h"
+﻿//----------- INCLUDES ----------
+#include "EnemyMoveAction.h"
 
 EnemyMoveAction::EnemyMoveAction(std::shared_ptr<BlackBoard> _blackBoard)
 	: EnemyAction(_blackBoard)

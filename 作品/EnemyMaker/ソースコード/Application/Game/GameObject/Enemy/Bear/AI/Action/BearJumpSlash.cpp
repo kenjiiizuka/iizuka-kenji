@@ -1,11 +1,12 @@
-﻿#include "BearJumpSlash.h"
+﻿//--------- INCLUDES ----------
+#include "BearJumpSlash.h"
 #include "../../../EnemyBase.h"
 #include "../../Animation/BearAnimationinstance.h"
 #include "../../../../../../Utility/DetectorUtility.h"
 #include "../../../AIBase/BlackBoard.h"
 
+//----------- NAMESPACEAILIAS -----------
 using namespace DirectX::SimpleMath;
-
 
 BearJumpSlash::BearJumpSlash(std::shared_ptr<BlackBoard> _blackBoard)
 	: BearAttackAction(_blackBoard)
@@ -28,6 +29,12 @@ EnemyActionResult BearJumpSlash::UpdateActionExecution()
 {
 	// 親クラス内で時間の計測をしているので呼び出す
 	BearAttackAction::UpdateActionExecution();
+
+	// 追従処理
+	if (GetCurrentAnimationSection() == "FollowStart")
+	{
+		FollowRotation(0.3f);
+	}
 
 	// アニメーションの終了判定があれば成功を返す、それ以外は実行中
 	std::shared_ptr<AnimationPlayer> animPlayer = mAnimInstance.lock()->GetAnimationPlayer();

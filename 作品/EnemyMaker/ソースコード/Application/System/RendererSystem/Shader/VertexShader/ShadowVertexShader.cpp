@@ -16,7 +16,7 @@ void ShadowVertexShader::UpdateBuffer(uint8_t _dataID)
 	VertexShader::UpdateBuffer(_dataID);
 
 	std::weak_ptr<Scene> currentScene = SceneManager::GetInstance().GetCurrentScene();
-	std::shared_ptr<LightBase> light = currentScene.lock()->GetGameObject<LightBase>(ELayer::BaseLayer);
+	std::shared_ptr<LightBase> light = currentScene.lock()->GetGameObject<LightBase>();
 	if (!light)
 	{
 		return;

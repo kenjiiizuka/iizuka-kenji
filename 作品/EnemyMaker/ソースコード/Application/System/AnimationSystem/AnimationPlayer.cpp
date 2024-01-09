@@ -13,10 +13,8 @@
 #include "../../ImGui/ImGuiUtility.h"
 #include "../../System/Logger/Logger.h"
 
+//----------- NAMESPACEAILIAS ---------------
 using namespace DirectX::SimpleMath;
-
-static float master = 1.0f;
-static bool debug = false;
 
 AnimationPlayer::AnimationPlayer()
 	: mbEndOnNextFrame(false)
@@ -119,23 +117,8 @@ void AnimationPlayer::StepAnimation(const double _deltaTime)
 		bone.lock()->SetAnimationMatrix(animationMatrix);
 	}	
 
-#ifdef DEBUG
-	ImGui::Begin("AnimationPlayer");
-	ImGui::SliderFloat("PlayRate", &master, 0.0f, 2.0f);
-	ImGui::Checkbox("Debug", &debug);
-	if (debug)
-	{
-		if (!ImGui::Button("Step"))
-		{
-			ImGui::End();
-			return;
-		}
-	}
-	ImGui::End();
-#endif // DEBUG
-
 	// 再生時間を進める
-	mAnimPlayBackData.mCurrentPlayTime += mAnimPlayBackData.mTickPerSeconds * mAnimPlayBackData.mPlayRate * _deltaTime * master;
+	mAnimPlayBackData.mCurrentPlayTime += mAnimPlayBackData.mTickPerSeconds * mAnimPlayBackData.mPlayRate * _deltaTime;
 }
 
 void AnimationPlayer::InterpBegin(const std::shared_ptr<SkeletalMeshAnimationClip>& _baseAnimationClip, const float _interpStartAnimationClipTime, const std::shared_ptr<SkeletalMeshAnimationClip> _toAnimationClip, const float _interpTime)

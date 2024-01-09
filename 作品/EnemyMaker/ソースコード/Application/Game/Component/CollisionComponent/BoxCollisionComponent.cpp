@@ -3,19 +3,19 @@
 #include "../../../System/CollisionSystem/CollisionSystem.h"
 #include "../PlaneComponent/PlaneComponent.h"
 
-using namespace DirectX::SimpleMath;
-
 BoxCollisionComponent::BoxCollisionComponent()
 	: PrimitiveComponent(Collision::PrimitiveType_Box)
-	, mHalfSize(Vector3::One)
+	, mHalfSize(DirectX::SimpleMath::Vector3::One)
 {
+	// 処理なし
 }
 
 BoxCollisionComponent::~BoxCollisionComponent()
 {
+	// 処理なし
 }
 
-void BoxCollisionComponent::FixInit(Vector3 _halfSize)
+void BoxCollisionComponent::FixInit(DirectX::SimpleMath::Vector3 _halfSize)
 {
 	mHalfSize = _halfSize;
 }

@@ -7,7 +7,6 @@
 #include "../../Resource/Bone.h"
 #include "CameraIncludes.h"
 
-
 CinematicCamera::CinematicCamera()
 	: mbPlay(false)
 	, mCurrentPlayTime(0.0)

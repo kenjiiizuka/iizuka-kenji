@@ -7,7 +7,7 @@
 
 void AnimationTestScene::Initialize()
 {
-	AddGameObject<AnimationTestObject>(ELayer::ObjectLayer);
+	AddGameObject<AnimationTestObject>();
 }
 
 void AnimationTestScene::Update()

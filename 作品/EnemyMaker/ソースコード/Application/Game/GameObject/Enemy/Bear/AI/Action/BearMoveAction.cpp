@@ -1,4 +1,5 @@
-﻿#include "BearMoveAction.h"
+﻿//------------- INCLUDES --------------
+#include "BearMoveAction.h"
 #include "../../../../../Component/MoveComponent/CharacterMovementComponent.h"
 #include "../../../AIBase/BlackBoard.h"
 #include "../../../EnemyBase.h"

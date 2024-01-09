@@ -16,7 +16,7 @@
 void PlayerTestScene::Initialize()
 {
 	// ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
-	std::weak_ptr<Player> player = AddGameObject<Player>(ELayer::ObjectLayer);
+	std::weak_ptr<Player> player = AddGameObject<Player>();
 	std::weak_ptr<TransformComponent> playerTrans = player.lock()->GetComponent<TransformComponent>();
 	player.lock()->SetPosition({ 100,0,30 });
 
@@ -35,7 +35,7 @@ void PlayerTestScene::Initialize()
 	std::shared_ptr<CinematicCamera> deathCamera = mpCameraManager->CreateCamera<CinematicCamera>("DeathCamera");
 	mPlayerEditor->SetDeathCamera(deathCamera);
 
-	std::shared_ptr<GameObject> collision = AddGameObject<GameObject>(ELayer::ObjectLayer);
+	std::shared_ptr<GameObject> collision = AddGameObject<GameObject>();
 	std::shared_ptr<CapsuleCollisionComponent> capsule = collision->AddComponent<CapsuleCollisionComponent>();
 	capsule->Init(7,5);
 	capsule->SetDebugDraw(true);
@@ -45,7 +45,7 @@ void PlayerTestScene::Initialize()
 
 	CollisionSystem::GetInstance().SwitchActive(true);
 
-	auto effect = AddGameObject<GameObject>(ELayer::ObjectLayer)->AddComponent<EffectComponent>();
+	auto effect = AddGameObject<GameObject>()->AddComponent<EffectComponent>();
 	effect->Init("assets/Effect/HitEffect.efkefc");
 
 	effectComp = effect;

@@ -7,6 +7,7 @@
 #include "../../Animation/BearAnimationinstance.h"
 #include "../../../../../../Utility/MathLibrary.h"
 #include "../../../../../../Utility/DetectorUtility.h"
+#include "../../../../../Resource/SkeletalMeshAnimationClip.h"
 
 //------------ NAMESPACEAILAS --------------
 using namespace DirectX::SimpleMath;
@@ -88,5 +89,33 @@ bool BearAttackAction::IsExecuteAble()
 	}
 
 	return isExecute;
+}
+
+void BearAttackAction::FollowRotation(const float _followLevel)
+{
+	// プレイヤー方向を向くYawを求める
+	std::shared_ptr<TransformComponent> enemyTrans = mEnemy->GetComponent<TransformComponent>();
+	float lookAtPlayerYaw = MathLibrary::LookAtYaw(enemyTrans->GetPosition(), mBlackBoard->GetValue<Vector3>("TargetPosition"));
+
+	// プレイヤー方向のクォータニオン作成
+	Quaternion targetQuat = { 0.0f, lookAtPlayerYaw, 0.0f, 1.0f };
+
+	// エネミーの回転をクォータニオンに変換	
+	Vector3 enemyRotation = enemyTrans->GetRotation();
+	Quaternion enemyQuat;
+	MathLibrary::ConvRotationToQuaternion(enemyRotation, enemyQuat);
+
+	
+	// 現在のエネミーのクォータニオンからプレイヤーの方を向くクォータニオンへ補間する
+	Vector3 newRotation = MathLibrary::LerpQuaternion(enemyQuat, targetQuat, static_cast<float>(mEnemy->GetCustomDeltaTime()), 1.0f);
+
+	// 回転をセットする
+	enemyTrans->SetRotation(newRotation);
+}
+
+std::string BearAttackAction::GetCurrentAnimationSection() const noexcept
+{
+	std::string section = mAnimInstance.lock()->GetAnimationPlayer()->GetPlayAnimation().lock()->GetCurrentSection();
+	return section;
 }
 

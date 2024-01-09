@@ -9,6 +9,7 @@
 BearAIController::BearAIController(EnemyBase* _controlledEnemy)
 	: EnemyAIController(_controlledEnemy)
 {
+	// 処理なし
 }
 
 void BearAIController::Init()

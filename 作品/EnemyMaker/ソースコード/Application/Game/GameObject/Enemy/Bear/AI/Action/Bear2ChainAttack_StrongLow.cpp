@@ -1,6 +1,10 @@
 //---------- INCLUDES -----------
 #include "Bear2ChainAttack_StrongLow.h"
 #include "../../Animation/BearAnimationinstance.h"
+#include "../../BearEnemy.h"
+#include "../../../../../../Utility/MathLibrary.h"
+#include "../../../AIBase/BlackBoard.h"
+
 
 Bear2ChainAttack_StrongLow::Bear2ChainAttack_StrongLow(std::shared_ptr<BlackBoard> _blackBoard)
 	: BearAttackAction(_blackBoard)
@@ -24,8 +28,16 @@ void Bear2ChainAttack_StrongLow::BeginActionExecution(EnemyBase* _enemy)
 
 EnemyActionResult Bear2ChainAttack_StrongLow::UpdateActionExecution()
 {
+	// 名前空間省略
+	using namespace DirectX::SimpleMath;
+
 	// 親クラス内で時間の計測をしているので呼び出す
 	BearAttackAction::UpdateActionExecution();
+		
+	if (GetCurrentAnimationSection() == "FollowStart")
+	{
+		FollowRotation();
+	}
 
 	// アニメーションの終了判定があれば成功を返す、それ以外は実行中
 	std::shared_ptr<AnimationPlayer> animPlayer = mAnimInstance.lock()->GetAnimationPlayer();

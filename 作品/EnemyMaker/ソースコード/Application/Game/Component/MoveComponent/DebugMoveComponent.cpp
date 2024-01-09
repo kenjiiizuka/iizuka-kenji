@@ -1,4 +1,5 @@
-﻿#include "DebugMoveComponent.h"
+﻿//---------- INCLUDES ----------
+#include "DebugMoveComponent.h"
 #include "../../../System/InputSystem/Input.h"
 #include "../../../Utility/Debug.h"
 #include "../TransformComponent/TransformComponent.h"

@@ -1,15 +1,16 @@
-﻿#include "EnemyAttackAction.h"
+﻿//-------------- INCLUDES ---------------
+#include "EnemyAttackAction.h"
 #include "../../../../../../System/FPSController/FPSController.h"
 #include "../../Sensor/EnemyAttackHitSensor.h"
 #include "../../../../../../System/Logger/Logger.h"
 #include <iostream>
-
 
 EnemyAttackAction::EnemyAttackAction(std::shared_ptr<BlackBoard> _blackBoard)
 	: EnemyAction(_blackBoard)
 	, mEffectivenessToPlayer(0.0f)
 	, mReceptivityToPlayer(0.0f)
 	, mRiskType(GeneticAlgorithmInf::AttackAction_None)
+	, mAttackID(0)
 {
 	mHitSensor = std::make_shared<EnemyAttackHitSensor>();
 	ResizeNumberOfEvaluationItems(3); // 3 攻撃遺伝子の評価項目は３つだから

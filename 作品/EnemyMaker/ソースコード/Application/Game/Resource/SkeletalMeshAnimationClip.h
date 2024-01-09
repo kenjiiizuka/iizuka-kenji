@@ -9,6 +9,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <iostream>
 #include "../../System/AssetSystem/SkeletalMesh/SkeletalMeshAnimationData.h"
 #include "../Component/SkeletalMeshComponent/AnimationNotifyState.h"
 
@@ -96,6 +97,12 @@ protected:
 	/** 現在の再生時間 */
 	float mCurrentPlayTime;
 
+	/** 現在のセクション */
+	std::string mCurrentSection;
+
+	/** アニメーションに設定されているセクション デフォルトでは "Default" セクション設定されている */
+	std::vector<std::pair<uint16_t, std::string>> mSections;
+
 public:
 	/**
 	* @fn Initialize
@@ -152,6 +159,13 @@ private:
 	*/
 	void ScaleKeyLerp(const double& _time, DirectX::SimpleMath::Vector3& _outPutScale, Channel& _channel);
 
+	/**
+	* @fn CheckCurrentSection
+	* @brief 現在のセクションがどれかを判断して設定する
+	* @return void
+	*/
+	void CheckCurrentSection();
+
 public:
 
 	/**
@@ -161,7 +175,7 @@ public:
 　　 * @return std::shared_ptr<T> 追加したアニメーション通知クラスの参照
 　　*/
 	template<typename T>
-		requires DerivedAnimationNotify<T, AnimationNotify>
+	requires DerivedAnimationNotify<T, AnimationNotify>
 	std::shared_ptr<T> AddAnimationNotify(float _attachFrame)
 	{
 		std::pair<std::shared_ptr<AnimationNotify>, float> animNotify;
@@ -181,7 +195,7 @@ public:
 　　 * @return std::shared_ptr<T> 追加したアニメーション通知ステートクラスの参照
 　　*/
 	template<typename T>
-		requires DerivedAnimationNotifyState<T, AnimationNotifyState>
+	requires DerivedAnimationNotifyState<T, AnimationNotifyState>
 	std::shared_ptr<T> AddAnimationNotifyState(uint16_t _attachStartFrame, uint16_t _attachEndFrame)
 	{
 		std::shared_ptr<AnimationNotifyState> notifyState;
@@ -248,6 +262,16 @@ public:
 	template<typename T>
 	requires DerivedAnimationNotifyState<T, AnimationNotifyState>
 	inline std::vector<std::shared_ptr<T>> GetAllAnimNotifyState();
+
+	/**
+	* @fn AddSection
+	* @brief セクション追加
+	* @detail 複数のセクションを追加する際はフレームが昇順になるように追加してください
+	* @param const uint16_t (_frame)
+	* @param std::string_view (_sectionName)
+	* @return void
+	*/
+	inline void AddSection(const uint16_t _frame, std::string_view _sectionName);
 
 public:
 	/**
@@ -397,6 +421,13 @@ public:
 	*/
 	inline float GetCurrentPlayTime() const noexcept;
 
+	/**
+	* @fn GetCurrentSection
+	* @brief 現在のセクションを返す
+	* @return std::string
+	*/
+	inline std::string GetCurrentSection() const noexcept;
+
 };
 
 //----------- INLINES ------------
@@ -484,6 +515,28 @@ inline bool SkeletalMeshAnimationClip::IsDisplaced() const noexcept
 inline float SkeletalMeshAnimationClip::GetCurrentPlayTime() const noexcept
 {
 	return mCurrentPlayTime;
+}
+
+inline std::string SkeletalMeshAnimationClip::GetCurrentSection() const noexcept
+{
+	return mCurrentSection;
+}
+
+inline void SkeletalMeshAnimationClip::AddSection(const uint16_t _frame, std::string_view _sectionName)
+{
+	// アニメーションの長さをこえていれば追加しない
+	if (_frame > mDuration)
+	{
+		std::cout << "Animationの長さを超えた位置にセクションを追加しようとしています。" << std::endl
+			<< "AnimationName  : " << mAnimationName << std::endl
+			<< "Duration       : " << mDuration << std::endl
+			<< "AddFrame       : " << _frame << std::endl
+			<< "AddSectionName : " << _sectionName << std::endl;
+		return;
+	}
+
+	// 追加
+	mSections.emplace_back(std::pair<uint16_t, std::string>(_frame, _sectionName));
 }
 
 template<typename T>

@@ -1,8 +1,10 @@
-﻿#include "CollisionSystem.h"
+﻿//------------ INCLUDES -----------
+#include "CollisionSystem.h"
 #include "../../Utility/Debug.h"
 #include "CollisionDetector3D.h"
 #include "../RendererSystem/RendererManager.h"
 
+//----------- NAMESPACEAILIAS ------------
 using namespace DirectX::SimpleMath;
 
 CollisionSystem::CollisionSystem()

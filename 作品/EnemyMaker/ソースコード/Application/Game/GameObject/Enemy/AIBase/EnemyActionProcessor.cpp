@@ -1,4 +1,5 @@
-﻿#include "EnemyActionProcessor.h"
+﻿//------------- INCLUDES -----------
+#include "EnemyActionProcessor.h"
 #include "GeneticAlgorithm/Gene/EnemyAction.h"
 #include "GeneticAlgorithm/GeneticAlgorithmDebugger.h"
 #include "GeneticAlgorithm/Gene/EnemyAttackAction.h"

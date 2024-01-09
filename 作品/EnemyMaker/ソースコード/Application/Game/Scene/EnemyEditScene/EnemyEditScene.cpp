@@ -23,14 +23,14 @@ EnemyEditScene::~EnemyEditScene()
 
 void EnemyEditScene::Initialize()
 {
-	std::shared_ptr<BearEnemy> enemy = AddGameObject<BearEnemy>(ELayer::ObjectLayer);
-	enemy->SetRotation({ 0.0f,3.14f,0.0f });
-
 	// プレイヤーの生成
-	std::weak_ptr<Player> player = AddGameObject<Player>(ELayer::ObjectLayer);
+	std::weak_ptr<Player> player = AddGameObject<Player>();
 	std::weak_ptr<TransformComponent> playerTrans = player.lock()->GetComponent<TransformComponent>();
 	player.lock()->SetPosition({ 0,0,-20 });
 	player.lock()->BattleStart();
+
+	std::shared_ptr<BearEnemy> enemy = AddGameObject<BearEnemy>();
+	enemy->SetRotation({ 0.0f,3.14f,0.0f });
 
 	// 敵の死亡時のカメラ
 	mEnemyDeathCamera = mpCameraManager->CreateCamera<CinematicCamera>("DeathCamera");

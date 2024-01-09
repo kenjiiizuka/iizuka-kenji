@@ -101,7 +101,7 @@ void LightingSystem::Init()
 void LightingSystem::Lighting(std::vector<std::weak_ptr<VisualEntity>> _entitys, std::weak_ptr<VisualEntity> _lightingEntity)
 {
 	std::weak_ptr<Scene> currentScene = SceneManager::GetInstance().GetCurrentScene();
-	std::shared_ptr<LightBase> light = currentScene.lock()->GetGameObject<LightBase>(ELayer::BaseLayer);
+	std::shared_ptr<LightBase> light = currentScene.lock()->GetGameObject<LightBase>();
 	if (!light)
 	{
 		return;

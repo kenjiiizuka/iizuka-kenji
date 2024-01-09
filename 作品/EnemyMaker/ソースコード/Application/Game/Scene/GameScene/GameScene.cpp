@@ -28,9 +28,8 @@ GameScene::~GameScene()
 
 void GameScene::Initialize()
 {
-
 	// プレイヤーの生成
-	std::shared_ptr<Player> player = AddGameObject<Player>(ELayer::ObjectLayer);
+	std::shared_ptr<Player> player = AddGameObject<Player>();
 	std::weak_ptr<TransformComponent> playerTrans = player->GetComponent<TransformComponent>();
 	player->SetPosition({ 100,0,70 });
 
@@ -40,28 +39,28 @@ void GameScene::Initialize()
 	playerCamera->Init(player);
 
 	// エネミーの作成
-	std::shared_ptr<BearEnemy> enemy = AddGameObject<BearEnemy>(ELayer::ObjectLayer);
+	std::shared_ptr<BearEnemy> enemy = AddGameObject<BearEnemy>();
 	enemy->SetPosition({ 100.f,0.f,100.f });
 	enemy->SetRotation({ 0.0f,3.14f,0.0f });
 
 	// 戦闘エリア外に行かないようにサークル型のオブジェクトの作成
-	AddGameObject<CircleBlockObject>(ELayer::ObjectLayer);
+	AddGameObject<CircleBlockObject>();
 
 	// コリジョンをオン
 	CollisionSystem::GetInstance().SwitchActive(true);
 
 	// バトルマネージャーの生成	
-	mBattleManager = AddGameObject<BattleManager>(ELayer::BaseLayer);
+	mBattleManager = AddGameObject<BattleManager>();
 	mBattleManager.lock()->Init(player, enemy);
 
 	// フェードインが終るまでは非アクティブ
 	mBattleManager.lock()->SetActive(false);
 
 	// フィールドの作成
-	AddGameObject<Field>(ELayer::ObjectLayer);
+	AddGameObject<Field>();
 
 	// フェードオブジェクト生成
-	mFade = AddGameObject<Fade>(ELayer::ObjectLayer);
+	mFade = AddGameObject<Fade>();
 	mFade.lock()->FadeIn();
 
 	// このシーンのオーディオリスナーを設定

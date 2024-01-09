@@ -33,7 +33,7 @@ void Object3DVertexShader::UpdateBuffer(uint8_t _dataID)
 	WriteBuffer(2, &material);
 
 	// ライトのセット
-	std::shared_ptr<LightBase> light = SceneManager::GetInstance().GetCurrentScene().lock()->GetGameObject<LightBase>(ELayer::BaseLayer);
+	std::shared_ptr<LightBase> light = SceneManager::GetInstance().GetCurrentScene().lock()->GetGameObject<LightBase>();
 	Vector4 lightBuffer[3] = {
 		{0.0f,-1.0f,0.0f,0.0f},
 		{1.0f,1.0f,1.0f,1.0f},

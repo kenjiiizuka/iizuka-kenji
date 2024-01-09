@@ -163,7 +163,7 @@ public:
 	 * @brief 現在再生しているアニメーションのゲッター
 	 * @return std::shared_ptr<SkeletalMeshAnimation> 現在再生しているアニメーション
 	*/
-	std::shared_ptr<AnimationPlayer> GetAnimationPlayer();
+	std::shared_ptr<AnimationPlayer> GetAnimationPlayer() const;
 
 	/**
 	 * @fn　GetAnimationByName

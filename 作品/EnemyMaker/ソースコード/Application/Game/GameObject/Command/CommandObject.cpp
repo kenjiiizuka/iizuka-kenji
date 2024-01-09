@@ -5,6 +5,7 @@
 
 CommandObject::CommandObject()
 {
+	// ˆ—‚È‚µ
 }
 
 CommandObject::~CommandObject()

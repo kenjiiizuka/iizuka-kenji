@@ -1,3 +1,4 @@
+//--------- INCLUDES -----------
 #include <iostream>
 #include "BinaryFile.h"
 

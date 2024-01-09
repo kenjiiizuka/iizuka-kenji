@@ -1,3 +1,4 @@
+//------------- INCLUDES -------------
 #include "EffekseerTestScene.h"
 #include "../../System/Effekseer/EffectSystem.h"
 #include "../../System/FPSController/FPSController.h"
@@ -8,12 +9,9 @@
 
 void EffekseerTestScene::Initialize()
 {
-	auto effect = AddGameObject<GameObject>(ELayer::ObjectLayer)->AddComponent<EffectComponent>();
+	auto effect = AddGameObject<GameObject>()->AddComponent<EffectComponent>();
 	effect->Init("assets/Player/Effect/Guard.efkefc");
-
 	effectComp = effect;
-
-	// EffectSystem::GetInstance().Initialize();
 }
 
 void EffekseerTestScene::Update()

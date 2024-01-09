@@ -1,3 +1,4 @@
+//---------- INCLUDES ----------
 #include "BoneAsset.h"
 
 BoneAsset::BoneAsset()

@@ -5,6 +5,7 @@
 #include "../../../System/FPSController/FPSController.h"
 #include "../../../Utility/MathLibrary.h"
 
+//---------- NAMESPACEAILIS ------------
 using namespace DirectX::SimpleMath;
 
 CharacterMovementComponent::CharacterMovementComponent()

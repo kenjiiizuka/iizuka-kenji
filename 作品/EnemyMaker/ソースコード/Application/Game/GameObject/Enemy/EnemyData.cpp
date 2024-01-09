@@ -1,7 +1,9 @@
-﻿#include "EnemyData.h"
+﻿//---------- INCLUDES ----------
+#include "EnemyData.h"
 
 EnemyAttack::EnemyAttack()
 	: mCollisionOccurrence(0)
+	, mToIdleRunInterpTime(0.0f)
 {
 	// 処理なし
 }
@@ -11,6 +13,7 @@ EnemyAttack::EnemyAttack(const std::string& _animClipName, const uint8_t& _colli
 	, mCollisionOccurrence(_collisionOccurrence)
 	, mDamagePerCollision(_damagePerCollision)
 	, mHitReactionPerCollision(_hitReactionPerCollision)
+	, mToIdleRunInterpTime(0.0f)
 {
 	// 処理なし
 }

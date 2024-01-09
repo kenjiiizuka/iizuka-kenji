@@ -7,6 +7,7 @@ AnimationStateContext::AnimationStateContext(AnimationInstance* _animInstance)
 	, mStateName("ContextState")
 	, mOwnerAnimationInstance(_animInstance)
 {
+	// 処理なし
 }
 
 void AnimationStateContext::PlayAnimationClip(const std::string& _animationName, const float _playRate, const float _interpTime, const float _toInterpAnimationClipTime)

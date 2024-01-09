@@ -38,6 +38,10 @@ BlendAnimationClip::BlendAnimationClip(std::shared_ptr<SkeletalMeshAnimationClip
 	mBlendAnimation.resize(2);
 	mBlendAnimation[0] = _clip1;
 	mBlendAnimation[1] = _clip2;
+
+	// セクションの初期値設定
+	mSections.emplace_back(std::pair<uint16_t, std::string>(0, "Default"));
+	mCurrentSection = mSections[0].second;
 }
 
 void BlendAnimationClip::Begin()

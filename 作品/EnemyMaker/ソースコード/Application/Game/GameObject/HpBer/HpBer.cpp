@@ -1,4 +1,5 @@
-﻿#include "HpBer.h"
+﻿//------------- INCLUDES -----------
+#include "HpBer.h"
 #include "../../Component/SpriteComponent/SpriteComponent.h"
 #include "../../../System/RendererSystem/Shader/VertexShader/VertexShader.h"
 #include "../../../Utility/MathLibrary.h"
@@ -24,6 +25,7 @@ HpBer::HpBer()
 	, mLostGageInitialLength(0.0f)
 	, mPrevHp(100.0f)
 {
+	// 処理なし
 }
 
 void HpBer::InitSprite()

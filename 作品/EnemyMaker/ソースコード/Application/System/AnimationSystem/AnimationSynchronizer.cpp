@@ -50,6 +50,9 @@ void AnimationSynchronizer::SynchroBegin(std::shared_ptr<SkeletalMesh> _skeletal
 	// スケルタルメッシュのトランスフォームを取得
 	mSkeletalMeshTrans = _skeletalMesh->GetWorldTransform();
 
+	// オーナーオブジェクトのトランスフォームを取得する
+	mMeshOwnerObjectTrans = mMeshOwnerObject->GetComponent<TransformComponent>()->GetTransform();
+
 	// 今のRootボーンの位置を求める
 	CalcuRootBoneTransform(mRootBoneTrans);
 }
@@ -77,7 +80,9 @@ void AnimationSynchronizer::Synchro()
 	// 前フレームとの差分を求める
 	Transform differenceTrans;
 	MathLibrary::CalucTransformDifference(currentBoneTrans, mRootBoneTrans, differenceTrans);
+	// Yは使用しないので0
 	differenceTrans.mPosition.y = 0.0f;
+	// Yaw回転以外は0
 	differenceTrans.mRotation.x = 0.0f;
 	differenceTrans.mRotation.z = 0.0f;
 
@@ -112,6 +117,23 @@ void AnimationSynchronizer::SyncPosition(const DirectX::SimpleMath::Vector3& _di
 
 	// 差分をGameObjectに適応
 	std::shared_ptr<TransformComponent> ownerTrans = mMeshOwnerObject->GetComponent<TransformComponent>();
+
+	// 開始時から回転(Yaw)が変化していればアニメーションに回転を適応する
+	float currentYaw = ownerTrans->GetRotation().y;
+	if (mMeshOwnerObjectTrans.mRotation.y != currentYaw)
+	{
+		float diff = currentYaw - mMeshOwnerObjectTrans.mRotation.y;
+		mMeshOwnerObjectTrans.mRotation.y += diff;
+
+		// SkeletalMeshのWorld行列を再計算
+		std::shared_ptr<SkeletalMeshComponent> skeletalMeshComp = mMeshOwnerObject->GetComponent<SkeletalMeshComponent>();
+		DXSimpleMath::Matrix meshCompMatrix = MathLibrary::MakeWorldMatrix(skeletalMeshComp->GetTransform());
+		DXSimpleMath::Matrix meshOwnerMatrix = MathLibrary::MakeWorldMatrix(mMeshOwnerObjectTrans);
+		mSkeletalMesh.lock()->CalucWorldMatrix(meshCompMatrix * meshOwnerMatrix);
+		mSkeletalMeshWorldMatrix = mSkeletalMesh.lock()->GetWorldMatrix();
+		mSkeletalMeshTrans = mSkeletalMesh.lock()->GetWorldTransform();
+	}
+
 
 	// 座標同期
 	if (mbSynchroPosition)

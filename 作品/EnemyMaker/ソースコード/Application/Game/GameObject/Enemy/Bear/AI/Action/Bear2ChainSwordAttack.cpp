@@ -15,6 +15,11 @@ Bear2ChainSwordAttack::Bear2ChainSwordAttack(std::shared_ptr<BlackBoard> _blackB
 	mAttackID = BearEnemyAttackData::DoubleSlash;
 }
 
+Bear2ChainSwordAttack::~Bear2ChainSwordAttack()
+{
+	// 処理なし
+}
+
 void Bear2ChainSwordAttack::BeginActionExecution(EnemyBase* _enemy)
 {
 	// 親クラスで実行回数の加算と配列の拡張しているので呼び出す

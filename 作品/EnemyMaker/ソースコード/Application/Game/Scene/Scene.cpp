@@ -26,14 +26,14 @@ void Scene::InitBase()
 	mpCameraManager->Init();
 
 	// ライトを作成
-	AddGameObject<LightBase>(ELayer::BaseLayer);
+	AddGameObject<LightBase>();
 	 
 	// スカイボックスの作成
-	std::shared_ptr<GameObject> obj = AddGameObject<SkyBox>(ELayer::ObjectLayer);
+	std::shared_ptr<GameObject> obj = AddGameObject<SkyBox>();
 	obj->SetPosition({ 130,120,130 });
 
 	// オーディオリスナーの作成
-	std::shared_ptr<AudioListener> listener = AddGameObject<AudioListener>(ELayer::ObjectLayer);
+	std::shared_ptr<AudioListener> listener = AddGameObject<AudioListener>();
 	
 	// リスナーのセット
 	AudioSystem::GetInstance().SetListener(listener);
@@ -43,17 +43,13 @@ void Scene::InitBase()
 
 void Scene::UninitBase()
 {
-	mpCameraManager->Uninit();
-	for (auto& objectList : mpGameObjectList) 
+	mpCameraManager->Uninit();	
+	for (std::shared_ptr<GameObject> obj : mpGameObjectList)
 	{
-		for (std::weak_ptr<GameObject> obj : objectList) 
-		{
-			obj.lock()->UninitBase();
-		}
-		objectList.clear();
+		obj->UninitBase();
 	}
+	mpGameObjectList.clear();	
 	Uninitialize();	
-
 	// オーディオクリア
 	AudioSystem::GetInstance().ClearAudio();
 }
@@ -61,45 +57,36 @@ void Scene::UninitBase()
 void Scene::UpdateBase()
 {
 	double deltaTime = FPSController::GetDeltaTime();
-
-	mpCameraManager->Update(deltaTime);
-	for (auto& objectList : mpGameObjectList)
+	mpCameraManager->Update(deltaTime);	
+	for (std::shared_ptr<GameObject> obj : mpGameObjectList)
 	{
-		for (std::weak_ptr<GameObject> obj : objectList)
-		{
-			obj.lock()->UpdateBase(deltaTime);
-		}
+		obj->UpdateBase(deltaTime);
 	}
 	Update();
 }
 
 void Scene::LastUpdateBase()
-{
-	for (std::list<std::shared_ptr<GameObject>>& list : mpGameObjectList)
+{	
+	for (std::shared_ptr<GameObject> obj : mpGameObjectList)
 	{
-		for (std::weak_ptr<GameObject> obj : list)
-		{
-			obj.lock()->LastUpdateBase();
-		}
-	}
+		obj->LastUpdateBase();
+	}	
 	LastUpdate();
 }
 
 void Scene::DrawBase()
 {
-	for (auto& objectList : mpGameObjectList) 
+	
+	for (std::shared_ptr<GameObject> obj : mpGameObjectList)
 	{
-		for (std::weak_ptr<GameObject> obj : objectList) 
-		{
-			obj.lock()->DrawBase(DirectX::SimpleMath::Matrix::Identity);
-		}
-	}
+		obj->DrawBase(DirectX::SimpleMath::Matrix::Identity);
+	}	
 	Draw();	
 }
 
 void Scene::Initialize()
 {	
-	AddGameObject<Camera2D>(ELayer::UILayer); // 2Dカメラオブジェクト
+	AddGameObject<Camera2D>(); // 2Dカメラオブジェクト
 	mpCameraManager->CreateCamera<Camera>("DefaultCamera");
 }
 

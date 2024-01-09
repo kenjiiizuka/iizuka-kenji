@@ -1,3 +1,4 @@
+//---------- INCLUDES ----------
 #include "Component.h"
 
 Component::Component()

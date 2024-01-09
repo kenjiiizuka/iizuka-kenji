@@ -32,7 +32,7 @@ void PlayerHitReactionBigNotifyState::NotifyBegin()
 {
 	// ‚Á”ò‚Ñ•ûŒü‚Æ‚Í‹t‚ÉƒvƒŒƒCƒ„[‚ðŒü‚¯‚é
 	DirectX::SimpleMath::Vector3 rotation = mPlayerTransform.lock()->GetRotation();
-	rotation.y = MathLibrary::Conv_VectorToRotation(mBlowVector).y;
+	rotation.y = MathLibrary::Conv_VectorToRotation(mBlowVector).y + PIFloat;
 	mPlayerTransform.lock()->SetRotation(rotation);	
 }
 

@@ -1,22 +1,21 @@
-﻿#include "Camera2D.h"
+﻿//---------- INCLUDES -----------
+#include "Camera2D.h"
 #include "../../../System/RendererSystem/Renderer.h"
 #include "../../../System/RendererSystem/Shader/Shader.h"
 
-using namespace DirectX::SimpleMath;
-
 void Camera2D::Draw()
 {
-	Matrix view_projectionData[2];
+	DirectX::SimpleMath::Matrix view_projectionData[2];
 
-	Matrix view;
-	view = Matrix::Identity;
+	DirectX::SimpleMath::Matrix view;
+	view = DirectX::SimpleMath::Matrix::Identity;
 	view = view.Transpose();
 
-	Matrix projection;
+	DirectX::SimpleMath::Matrix projection;
 	projection = DirectX::XMMatrixOrthographicOffCenterLH(
 		0.0f,
-		static_cast<float>(Renderer::GetInstance().GetWidth()),					// ビューボリュームの最小Ｘ
-		static_cast<float>(Renderer::GetInstance().GetHeight()),					// ビューボリュームの最小Ｙ
+		static_cast<float>(Renderer::GetInstance().GetWidth()),	    // ビューボリュームの最小Ｘ
+		static_cast<float>(Renderer::GetInstance().GetHeight()),    // ビューボリュームの最小Ｙ
 		0.0f,													    // ビューボリュームの最大Ｙ
 		0.0f,
 		1.0f);

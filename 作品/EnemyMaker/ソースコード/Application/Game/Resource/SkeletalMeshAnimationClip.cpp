@@ -49,6 +49,10 @@ void SkeletalMeshAnimationClip::Initialize(const std::string& _filePath)
 	mDuration = animationData.GetDuration();
 	mTickPerSeconds = animationData.GetTickPerSecond();
 	mEndFrame = mDuration;
+
+	// セクションの初期値設定
+	mSections.emplace_back(std::pair<uint16_t, std::string>(0, "Default"));
+	mCurrentSection = mSections[0].second;
 }
 
 void SkeletalMeshAnimationClip::Begin()
@@ -69,6 +73,9 @@ void SkeletalMeshAnimationClip::Begin()
 		mbNotifyStateEndExecuted[notifyState_i] = false;
 		notifyState_i++;
 	}
+
+	// セクションを判別する
+	CheckCurrentSection();
 }
 
 void SkeletalMeshAnimationClip::Update(const float _currentPlayTime)
@@ -112,6 +119,10 @@ void SkeletalMeshAnimationClip::Update(const float _currentPlayTime)
 		}
 		notifyState_i++;
 	}
+
+	// 現在のセクションを判別する
+	CheckCurrentSection();
+
 }
 
 void SkeletalMeshAnimationClip::PositionKeyLerp(const double& _time, DirectX::SimpleMath::Vector3& _outPutPosition, Channel& _channel)
@@ -165,6 +176,21 @@ void SkeletalMeshAnimationClip::ScaleKeyLerp(const double& _time, DirectX::Simpl
 	else
 	{
 		_outPutScale = scaleKey.mValue;
+	}
+}
+
+void SkeletalMeshAnimationClip::CheckCurrentSection()
+{
+	// 現在のセクションがどれか判別する
+	mCurrentSection = mSections[0].second;
+	for (const std::pair<uint16_t, std::string>& section : mSections)
+	{
+		// セクションの開始フレーム以下なら判別終了
+		if (mCurrentPlayTime < section.first)
+		{
+			return;
+		}
+		mCurrentSection = section.second;
 	}
 }
 

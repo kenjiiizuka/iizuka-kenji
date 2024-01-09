@@ -1,4 +1,5 @@
-﻿#include "BearKickAttack.h"
+﻿//-------------- INCLUDES -------------
+#include "BearKickAttack.h"
 #include "../../../../../Component/SkeletalMeshComponent/SkeletalMeshComponent.h"
 #include "../../../../../Resource/Skeleton.h"
 #include "../../../../../Resource/Bone.h"

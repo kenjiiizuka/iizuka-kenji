@@ -101,7 +101,7 @@ void BearEnemyEditor::Update()
 
 	std::shared_ptr<EnemyAIComponent> aiComp = mEditEnemy.lock()->GetComponent<EnemyAIComponent>();
 	std::shared_ptr<BlackBoard> blackboard = aiComp->GetAIController().lock()->GetBlackboard().lock();
-	std::shared_ptr<Player> player = SceneManager::GetInstance().GetCurrentScene().lock()->GetGameObject<Player>(ELayer::ObjectLayer);	
+	std::shared_ptr<Player> player = SceneManager::GetInstance().GetCurrentScene().lock()->GetGameObject<Player>();	
 	DirectX::SimpleMath::Vector3 playerPos = player->GetComponent<TransformComponent>()->GetPosition();
 	blackboard->SetValue<DirectX::SimpleMath::Vector3>(playerPos, "TargetPosition");
 
