@@ -1,7 +1,6 @@
 //--------- INCLUDES ----------
 #include "EnemyEditScene.h"
 #include "../../../System/InputSystem/Input.h"
-#include "../../../ImGui/ImGuiUtility.h"
 #include "../SceneManager.h"
 #include "../DebugScene/DebugScene.h"
 #include "../../GameObject/Enemy/Bear/BearEnemy.h"
@@ -10,6 +9,7 @@
 #include "../../GameObject/Camera/CameraManager.h"
 #include "../../../System/CollisionSystem/CollisionSystem.h"
 #include "../../GameObject/Camera/CinematicCamera.h"
+#include "../../../ImGui/ImGuiUtility.h"
 
 EnemyEditScene::EnemyEditScene()
 {

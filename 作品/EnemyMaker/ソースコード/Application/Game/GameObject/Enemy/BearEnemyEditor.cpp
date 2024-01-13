@@ -2,7 +2,6 @@
 #include "BearEnemyEditor.h"
 #include "../../Component/AIComponent/EnemyAIComponent.h"
 #include "AIBase/EnemyActionProcessor.h"
-#include "../../../ImGui/ImGuiUtility.h"
 #include "AIBase/BlackBoard.h"
 #include "AIBase/EnemyAIController.h"
 #include "AIBase/EnemyActionSelector.h"
@@ -39,6 +38,7 @@
 #include "../../Resource/SkeletalMesh.h"
 #include "../../Resource/Skeleton.h"
 #include "../../Resource/Bone.h"
+#include "../../../ImGui/ImGuiUtility.h"
 
 BearEnemyEditor::BearEnemyEditor()
 {
@@ -241,11 +241,11 @@ void BearEnemyEditor::CollisionOnFrameNode(EnemyAttack& _attackData)
 				float endFrame = notify->GetEndFrame();
 				ImGui::InputFloat(("Col On Frame" + std::to_string(notify_i)).c_str(), &onFrame);
 				ImGui::InputFloat(("Col Off Frame" + std::to_string(notify_i)).c_str(), &endFrame);
-				notify->SetStartFrame(onFrame);
-				notify->SetEndFrame(endFrame);
+				notify->SetStartFrame(static_cast<uint16_t>(onFrame));
+				notify->SetEndFrame(static_cast<uint16_t>(endFrame));
 
-				_attackData.mCollisionFrames[notify_i].first = onFrame;
-				_attackData.mCollisionFrames[notify_i].second = endFrame;
+				_attackData.mCollisionFrames[notify_i].first = static_cast<uint16_t>(onFrame);
+				_attackData.mCollisionFrames[notify_i].second = static_cast<uint16_t>(endFrame);
 
 				notify_i++;
 			}
@@ -266,8 +266,8 @@ void BearEnemyEditor::CollisionOnFrameNode(EnemyAttack& _attackData)
 				float endFrame = notify->GetEndFrame();
 				ImGui::InputFloat(("Col On Frame" + std::to_string(notify_i)).c_str(), &onFrame);
 				ImGui::InputFloat(("Col Off Frame" + std::to_string(notify_i)).c_str(), &endFrame);
-				notify->SetStartFrame(onFrame);
-				notify->SetEndFrame(endFrame);
+				notify->SetStartFrame(static_cast<uint16_t>(onFrame));
+				notify->SetEndFrame(static_cast<uint16_t>(endFrame));
 
 				_attackData.mCollisionFrames[notify_i].first = static_cast<uint16_t>(onFrame);
 				_attackData.mCollisionFrames[notify_i].second = static_cast<uint16_t>(endFrame);

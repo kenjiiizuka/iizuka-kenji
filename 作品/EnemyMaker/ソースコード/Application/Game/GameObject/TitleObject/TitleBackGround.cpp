@@ -1,7 +1,6 @@
 //----------- INCLUDES ---------
 #include "TitleBackGround.h"
 #include "../../Component/SpriteComponent/SpriteComponent.h"
-#include "../../../ImGui/ImGuiUtility.h"
 #include "../../../Utility/MathLibrary.h"
 #include <math.h>
 #include "../../../System/FPSController/FPSController.h"

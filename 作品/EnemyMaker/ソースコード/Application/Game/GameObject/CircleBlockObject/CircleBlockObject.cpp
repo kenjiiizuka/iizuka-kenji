@@ -1,7 +1,6 @@
 //------------ INCLUDES -------------
 #include "CircleBlockObject.h"
 #include "../../Component/CollisionComponent/CircleCollisionComponent.h"
-#include "../../../ImGui/ImGuiUtility.h"
 
 CircleBlockObject::CircleBlockObject()
 	: mRingRadius(60.0f)

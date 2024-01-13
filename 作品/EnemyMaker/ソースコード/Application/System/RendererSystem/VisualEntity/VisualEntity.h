@@ -128,7 +128,7 @@ private:
 	* @param const size_t (shader_i) 使用するジオメトリシェーダーの添え字
 	* @return void
 	*/
-	void SetupGeometryShader(const size_t shader_i);
+	void SetupGeometryShader(const uint8_t shader_i);
 
 public:
 	/**

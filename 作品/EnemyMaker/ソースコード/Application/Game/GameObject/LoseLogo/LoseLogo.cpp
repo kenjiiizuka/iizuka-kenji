@@ -2,7 +2,6 @@
 #include "LoseLogo.h"
 #include "../BlackPanel/BlackPanel.h"
 #include "../../Component/SpriteComponent/SpriteComponent.h"
-#include "../../../ImGui/ImGuiUtility.h"
 #include "../../../Utility/MathLibrary.h"
 #include "../../Component/SpriteComponent/AnimationSpriteComponent.h"
 #include "../../../System/AssetSystem/Texture/TextureAssetInclude.h"

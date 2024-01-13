@@ -50,6 +50,7 @@ void EnemyAttackAction::Evaluate(std::shared_ptr<BlackBoard> _blackboard, const 
 
 	// ログに自身のリスクタイプと型名を記入
 	{
+		
 		Logger& logger = Logger::GetInstance();
 		// 評価項目値を出力
 		logger.WriteLog("EffectivenessToPlayer : " + std::to_string(mEffectivenessToPlayer));

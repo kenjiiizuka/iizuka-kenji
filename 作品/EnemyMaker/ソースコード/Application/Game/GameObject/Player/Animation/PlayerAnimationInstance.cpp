@@ -272,8 +272,6 @@ void PlayerAnimationInstance::TransitionIdle()
 	mMainState = PlayerAnimationState::Idle;
 	mStateContext = TransitionContext<PlayerAnimationPulledState>();
 	mStateContext->Entry();	
-
-	Logger::GetInstance().WriteLog("[Transition] To Pulled",1);
 }
 
 void PlayerAnimationInstance::CheckTransitionToDeath()
@@ -325,7 +323,6 @@ void PlayerAnimationInstance::TransitionToDeath()
 	mStateContext->Entry();
 	mMainState = PlayerAnimationState::Death;
 
-	Logger::GetInstance().WriteLog("[Transition] To Death",1);
 }
 
 void PlayerAnimationInstance::TransitionToRoll()
@@ -335,7 +332,6 @@ void PlayerAnimationInstance::TransitionToRoll()
 	mMainState = PlayerAnimationState::Step;
 	bIsPlayRollAnimation = true;
 
-	Logger::GetInstance().WriteLog("[Transition] To Step",1);
 }
 
 void PlayerAnimationInstance::CheckTransitionToStep()
@@ -352,7 +348,6 @@ void PlayerAnimationInstance::TransitionToHitReaction()
 	std::static_pointer_cast<PlayerAnimationHitReactionState>(mStateContext)->Entry(mHitReactionNames[mPlayer->GetHitReaction()]);
 	mMainState = PlayerAnimationState::HitReaction;
 
-	Logger::GetInstance().WriteLog("[Transition] To HitReaction",1);
 }
 
 void PlayerAnimationInstance::LoadUseAnimationClips()

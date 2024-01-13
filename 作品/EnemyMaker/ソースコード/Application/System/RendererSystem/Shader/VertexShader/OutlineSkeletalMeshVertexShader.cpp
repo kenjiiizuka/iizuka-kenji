@@ -5,7 +5,6 @@
 #include "../../../../Game/Resource/Bone.h"
 #include "../../../../Utility/Debug.h"
 #include "../../../../Game/GameObject/Enemy/Bear/BearEnemy.h"
-#include "../../../../ImGui/ImGuiUtility.h"
 #include <vector>
 #include <array>
 

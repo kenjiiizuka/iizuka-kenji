@@ -8,9 +8,7 @@
 #include "../../Game/Resource/Skeleton.h"
 #include "../../Game/Resource/SkeletalMeshAnimationClip.h"
 #include "../../Game/Resource/Bone.h"
-#include "../../ImGui/ImGuiUtility.h"
 #include "../../System/AnimationSystem/InterpSkeletalAnimation.h"
-#include "../../ImGui/ImGuiUtility.h"
 #include "../../System/Logger/Logger.h"
 
 //----------- NAMESPACEAILIAS ---------------

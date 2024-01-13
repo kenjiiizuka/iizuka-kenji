@@ -245,3 +245,41 @@
 2024y 1m 10d  23:44:49  { AttackAction_LowRisk_LowReturn : 0.500000 }
 2024y 1m 10d  23:44:49  { EvaluationValue : 0.875000 }
 2024y 1m 10d  23:44:49  { [EvaluateGene] GeneIndex : 1 }
+2024y 1m 11d  0:18:28  { DataCollectionCount : 1 }
+2024y 1m 11d  0:18:28  { AttackGene RiskType }
+2024y 1m 11d  0:18:28  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { class BearKickAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 11d  0:18:28  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 11d  0:18:28  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { class Bear3ChainSwordAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 11d  0:18:28  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 11d  0:18:28  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { class BearRoarAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 11d  0:18:28  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { class BearDownwardSlashStrong : AttackAction_LowRisk_LowReturn }
+2024y 1m 11d  0:18:28  { EffectivenessToPlayer : 0.767857 }
+2024y 1m 11d  0:18:28  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { class Bear2ChainAttack_StrongLow : AttackAction_LowRisk_HighReturn }
+2024y 1m 11d  0:18:28  { EffectivenessToPlayer : 0.714286 }
+2024y 1m 11d  0:18:28  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { class BearSwordSwingDownAttack : AttackAction_LowRisk_HighReturn }
+2024y 1m 11d  0:18:28  { EffectivenessToPlayer : 1.000000 }
+2024y 1m 11d  0:18:28  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { class Bear2ChainSwordAttack : AttackAction_LowRisk_HighReturn }
+2024y 1m 11d  0:18:28  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 11d  0:18:28  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 11d  0:18:28  { class Bear2ChinaBackAndFront : AttackAction_LowRisk_LowReturn }
+2024y 1m 11d  0:18:28  { GoalRatio }
+2024y 1m 11d  0:18:28  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 11d  0:18:28  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 11d  0:18:28  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 11d  0:18:28  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 11d  0:18:28  { CurrentRatio }
+2024y 1m 11d  0:18:28  { AttackAction_HighRisk_HighReturn : 0.000000 }
+2024y 1m 11d  0:18:28  { AttackAction_HighRisk_LowReturn : 0.000000 }
+2024y 1m 11d  0:18:28  { AttackAction_LowRisk_HighReturn : 0.375000 }
+2024y 1m 11d  0:18:28  { AttackAction_LowRisk_LowReturn : 0.625000 }
+2024y 1m 11d  0:18:28  { EvaluationValue : 0.750000 }
+2024y 1m 11d  0:18:28  { [EvaluateGene] GeneIndex : 2 }

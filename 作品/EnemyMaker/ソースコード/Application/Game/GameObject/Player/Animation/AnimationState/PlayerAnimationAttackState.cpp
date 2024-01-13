@@ -1,3 +1,4 @@
+//---------- INCLUDES ------------
 #include "PlayerAnimationAttackState.h"
 #include "../../../../Component/SkeletalMeshComponent/AnimationInstance.h"
 #include "../../Player.h"
@@ -8,6 +9,9 @@ using namespace PlayerData;
 
 PlayerAnimationAttackState::PlayerAnimationAttackState(AnimationInstance* _animInstance)
 	: AnimationStateContext(_animInstance)
+	, mOldState()
+	, mPlayer(nullptr)
+	, mState()
 {
 	// このステートでアニメーションの名前を紐づけ
 	mAnimationNames[AttackID_Y1] = "Y1";
@@ -22,7 +26,6 @@ PlayerAnimationAttackState::PlayerAnimationAttackState(AnimationInstance* _animI
 
 void PlayerAnimationAttackState::Entry(AttackID _entryState)
 {
-
 	// プレイヤーの取得
 	mPlayer = static_cast<Player*>(mOwnerAnimationInstance->GetOwner());
 
@@ -36,8 +39,6 @@ void PlayerAnimationAttackState::Entry(AttackID _entryState)
 	}
 
 	PlayAnimationClip(playerAttack.mAnimationClipName, playRate, mPlayer->GetNextAttackInterpTime(), mPlayer->GetNextAttackInterpStartTime());
-
-	Logger::GetInstance().WriteLog("Entry AttackAnimationState",1);
 }
 
 void PlayerAnimationAttackState::Update()

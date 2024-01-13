@@ -74,7 +74,7 @@ void Manager::Initialize(Application* _app)
 	EffectSystem::GetInstance().Initialize();
 
 	// ImGui‚Ì‰Šú‰»
-	const HWND windowHandle = _app->GetWindow();
+	const HWND& windowHandle = _app->GetWindow();
 	ImGuiUtility::GetInstance().Initialize(windowHandle);
 }
 

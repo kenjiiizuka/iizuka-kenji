@@ -67,6 +67,9 @@ private:
 	/** Œ»İg—p‚µ‚Ä‚¢‚éˆâ“`q‚Ì“Y‚¦š */
 	size_t mCurrentGeneIndex;
 
+	/** ¡‚Ìˆâ“`q‚Ì¢‘ã */
+	size_t mGenerationCount;
+
 	/** UŒ‚ˆâ“`q‚Ì•]‰¿’l‚ğ•\¦‚·‚é‚© */
 	bool mbDisplayAttackGeneEvaluation;
 
@@ -137,6 +140,14 @@ public:
 	inline void SetDisplayGenetic(const std::vector<std::shared_ptr<Gene>>& _genetic) noexcept;
 
 	/**
+	* @fn SetCurrentGenerationCount
+	* @brief Œ»İ‚Ìˆâ“`q‚Ì¢‘ã”‚ğƒZƒbƒg‚·‚é
+	* @param const size_t (_count)
+	* @return void
+	*/
+	inline void SetCurrentGenerationCount(const size_t _count) noexcept;
+
+	/**
 	* @fn SetCurrentGeneIndex
 	* @brief Œ»İg—p‚µ‚Ä‚¢‚éˆâ“`q‚Ì“Y‚¦š
 	* @param const size_t& (_index)
@@ -159,6 +170,11 @@ public:
 inline void GeneticAlgorithmDebugger::SetDisplayGenetic(const std::vector<std::shared_ptr<Gene>>& _genetic) noexcept
 {
 	mGenes = _genetic;
+}
+
+inline void GeneticAlgorithmDebugger::SetCurrentGenerationCount(const size_t _count) noexcept
+{
+	mGenerationCount = _count;
 }
 
 inline void GeneticAlgorithmDebugger::SetCurrentGeneIndex(const size_t& _index) noexcept

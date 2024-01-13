@@ -36,7 +36,7 @@ void Utility::QuickSort(std::vector<std::pair<float, size_t>>& _valueAndIndex, c
 
 size_t Utility::Partition(std::vector<std::pair<float, size_t>>& _valueAndIndex, const size_t _l, const size_t _r)
 {
-	size_t pivot = _valueAndIndex[_r].first;
+	size_t pivot = static_cast<size_t>(_valueAndIndex[_r].first);
 	size_t i = (_l - 1);
 
 	for (size_t j = _l; j < _r; j++) 

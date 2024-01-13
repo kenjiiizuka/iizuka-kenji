@@ -4,7 +4,6 @@
 #include "../../Component/TransformComponent/TransformComponent.h"
 #include "../../Component/PlaneComponent/PlaneComponent.h"
 #include "../../GameObject/StaticMeshObject/StaticMeshObject.h"
-#include "../../../ImGui/ImGuiUtility.h"
 #include "../../../Utility/MathLibrary.h"
 
 using namespace DirectX::SimpleMath;

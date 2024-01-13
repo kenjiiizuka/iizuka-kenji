@@ -1,7 +1,6 @@
 //----------- INCLUDES -----------
 #include "EnemyAIComponent.h"
 #include "../../GameObject/Enemy/AIBase/EnemyAIController.h"
-#include "../../../ImGui/ImGuiUtility.h"
 
 EnemyAIComponent::EnemyAIComponent()
 	:mbRunAI(false)

@@ -2,7 +2,7 @@
 #include "CinematicCamera.h"
 #include "../../../System/RendererSystem/DebugRenderer/DebugRendererManager.h"
 #include "../../../System/AssetSystem/JsonFile/JsonIncludes.h"
-#include"../../../ImGui/ImGuiUtility.h"
+#include "../../../ImGui/ImGuiUtility.h"
 #include "../../../Utility/MathLibrary.h"
 #include "../../Resource/Bone.h"
 #include "CameraIncludes.h"
@@ -76,7 +76,7 @@ void CinematicCamera::InterpCameraAnimationKeyPosition(CameraAnimationKey& _keyB
 	double t = MathLibrary::Clamp01(time / (_keyTo.mTime - _keyBase.mTime));
 
 	// ï‚ä‘
-	_position = DirectX::SimpleMath::Vector3::Lerp(_keyBase.mPosition, _keyTo.mPosition, t);
+	_position = DirectX::SimpleMath::Vector3::Lerp(_keyBase.mPosition, _keyTo.mPosition, static_cast<float>(t));
 }
 
 void CinematicCamera::GetKey(CameraAnimationKey& _key1, CameraAnimationKey& _key2)

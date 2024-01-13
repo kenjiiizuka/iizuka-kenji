@@ -1,7 +1,6 @@
 //---------- INCLUDES -----------
 #include "BattleSoundManager.h"
 #include "../../../System/AudioSystem/AudioSystemIncludes.h"
-#include "../../../ImGui/ImGuiUtility.h"
 #include "../../../Utility/MathLibrary.h"
 
 BattleSoundManager::BattleSoundManager()

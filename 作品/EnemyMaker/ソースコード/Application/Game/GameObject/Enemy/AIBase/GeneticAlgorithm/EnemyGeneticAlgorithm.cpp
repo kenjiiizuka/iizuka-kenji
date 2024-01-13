@@ -55,10 +55,11 @@ void EnemyGeneticAlgorithm::Init()
 		GenerateFirstGenes();
 	}
 
-	// デバッグ表示用処理　描画する遺伝子のセット
+	// デバッグ表示用処理　描画する遺伝子のセット	
 	GeneticAlgorithmDebugger::GetInstance().SetDisplayGenetic(mCurrentGenerationGenes);
 	GeneticAlgorithmDebugger::GetInstance().SetCurrentGeneIndex(mCurrentDataCollectionGene_i);
 	GeneticAlgorithmDebugger::GetInstance().SetDisplayGeneIndex(mCurrentDataCollectionGene_i);
+	GeneticAlgorithmDebugger::GetInstance().SetCurrentGenerationCount(mGenerationCount);
 }
 
 void EnemyGeneticAlgorithm::GenerateFirstGenes()
@@ -72,6 +73,8 @@ void EnemyGeneticAlgorithm::GenerateFirstGenes()
 	mCurrentGenerationGenesSize = mCurrentGenerationGenes.size();
 	// 一世代目に設定
 	mGenerationCount = 1;
+
+	Logger::GetInstance().WriteLog("Created 1 Generate");
 }
 
 void EnemyGeneticAlgorithm::Evaluate()
@@ -130,6 +133,11 @@ void EnemyGeneticAlgorithm::GenerateGenetic()
 	
 	// 遺伝したら先頭の遺伝子からデータ収集を開始する
 	mCurrentDataCollectionGene_i = 0;
+
+	// 世代を加算
+	mGenerationCount++;
+
+	Logger::GetInstance().WriteLog("Created " + std::to_string(mGenerationCount) +  " Generate");
 }
 
 void EnemyGeneticAlgorithm::Genetics()

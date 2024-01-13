@@ -2,7 +2,6 @@
 #include "AudioEmitter.h"
 #include "../../System/AudioSystem/AudioSource.h"
 #include "../../System/RendererSystem/DebugRenderer/DebugRendererManager.h"
-#include "../../ImGui/ImGuiUtility.h"
 #include "../../Utility/MathLibrary.h"
 
 AudioEmitter::AudioEmitter()

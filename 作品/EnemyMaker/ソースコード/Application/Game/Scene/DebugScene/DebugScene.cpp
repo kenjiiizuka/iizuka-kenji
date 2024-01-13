@@ -2,7 +2,6 @@
 #include "../../../Manager.h"
 #include "../TitleScene/TitleScene.h"
 #include "../Test/PlayerTestScene.h"
-#include "../../../ImGui/ImGuiUtility.h"
 #include "../../Scene/SceneManager.h"
 #include "../EnemyEditScene/EnemyEditScene.h"
 #include "../AudioTestScene/AudioTestScene.h"
@@ -13,6 +12,7 @@
 #include "../../GameObject/StaticMeshObject/StaticMeshObject.h"
 #include "../../Component/MoveComponent/DebugMoveComponent.h"
 #include "../../../Utility/MathLibrary.h"
+#include "../../../ImGui/ImGuiUtility.h"
 
 std::weak_ptr<StaticMeshObject> mFrustumTest;
 

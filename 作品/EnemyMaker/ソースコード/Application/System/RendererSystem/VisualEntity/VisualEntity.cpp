@@ -130,7 +130,7 @@ void VisualEntity::SetRasterizerState(const size_t entity_i)
     }
 }
 
-void VisualEntity::SetupGeometryShader(const size_t shader_i)
+void VisualEntity::SetupGeometryShader(const uint8_t shader_i)
 {
     // 配列外参照チェック
     if (shader_i >= mGeometryShader.size())

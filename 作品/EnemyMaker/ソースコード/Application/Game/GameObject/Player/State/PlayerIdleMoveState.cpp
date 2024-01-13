@@ -3,7 +3,6 @@
 #include "../Player.h"
 #include "../../../Component/MoveComponent/PlayerMovementComponent.h"
 #include "../../../../System/InputSystem/XInput.h"
-#include "../../../../ImGui/ImGuiUtility.h"
 
 PlayerIdleMoveState::PlayerIdleMoveState(Player* _player)
 	: PlayerStateContext(_player)

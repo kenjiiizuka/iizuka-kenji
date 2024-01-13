@@ -5,8 +5,7 @@
 #include "Gene/EnemyMoveAction.h"
 #include "Gene/Situation.h"
 #include "Gene/Gene.h"
-#include"../../../../../ImGui/ImGuiUtility.h"
-#include"../../../../../ImGui/imgui_impl_dx11.h"
+#include "../../../../../ImGui/ImGuiUtility.h"
 
 GeneticAlgorithmDebugger::GeneticAlgorithmDebugger()
 	: mbDisplayAttackGeneEvaluation(true)
@@ -15,6 +14,7 @@ GeneticAlgorithmDebugger::GeneticAlgorithmDebugger()
 	, mbDisplayMoveGeneEvaluationData(false)
 	, mDisplayGeneticIndex(0)
 	, mCurrentGeneIndex(0)
+	, mGenerationCount(0)
 {
 	// èàóùÇ»Çµ
 }
@@ -74,6 +74,9 @@ void GeneticAlgorithmDebugger::DisplaySituation(const std::shared_ptr<Gene>& _ge
 	ImGui::SetNextWindowPos(ImVec2(0.0f, 100.0f));
 	ImGui::SetNextWindowSize(ImVec2(500.0f, 260.0f));
 	ImGui::Begin("Situation");
+
+//	ImGui::Text(("Current Generation : " + std::to_string(mGenerationCount)).c_str());
+	ImGui::Text(("Current Generation : " + std::to_string(mGenerationCount)).c_str());
 
 	std::vector<std::shared_ptr<Situation>> situations = _genetic->GetSituations();
 	for (size_t situation_i = 0; const std::weak_ptr<Situation>& situation : situations)

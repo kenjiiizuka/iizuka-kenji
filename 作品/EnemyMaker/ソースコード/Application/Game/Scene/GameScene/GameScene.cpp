@@ -13,7 +13,6 @@
 #include "../../GameObject/CircleBlockObject/CircleBlockObject.h"
 #include "../../GameObject/Fade/Fade.h"
 #include "../../../System/Logger/Logger.h"
-#include "../../../ImGui/ImGuiUtility.h"
 
 GameScene::GameScene()
 	: mbTransitionScene(false)
@@ -67,7 +66,8 @@ void GameScene::Initialize()
 	AudioSystem::GetInstance().GetAudioListenerObject().lock()->SwitchListenerObject(player);
 
 	// アニメーション用ログファイルオープン
-	Logger::GetInstance().OpenLogFile("assets/Log/PlayerLog.txt");
+	// Logger::GetInstance().OpenLogFile("assets/Log/
+// PlayerLog.txt");
 }
 
 void GameScene::Update()

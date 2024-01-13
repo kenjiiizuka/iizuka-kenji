@@ -15,7 +15,6 @@
 #include "../../../System/InputSystem/XInput.h"
 #include "../../../System/FPSController/FPSController.h"
 #include "../../Component/AudioComponent/AudioComponent.h"
-#include "../../../ImGui/ImGuiUtility.h"
 
 BattleManager::BattleManager()
 	: mState(Battle_Start)
