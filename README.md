@@ -1,4 +1,4 @@
-紹介動画などをGoogleDriveに乗せています。
+制作物の紹介動画やポートフォリオをGoogleDriveに乗せています。
 よろしければご覧ください。  
 
 https://drive.google.com/drive/folders/1hves9S92GN-W4T33oAAAWKv8aqBl0saN?usp=drive_link
@@ -11,7 +11,6 @@ https://drive.google.com/drive/folders/1hves9S92GN-W4T33oAAAWKv8aqBl0saN?usp=dri
 >RushChain
 >
 >![RushChain](https://github.com/kenjiiizuka/iizuka-kenji/assets/92203252/5b2388ca-0bbb-487e-9a34-2738802e6fbd)
-
 
 >Lab-raSting
 >
