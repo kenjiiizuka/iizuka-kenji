@@ -1,14 +1,20 @@
-﻿#pragma once
+﻿/**
+* @file Bear2ChainSwordAttack.h
+* @brief Bear2ChainSwordAttackクラスの定義
+*/
+
+#pragma once
 
 //----------- INCLUDES -----------
 #include "BearAttackAction.h"
 
-
 //---------- 前方宣言 -----------
 class AnimationInstance;
 
-
-/** 熊の敵の剣での2連撃攻撃 水平切り二回 */
+/**
+* @class Bear2ChainSwordAttack
+* @brief 熊の剣を２連撃振る攻撃クラス
+*/
 class Bear2ChainSwordAttack : public BearAttackAction
 {
 public:
@@ -52,13 +58,6 @@ public:
 	 * @return bool true : 実行可能 false 実行不可
 	*/
 	virtual bool IsExecuteAble();
-
-	/**
-	 * @fn IsValidAction
-	 * @brief この行動が有効かどうかを返す
-	 * @return bool true : 有効 false 無効
-	*/
-	//virtual bool IsValidAction();
 
 	/**
 	 * @fn DuplicateFromSelfType

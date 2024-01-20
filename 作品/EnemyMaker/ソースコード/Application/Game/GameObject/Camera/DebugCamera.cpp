@@ -15,10 +15,10 @@ void DebugCamera::Update(const double _deltaTime)
 {
 	if (Input::GetKeyPress('1'))
 	{
-		bAnableInput = !bAnableInput;
+		bEnableInput = !bEnableInput;
 	}
 	
-	if (!bAnableInput) 
+	if (!bEnableInput) 
 	{
 		return;
 	}

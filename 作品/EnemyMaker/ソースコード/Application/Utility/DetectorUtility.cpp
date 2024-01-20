@@ -108,7 +108,7 @@ bool DetectorUtility::IsPositionInSector2D(DirectX::SimpleMath::Vector2 _positio
 	float t;
 
 	DirectX::SimpleMath::Vector3 intersection;
-	float distance = CalucPosintSegmentDistance({_position.x, 0.0f, _position.y}, segment, intersection, t);
+	float distance = CalucPointSegmentDistance({_position.x, 0.0f, _position.y}, segment, intersection, t);
 	
 	// 下限
 	float downRadian = MathLibrary::FloatDegreeToRadian(-_sectorDegree / 2.0f);
@@ -117,14 +117,14 @@ bool DetectorUtility::IsPositionInSector2D(DirectX::SimpleMath::Vector2 _positio
 	muinasViewVec += _sectorCenter;
 	segment.mStartPosition = { _sectorCenter.x, 0.0f, _sectorCenter.y };
 	segment.mEndPosition = { muinasViewVec.x, 0.0f, muinasViewVec.y };
-	distance = CalucPosintSegmentDistance({ _position.x, 0.0f, _position.y }, segment, intersection, t);
+	distance = CalucPointSegmentDistance({ _position.x, 0.0f, _position.y }, segment, intersection, t);
 
-	sts = InSectorCheackXZ(_sectorCenter, _sectorEndPoint, upRadian, _position, sectorLength);
+	sts = InSectorCheckXZ(_sectorCenter, _sectorEndPoint, upRadian, _position, sectorLength);
 
 	return sts;
 }
 
-bool DetectorUtility::InSectorCheackXZ(const DirectX::SimpleMath::Vector2& _sectorCenter, const DirectX::SimpleMath::Vector2& _sectorEndPoint, const float& _sectorAngle, const DirectX::SimpleMath::Vector2& _position, const float& _length)
+bool DetectorUtility::InSectorCheckXZ(const DirectX::SimpleMath::Vector2& _sectorCenter, const DirectX::SimpleMath::Vector2& _sectorEndPoint, const float& _sectorAngle, const DirectX::SimpleMath::Vector2& _position, const float& _length)
 {
 	// チェック対象と視点を結ぶベクトル
 	DirectX::SimpleMath::Vector2 vecobj;
@@ -168,7 +168,7 @@ bool DetectorUtility::InSectorCheackXZ(const DirectX::SimpleMath::Vector2& _sect
 	return false;
 }
 
-float DetectorUtility::CalucPosintSegmentDistance(const DirectX::SimpleMath::Vector3& _position, const PrimitiveShape::Segment3D& _segment, DirectX::SimpleMath::Vector3& _interSectionPoint, float& _t)
+float DetectorUtility::CalucPointSegmentDistance(const DirectX::SimpleMath::Vector3& _position, const PrimitiveShape::Segment3D& _segment, DirectX::SimpleMath::Vector3& _interSectionPoint, float& _t)
 {
 	float distance = CalucPointLineDist(_position, _segment, _interSectionPoint, _t);
 

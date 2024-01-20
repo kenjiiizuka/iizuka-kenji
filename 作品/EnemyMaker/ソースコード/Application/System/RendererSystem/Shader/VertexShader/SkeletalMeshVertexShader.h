@@ -1,11 +1,23 @@
-﻿#pragma once
+﻿/**
+* @file SkeletalMeshVertexShader.h
+* @brief SkeletalMeshVertexShaderクラスの定義
+*/
+
+#pragma once
+
+//---------- INCLUDES --------
 #include "VertexShader.h"
 #include "../../../../Game/Component/TransformComponent/Transform.h"
 
+//--------- 前方宣言 ---------
 class SkeletalMesh;
 class Skeleton;
 
-class SkeletalMeshVertexShader : public VertexShader
+/**
+* @class SkeletalMeshVertexShader
+* @brief スケルタルメッシュを表示するための頂点シェーダー
+*/
+class SkeletalMeshVertexShader final : public VertexShader
 {
 public:
 	/**

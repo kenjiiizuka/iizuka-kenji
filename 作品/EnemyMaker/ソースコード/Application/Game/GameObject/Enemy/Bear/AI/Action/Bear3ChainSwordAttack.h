@@ -1,8 +1,20 @@
-﻿#pragma once
+﻿/**
+* @file Bear3ChainSwordAttack.h
+* @brief Bear3ChainSwordAttackクラスの定義
+*/
+
+#pragma once
+
+//---------- INCLUDES -----------
 #include "BearAttackAction.h"
 
+//--------- 前方宣言 ---------
 class AnimationInstance;
 
+/**
+* @class  Bear3ChainSwordAttack
+* @brief 熊の剣を３連撃する攻撃
+*/
 class Bear3ChainSwordAttack : public BearAttackAction
 {
 public:

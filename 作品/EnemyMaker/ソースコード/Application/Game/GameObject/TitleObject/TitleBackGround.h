@@ -55,8 +55,5 @@ public:
 	* @return void
 	*/
 	void Update(const double _deltaTime) override;
-
-
-
 };
 

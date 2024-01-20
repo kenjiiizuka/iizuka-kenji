@@ -3,7 +3,6 @@
 * @brief PlayerAnimationDeathStateクラスの定義
 */
 
-
 #pragma once
 
 //---------- INCLUDES -----------
@@ -19,7 +18,7 @@ public:
 	/**
 	* コンストラクタ
 	*
-	* @param[in] AnimationInstance* (_animInstance)
+	* @param AnimationInstance* (_animInstance)
 	*/
 	PlayerAnimationDeathState(AnimationInstance* _animInstance);
 

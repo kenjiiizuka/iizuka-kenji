@@ -30,7 +30,12 @@ private:
 	float mRadius;	
 
 public:
-	
+	/**
+	* @fn Update
+	* @brief XVˆ—
+	* @param const double (_deltaTime)
+	* @return void
+	*/
 	void Update(const double _deltaTime) override;
 
 	/**

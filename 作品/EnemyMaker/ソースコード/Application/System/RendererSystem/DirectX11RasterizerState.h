@@ -12,7 +12,7 @@
 * @class DirectX11RasterizerState
 * @brief ID3D11RasterizerStateをラップしたクラス
 */
-class DirectX11RasterizerState
+class DirectX11RasterizerState final
 {
 public:
 	/**
@@ -33,6 +33,13 @@ private:
 	D3D11_RASTERIZER_DESC mRasterizerDesc;
 
 public:
+	/**
+	* @fn Release
+	* @brief 解放処理
+	* @return void
+	*/
+	void Release();
+
 	/**
 	* @fn SetupRasterizerDesc
 	* @brief ラスタライザーデスクの設定

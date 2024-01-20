@@ -1,9 +1,19 @@
-﻿#pragma once
+﻿/**
+* @file Singleton.h
+* @brief Singleton, SingletonFinalizerクラスの定義
+*/
+
+#pragma once
+
+//---------- INCLUDES -----------
 #include <mutex>
 #include <cassert>
 
 
-/** Singletonクラスを破棄するためのクラス */
+/**
+* @class SingletonFinalizer
+* @brief Singletonを破棄するためのクラス
+*/
 class SingletonFinalizer final
 {
 public:
@@ -26,7 +36,10 @@ public:
 	static void Finalize();
 };
 
-
+/**
+* @class Singleton
+* @brief 継承したクラスをSingletonにするクラス
+*/
 template <typename Instance>
 class Singleton
 {

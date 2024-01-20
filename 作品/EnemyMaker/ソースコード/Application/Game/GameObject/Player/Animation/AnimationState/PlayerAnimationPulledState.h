@@ -25,7 +25,7 @@ public:
     /**
      * 値の初期化
      *
-     * @param[in] AnimationInstance* (_animInstance) このステートを持つアニメーションインスタンス
+     * @param AnimationInstance* (_animInstance) このステートを持つアニメーションインスタンス
     */
 	PlayerAnimationPulledState(AnimationInstance* _animInstance);
 

@@ -283,3 +283,263 @@
 2024y 1m 11d  0:18:28  { AttackAction_LowRisk_LowReturn : 0.625000 }
 2024y 1m 11d  0:18:28  { EvaluationValue : 0.750000 }
 2024y 1m 11d  0:18:28  { [EvaluateGene] GeneIndex : 2 }
+2024y 1m 14d  21:51:58  { DataCollectionCount : 1 }
+2024y 1m 14d  21:51:58  { AttackGene RiskType }
+2024y 1m 14d  21:51:58  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 14d  21:51:58  { ReceptivityToPlayer : 0.682808 }
+2024y 1m 14d  21:51:58  { class BearKickAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 14d  21:51:58  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 14d  21:51:58  { ReceptivityToPlayer : 0.789564 }
+2024y 1m 14d  21:51:58  { class BearSwordSwingUpAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 14d  21:51:58  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 14d  21:51:58  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 14d  21:51:58  { class BearSwordSwingDownAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 14d  21:51:58  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 14d  21:51:58  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 14d  21:51:58  { class BearJumpSlash : AttackAction_LowRisk_LowReturn }
+2024y 1m 14d  21:51:58  { EffectivenessToPlayer : 0.950495 }
+2024y 1m 14d  21:51:58  { ReceptivityToPlayer : 0.949000 }
+2024y 1m 14d  21:51:58  { class Bear2ChainSwordAttack : AttackAction_HighRisk_HighReturn }
+2024y 1m 14d  21:51:58  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 14d  21:51:58  { ReceptivityToPlayer : 1.000000 }
+2024y 1m 14d  21:51:58  { class BearRoarAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 14d  21:51:58  { EffectivenessToPlayer : 0.594059 }
+2024y 1m 14d  21:51:58  { ReceptivityToPlayer : 0.986960 }
+2024y 1m 14d  21:51:58  { class Bear3ChainSwordAttack : AttackAction_HighRisk_HighReturn }
+2024y 1m 14d  21:51:58  { EffectivenessToPlayer : 1.000000 }
+2024y 1m 14d  21:51:58  { ReceptivityToPlayer : 0.879450 }
+2024y 1m 14d  21:51:58  { class Bear2ChainSwordStrongAttack : AttackAction_HighRisk_HighReturn }
+2024y 1m 14d  21:51:58  { GoalRatio }
+2024y 1m 14d  21:51:58  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 14d  21:51:58  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 14d  21:51:58  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 14d  21:51:58  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 14d  21:51:58  { CurrentRatio }
+2024y 1m 14d  21:51:58  { AttackAction_HighRisk_HighReturn : 0.375000 }
+2024y 1m 14d  21:51:58  { AttackAction_HighRisk_LowReturn : 0.375000 }
+2024y 1m 14d  21:51:58  { AttackAction_LowRisk_HighReturn : 0.000000 }
+2024y 1m 14d  21:51:58  { AttackAction_LowRisk_LowReturn : 0.250000 }
+2024y 1m 14d  21:51:58  { EvaluationValue : 0.875000 }
+2024y 1m 14d  21:51:58  { [EvaluateGene] GeneIndex : 3 }
+2024y 1m 14d  21:51:58  {  [Genetic]  }
+2024y 1m 14d  21:51:58  { [RadomGenerateGene] }
+2024y 1m 14d  21:51:58  { [RadomGenerateSituation] }
+2024y 1m 14d  21:51:58  { [RadomGenerateAttackGenes] }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class Bear2ChinaBackAndFront }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearDownwardSlashStrong }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearJumpSlash }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class Bear2ChainAttack_StrongLow }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearSlashWeak }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearSwipingAttack }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearBackJumpSlash }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearSwordSwingUpAttack }
+2024y 1m 14d  21:51:58  { [RadomGenerateGene] }
+2024y 1m 14d  21:51:58  { [RadomGenerateSituation] }
+2024y 1m 14d  21:51:58  { [RadomGenerateAttackGenes] }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearJumpSlash }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearBackJumpSlash }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearSlashWeak }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearKickAttack }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearSwipingAttack }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearDownwardSlashStrong }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearSwordSwingDownAttack }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class Bear2ChainAttack_StrongLow }
+2024y 1m 14d  21:51:58  { [RadomGenerateGene] }
+2024y 1m 14d  21:51:58  { [RadomGenerateSituation] }
+2024y 1m 14d  21:51:58  { [RadomGenerateAttackGenes] }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearJumpSlash }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class Bear2ChinaBackAndFront }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class Bear3ChainSwordAttack }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearRoarAttack }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearDownwardSlashStrong }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearSwordSwingUpAttack }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class BearKickAttack }
+2024y 1m 14d  21:51:58  { GenerateAttackGene : class Bear2ChainSwordStrongAttack }
+2024y 1m 14d  21:52:2  { Created 3 Generate }
+2024y 1m 15d  16:18:17  { DataCollectionCount : 1 }
+2024y 1m 15d  16:18:17  { AttackGene RiskType }
+2024y 1m 15d  16:18:17  { EffectivenessToPlayer : 1.000000 }
+2024y 1m 15d  16:18:17  { ReceptivityToPlayer : 0.213591 }
+2024y 1m 15d  16:18:17  { class Bear2ChinaBackAndFront : AttackAction_LowRisk_HighReturn }
+2024y 1m 15d  16:18:17  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 15d  16:18:17  { ReceptivityToPlayer : 0.658497 }
+2024y 1m 15d  16:18:17  { class BearDownwardSlashStrong : AttackAction_HighRisk_LowReturn }
+2024y 1m 15d  16:18:17  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 15d  16:18:17  { ReceptivityToPlayer : 0.120648 }
+2024y 1m 15d  16:18:17  { class BearJumpSlash : AttackAction_LowRisk_LowReturn }
+2024y 1m 15d  16:18:17  { EffectivenessToPlayer : 0.394444 }
+2024y 1m 15d  16:18:17  { ReceptivityToPlayer : 0.458315 }
+2024y 1m 15d  16:18:17  { class Bear2ChainAttack_StrongLow : AttackAction_LowRisk_LowReturn }
+2024y 1m 15d  16:18:17  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 15d  16:18:17  { ReceptivityToPlayer : 1.000000 }
+2024y 1m 15d  16:18:17  { class BearSlashWeak : AttackAction_HighRisk_LowReturn }
+2024y 1m 15d  16:18:17  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 15d  16:18:17  { ReceptivityToPlayer : 0.324029 }
+2024y 1m 15d  16:18:17  { class BearSwipingAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 15d  16:18:17  { EffectivenessToPlayer : 0.109091 }
+2024y 1m 15d  16:18:17  { ReceptivityToPlayer : 0.630814 }
+2024y 1m 15d  16:18:17  { class BearBackJumpSlash : AttackAction_HighRisk_LowReturn }
+2024y 1m 15d  16:18:17  { EffectivenessToPlayer : 0.222222 }
+2024y 1m 15d  16:18:17  { ReceptivityToPlayer : 0.551893 }
+2024y 1m 15d  16:18:17  { class BearSwordSwingUpAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 15d  16:18:17  { GoalRatio }
+2024y 1m 15d  16:18:17  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 15d  16:18:17  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 15d  16:18:17  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 15d  16:18:17  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 15d  16:18:17  { CurrentRatio }
+2024y 1m 15d  16:18:17  { AttackAction_HighRisk_HighReturn : 0.000000 }
+2024y 1m 15d  16:18:17  { AttackAction_HighRisk_LowReturn : 0.500000 }
+2024y 1m 15d  16:18:17  { AttackAction_LowRisk_HighReturn : 0.125000 }
+2024y 1m 15d  16:18:17  { AttackAction_LowRisk_LowReturn : 0.375000 }
+2024y 1m 15d  16:18:17  { EvaluationValue : 0.812500 }
+2024y 1m 15d  16:18:17  { [EvaluateGene] GeneIndex : 1 }
+2024y 1m 20d  16:10:33  { DataCollectionCount : 1 }
+2024y 1m 20d  16:10:33  { AttackGene RiskType }
+2024y 1m 20d  16:10:33  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { class BearJumpSlash : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:10:33  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { class BearBackJumpSlash : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:10:33  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { class BearSlashWeak : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:10:33  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { class BearKickAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:10:33  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { class BearSwipingAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:10:33  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { class BearDownwardSlashStrong : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:10:33  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { class BearSwordSwingDownAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:10:33  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:10:33  { class Bear2ChainAttack_StrongLow : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:10:33  { GoalRatio }
+2024y 1m 20d  16:10:33  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 20d  16:10:33  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 20d  16:10:33  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 20d  16:10:33  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 20d  16:10:33  { CurrentRatio }
+2024y 1m 20d  16:10:33  { AttackAction_HighRisk_HighReturn : 0.000000 }
+2024y 1m 20d  16:10:33  { AttackAction_HighRisk_LowReturn : 0.000000 }
+2024y 1m 20d  16:10:33  { AttackAction_LowRisk_HighReturn : 0.000000 }
+2024y 1m 20d  16:10:33  { AttackAction_LowRisk_LowReturn : 1.000000 }
+2024y 1m 20d  16:10:33  { EvaluationValue : 0.650000 }
+2024y 1m 20d  16:10:33  { [EvaluateGene] GeneIndex : 2 }
+2024y 1m 20d  16:17:26  { DataCollectionCount : 1 }
+2024y 1m 20d  16:17:26  { AttackGene RiskType }
+2024y 1m 20d  16:17:26  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 20d  16:17:26  { ReceptivityToPlayer : 0.000000 }
+2024y 1m 20d  16:17:26  { class BearJumpSlash : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:17:26  { EffectivenessToPlayer : 0.740741 }
+2024y 1m 20d  16:17:26  { ReceptivityToPlayer : 0.548302 }
+2024y 1m 20d  16:17:26  { class Bear2ChinaBackAndFront : AttackAction_HighRisk_HighReturn }
+2024y 1m 20d  16:17:26  { EffectivenessToPlayer : 0.493827 }
+2024y 1m 20d  16:17:26  { ReceptivityToPlayer : 0.435868 }
+2024y 1m 20d  16:17:26  { class Bear3ChainSwordAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:17:26  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 20d  16:17:26  { ReceptivityToPlayer : 0.993866 }
+2024y 1m 20d  16:17:26  { class BearRoarAttack : AttackAction_HighRisk_LowReturn }
+2024y 1m 20d  16:17:26  { EffectivenessToPlayer : 0.987654 }
+2024y 1m 20d  16:17:26  { ReceptivityToPlayer : 1.000000 }
+2024y 1m 20d  16:17:26  { class BearDownwardSlashStrong : AttackAction_HighRisk_HighReturn }
+2024y 1m 20d  16:17:26  { EffectivenessToPlayer : 0.329218 }
+2024y 1m 20d  16:17:26  { ReceptivityToPlayer : 0.264637 }
+2024y 1m 20d  16:17:26  { class BearSwordSwingUpAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:17:26  { EffectivenessToPlayer : 0.263375 }
+2024y 1m 20d  16:17:26  { ReceptivityToPlayer : 0.301622 }
+2024y 1m 20d  16:17:26  { class BearKickAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:17:26  { EffectivenessToPlayer : 1.000000 }
+2024y 1m 20d  16:17:26  { ReceptivityToPlayer : 0.383720 }
+2024y 1m 20d  16:17:26  { class Bear2ChainSwordStrongAttack : AttackAction_LowRisk_HighReturn }
+2024y 1m 20d  16:17:26  { GoalRatio }
+2024y 1m 20d  16:17:26  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 20d  16:17:26  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 20d  16:17:26  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 20d  16:17:26  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 20d  16:17:26  { CurrentRatio }
+2024y 1m 20d  16:17:26  { AttackAction_HighRisk_HighReturn : 0.250000 }
+2024y 1m 20d  16:17:26  { AttackAction_HighRisk_LowReturn : 0.125000 }
+2024y 1m 20d  16:17:26  { AttackAction_LowRisk_HighReturn : 0.125000 }
+2024y 1m 20d  16:17:26  { AttackAction_LowRisk_LowReturn : 0.500000 }
+2024y 1m 20d  16:17:26  { EvaluationValue : 0.900000 }
+2024y 1m 20d  16:17:26  { [EvaluateGene] GeneIndex : 3 }
+2024y 1m 20d  16:17:26  {  [Genetic]  }
+2024y 1m 20d  16:17:26  { [RadomGenerateGene] }
+2024y 1m 20d  16:17:26  { [RadomGenerateSituation] }
+2024y 1m 20d  16:17:26  { [RadomGenerateAttackGenes] }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class Bear2ChainSwordAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class Bear2ChinaBackAndFront }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearBackJumpSlash }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearDownwardSlashStrong }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearKickAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class Bear2ChainSwordStrongAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearSwordSwingDownAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearJumpSlash }
+2024y 1m 20d  16:17:26  { [RadomGenerateGene] }
+2024y 1m 20d  16:17:26  { [RadomGenerateSituation] }
+2024y 1m 20d  16:17:26  { [RadomGenerateAttackGenes] }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearBackJumpSlash }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearSwipingAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearSlashWeak }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearKickAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearSwordSwingDownAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearJumpSlash }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class Bear2ChainAttack_StrongLow }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class Bear2ChainSwordStrongAttack }
+2024y 1m 20d  16:17:26  { [RadomGenerateGene] }
+2024y 1m 20d  16:17:26  { [RadomGenerateSituation] }
+2024y 1m 20d  16:17:26  { [RadomGenerateAttackGenes] }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearSwordSwingDownAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearJumpSlash }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class Bear2ChainSwordAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearSwipingAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class Bear3ChainSwordAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearRoarAttack }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class Bear2ChainAttack_StrongLow }
+2024y 1m 20d  16:17:26  { GenerateAttackGene : class BearSlashWeak }
+2024y 1m 20d  16:17:26  { Created 4 Generate }
+2024y 1m 20d  16:44:3  { DataCollectionCount : 1 }
+2024y 1m 20d  16:44:3  { AttackGene RiskType }
+2024y 1m 20d  16:44:3  { EffectivenessToPlayer : 0.916667 }
+2024y 1m 20d  16:44:3  { ReceptivityToPlayer : 0.707063 }
+2024y 1m 20d  16:44:3  { class Bear2ChainSwordAttack : AttackAction_HighRisk_HighReturn }
+2024y 1m 20d  16:44:3  { EffectivenessToPlayer : 1.000000 }
+2024y 1m 20d  16:44:3  { ReceptivityToPlayer : 1.000000 }
+2024y 1m 20d  16:44:3  { class Bear2ChinaBackAndFront : AttackAction_HighRisk_HighReturn }
+2024y 1m 20d  16:44:3  { EffectivenessToPlayer : 0.375000 }
+2024y 1m 20d  16:44:3  { ReceptivityToPlayer : 0.480748 }
+2024y 1m 20d  16:44:3  { class BearBackJumpSlash : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:44:3  { EffectivenessToPlayer : -nan(ind) }
+2024y 1m 20d  16:44:3  { ReceptivityToPlayer : -nan(ind) }
+2024y 1m 20d  16:44:3  { class BearDownwardSlashStrong : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:44:3  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 20d  16:44:3  { ReceptivityToPlayer : 0.459586 }
+2024y 1m 20d  16:44:3  { class BearKickAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:44:3  { EffectivenessToPlayer : 0.681818 }
+2024y 1m 20d  16:44:3  { ReceptivityToPlayer : 0.402528 }
+2024y 1m 20d  16:44:3  { class Bear2ChainSwordStrongAttack : AttackAction_LowRisk_HighReturn }
+2024y 1m 20d  16:44:3  { EffectivenessToPlayer : 0.277778 }
+2024y 1m 20d  16:44:3  { ReceptivityToPlayer : 0.193587 }
+2024y 1m 20d  16:44:3  { class BearSwordSwingDownAttack : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:44:3  { EffectivenessToPlayer : 0.000000 }
+2024y 1m 20d  16:44:3  { ReceptivityToPlayer : 0.278830 }
+2024y 1m 20d  16:44:3  { class BearJumpSlash : AttackAction_LowRisk_LowReturn }
+2024y 1m 20d  16:44:3  { GoalRatio }
+2024y 1m 20d  16:44:3  { AttackAction_HighRisk_HighReturn : 0.300000 }
+2024y 1m 20d  16:44:3  { AttackAction_HighRisk_LowReturn : 0.200000 }
+2024y 1m 20d  16:44:3  { AttackAction_LowRisk_HighReturn : 0.200000 }
+2024y 1m 20d  16:44:3  { AttackAction_LowRisk_LowReturn : 0.300000 }
+2024y 1m 20d  16:44:3  { CurrentRatio }
+2024y 1m 20d  16:44:3  { AttackAction_HighRisk_HighReturn : 0.250000 }
+2024y 1m 20d  16:44:3  { AttackAction_HighRisk_LowReturn : 0.000000 }
+2024y 1m 20d  16:44:3  { AttackAction_LowRisk_HighReturn : 0.125000 }
+2024y 1m 20d  16:44:3  { AttackAction_LowRisk_LowReturn : 0.625000 }
+2024y 1m 20d  16:44:3  { EvaluationValue : 0.837500 }
+2024y 1m 20d  16:44:3  { [EvaluateGene] GeneIndex : 1 }

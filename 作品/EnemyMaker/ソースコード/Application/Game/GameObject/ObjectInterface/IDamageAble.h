@@ -1,9 +1,9 @@
-﻿#pragma once
-
-/**
+﻿/**
 * @file IDamageAble.h
-* @brief IDamageAbleクラスの定義 
+* @brief IDamageAbleクラスの定義
 */
+
+#pragma once
 
 /** ダメージのやり取りをするためのインターフェースクラス */
 class IDamageAble

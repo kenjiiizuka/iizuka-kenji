@@ -3,18 +3,14 @@
 * @brief BearMoveActionクラスの定義をしている
 */
 
-
 #pragma once
-
 
 //------------- INCLUDES -------------
 #include "../../../AIBase/GeneticAlgorithm/Gene/EnemyMoveAction.h"
 
-
 //------------- 前方宣言 -------------
 class EnemyBase;
 class CharacterMovementComponent;
-
 
 /**
 * @class BearMoveAction

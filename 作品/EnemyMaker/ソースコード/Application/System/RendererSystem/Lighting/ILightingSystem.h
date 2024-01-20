@@ -1,10 +1,21 @@
-﻿#pragma once
+﻿/**
+* @file ILightingSystem.h
+* @brief ILightingSystemクラスの定義
+*/
+
+#pragma once
+
+//-------- INCLUDE ---------
 #include <vector>
 #include <memory>
 
+//-------- 前方宣言 ---------
 class VisualEntity;
 
-/** ライティングシステムのインターフェースクラス */
+/**
+* @class ILightingSystem
+* @brief ライティングシステムのインターフェースクラス
+*/
 class ILightingSystem
 {
 public:
@@ -29,7 +40,7 @@ public:
 	/**
 　　 * @fn Lighting
 	 * @brief シャドウマップを作成渡されたオブジェクトの影を反映したシャドウマップを作成し、影描画オブジェクトにセットする
-	 * @param std::vector<std::weak_ptr<VisualEntity>> (_entitys)
+	 * @param std::vector<std::weak_ptr<VisualEntity>> (_entities)
 	 * @param std::weak_ptr<VisualEntity> (_lightingEntity)
 　　 * @return void
 　　*/

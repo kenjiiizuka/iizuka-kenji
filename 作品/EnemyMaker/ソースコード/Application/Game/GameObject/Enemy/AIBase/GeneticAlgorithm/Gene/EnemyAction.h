@@ -1,19 +1,24 @@
-﻿#pragma once
+﻿/**
+* @file  EnemyAction.h
+* @brief EnemyActionクラスの定義
+*/
+
+#pragma once
 
 //---------- INCLUDES -----------
 #include <memory>
 #include "../../EnemyAIData.h"
 #include "DecisionData.h"
-/**
-* @file  EnemyAction.h
-* @brief EnemyActionクラスの定義
-*/
 
-// 前方宣言
+
+//---------- 前方宣言 ---------
 class EnemyBase;
 class BlackBoard;
 
-/** エネミーの行動クラス */
+/**
+* @class EnemyAction
+* @brief 敵の行動、攻撃遺伝子の基底クラス
+*/
 class EnemyAction : public DecisionData
 {
 public:

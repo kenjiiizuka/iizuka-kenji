@@ -1,21 +1,24 @@
-﻿#pragma once
-#include "../../../../Component/SkeletalMeshComponent/AnimationStateContext.h"
-
-/**
+﻿/**
 * @file  PlayerAnimationRollState.h
 * @brief プレイヤーのアニメーションの回避アニメーションのステートクラスの定義
 */
 
+#pragma once
 
+//-------- INCLUDES ---------
+#include "../../../../Component/SkeletalMeshComponent/AnimationStateContext.h"
+
+/**
+* @class PlayerAnimationRollState
+* @brief プレイヤーの回避アニメーションステート
+*/
 class PlayerAnimationRollState : public AnimationStateContext
 {
-public:
-	PlayerAnimationRollState() = delete;
-
+public:	
 	/**
-	* 値の初期化
+	* コンストラクタ
 	*
-	* @param[in] AnimationInstance* (_animInstance) このステートコンテキストを持つアニメーションインスタンス
+	* @param AnimationInstance* (_animInstance) このステートコンテキストを持つアニメーションインスタンス
 	*/
 	PlayerAnimationRollState(AnimationInstance* _animInstance);
 

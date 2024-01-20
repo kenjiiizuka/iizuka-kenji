@@ -1,10 +1,12 @@
-﻿#pragma once
-#include <stdint.h>
-
-/**
+﻿/**
 * @file  CrossCharacterData.h
 * @brief キャラクター間で共通したデータを定義したファイル
 */
+
+#pragma once
+
+//-------- INCLUDES --------
+#include <stdint.h>
 
 /** キャラクター間で共通したデータを定義する名前空間 */
 namespace CrossCharacter

@@ -1,22 +1,26 @@
-﻿#pragma once
-#include "../GameObject.h"
-
-
-/**
+﻿/**
 * @file  Field.h
 * @brief Fieldクラスの定義
 */
 
+#pragma once
+
+//--------- INCLUDES ----------
+#include "../GameObject.h"
+
+
+//--------- 前方宣言 ---------
 class StaticMeshObject;
 
-class Field :
-    public GameObject
+/**
+* @class Field 
+* @brief フィールドオブジェクト
+*/
+class Field : public GameObject
 {
 public:
     /**
-    *
-    * 値の初期化
-    *
+    * コンストラクタ
     */
     Field();
 

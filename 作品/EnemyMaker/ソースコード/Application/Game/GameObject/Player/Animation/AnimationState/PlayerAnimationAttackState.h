@@ -1,25 +1,30 @@
-﻿#pragma once
-#include "../../../../Component/SkeletalMeshComponent/AnimationStateContext.h"
-#include "../../PlayerData.h"
-#include <array>
-
-/**
+﻿/**
 * @file  PlayerAnimationAttackState.h
 * @brief プレイヤーのアニメーションステート
 */
 
+#pragma once
+
+//--------- INCLUDES ---------
+#include "../../../../Component/SkeletalMeshComponent/AnimationStateContext.h"
+#include "../../PlayerData.h"
+#include <array>
+
+//--------- 前方宣言 ---------
 class AnimationInstance;
 class Player;
 
-
+/**
+* @class PlayerAnimationAttackState
+* @brief プレイヤーの攻撃アニメーションステート
+*/
 class PlayerAnimationAttackState : public AnimationStateContext
 {
 public:
-
 	/**
-	* 値の初期化
+	* コンストラクタ
 	*
-	* @param[in] AnimationInstace (_animInstance) このステートを持つアニメーションインスタンス
+	* @param[in] AnimationInstance (_animInstance) このステートを持つアニメーションインスタンス
 	*/
 	PlayerAnimationAttackState(AnimationInstance* _animInstance);
 

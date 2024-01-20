@@ -46,7 +46,7 @@ private:
 	/**
 	* @fn FindChunk
 	* @brief wavファイルからチャンクデータを見つける
-	* @detail マイクロソフト公式リファレンスを参照したwavファイルからチャンクを見つける関数
+	* @detail マイクロソフト公式リファレンスを参照した　wavファイルからチャンクを見つける関数
 	*         https://learn.microsoft.com/ja-jp/windows/win32/xaudio2/how-to--load-audio-data-files-in-xaudio2
 	* @param HANDLE (_hFile) 読み取りたいwavファイル
 	* @param DWORD  (_fourcc)
@@ -59,7 +59,7 @@ private:
 	/**
 	* @fn ReadChunkData
 	* @brief チャンクを読み取る関数
-	* @detail マイクロソフト公式リファレンスを参照したwavファイルからチャンクを読み取る関数
+	* @detail マイクロソフト公式リファレンスを参照した　wavファイルからチャンクを読み取る関数
 	*         https://learn.microsoft.com/ja-jp/windows/win32/xaudio2/how-to--load-audio-data-files-in-xaudio2
 	* @param HANDLE (_hFile)
 	* @param void* (_buffer)

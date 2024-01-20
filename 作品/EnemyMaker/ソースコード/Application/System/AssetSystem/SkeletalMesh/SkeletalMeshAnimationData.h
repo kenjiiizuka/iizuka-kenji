@@ -10,8 +10,6 @@
 #include <string>
 #include <SimpleMath.h>
 #include "../../../System/AssetSystem/IAsset.h"
-#include "../../../Game/Component/SkeletalMeshComponent/AnimationInformation.h"
-
 
 /**
 * @struct VectorKey
@@ -44,7 +42,6 @@ struct QuaternionKey
 	*/
 	QuaternionKey();
 };
-
 
 /** ボーンのキーフレームの情報を持つ */
 /**

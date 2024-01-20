@@ -1,25 +1,28 @@
-﻿#pragma once
-#include "../../../../Component/SkeletalMeshComponent/AnimationStateContext.h"
-
-
-/**
+﻿/**
 * @file  PlayerAnimationHitReactionState.h
 * @brief プレイヤーのヒットリアクション状態
 */
 
+#pragma once
+
+//--------- INCLUDES ---------
+#include "../../../../Component/SkeletalMeshComponent/AnimationStateContext.h"
+
+/**
+* @class PlayerAnimationHitReactionState
+* @brief プレイヤーのヒットリアクションアニメーションステート
+*/
 class PlayerAnimationHitReactionState : public AnimationStateContext
 {
 public:
 	PlayerAnimationHitReactionState() = delete;
 
 	/**
-	* 値の初期化
+	* コンストラクタ
 	*
-	* @param[in] AnimationInstance* (_animInstance) このステートコンテキストを持つアニメーションインスタンス
+	* @param AnimationInstance* (_animInstance) このステートコンテキストを持つアニメーションインスタンス
 	*/
 	PlayerAnimationHitReactionState(AnimationInstance* _animInstance);
-
-private:
 
 public:
 	/**

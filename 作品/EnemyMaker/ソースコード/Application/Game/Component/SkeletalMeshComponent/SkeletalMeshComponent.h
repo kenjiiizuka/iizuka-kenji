@@ -15,7 +15,6 @@
 //--------- 前方宣言 -----------
 class AnimationPlayer;
 
-
 template<class AnimInstance>
 concept DerivedAnimationInstance = std::derived_from<AnimInstance, AnimationInstance>;
 
@@ -53,15 +52,35 @@ private:
 	Transform mTransform;
 
 public:
+	/**
+	* @fn Load
+	* @brief 読み込み処理
+	* @param const std::string (_filePath)
+	* @param bool (_flipUV)
+	* @return void
+	*/
 	void Load(const std::string _filePath, bool _flipUV = true);
 
-
+	/**
+	* @fn Init
+	* @brief 初期化処理
+	* @return void
+	*/
 	void Init() override;
 
-
+	/**
+	* @fn Update
+	* @brief 更新処理
+	* @param const double (_deltaTime)
+	* @return void
+	*/
 	void Update(const double _deltaTime) override;
 
-
+	/**
+	* @fn Draw
+	* @brief 描画処理
+	* @return void
+	*/
 	void Draw() override;
 
 public:

@@ -16,7 +16,7 @@ class DirectX11Device;
 * @class DirectX11BlendState
 * @brief ID3D11BlendStateをラップしたクラス
 */
-class DirectX11BlendState
+class DirectX11BlendState final
 {
 public:
 	/**
@@ -37,6 +37,13 @@ private:
 	ID3D11BlendState* mBlendState;
 
 public:
+	/**
+	* @fn Release
+	* @brief 解放処理
+	* @return void
+	*/
+	void Release();
+
 	/**
 	* @fn SetupBlendDesc
 	* @brief ブレンドデスクの設定

@@ -130,6 +130,3 @@ public:
 	void SetDeathCamera(std::shared_ptr<CinematicCamera> _camera) noexcept;
 
 };
-
-//------- INLINES --------
-

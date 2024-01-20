@@ -19,7 +19,7 @@ class CapsuleCollisionComponent : public PrimitiveComponent
 {
 public:
 	/**
-	* 値の初期化
+	* コンストラクタ
 	*/
 	CapsuleCollisionComponent();
 

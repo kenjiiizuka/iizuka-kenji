@@ -1,9 +1,9 @@
-#pragma once
-
 /**
 * @file IAssetProvider.h
 * @brief IAssetProviderクラスの定義
 */
+
+#pragma once
 
 //---------- INCLUDES ---------
 #include <string>
@@ -14,7 +14,6 @@
 
 //----------- 前方宣言 --------
 class AssetHandle;
-
 
 /**
 * @class IAssetProvider

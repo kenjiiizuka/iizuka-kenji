@@ -51,7 +51,6 @@ public:
 	*/
 	virtual std::shared_ptr<IAsset> Load(const std::string& _filePath) const override;	
 
-
 private:
 	/**
 	* @fn LoadVertexData

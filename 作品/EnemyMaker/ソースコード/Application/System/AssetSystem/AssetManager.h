@@ -1,8 +1,9 @@
-#pragma once
 /**
 * @file AssetManager.h
 * @brief AssetManagerクラスの定義
 */
+
+#pragma once
 
 //---------- INCLUDES -----------
 #include <memory>
@@ -17,7 +18,6 @@ class AssetHandle;
 //--------- コンセプト ----------
 template<class Provider>
 concept DerivedProvider = std::derived_from<Provider, IAssetProvider>;
-
 
 /**
 * @class AssetManager

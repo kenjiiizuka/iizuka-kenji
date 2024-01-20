@@ -1,9 +1,20 @@
-﻿#pragma once
+﻿/**
+* @file BearRoarAttack.h
+* @brief BearRoarAttackクラスの定義
+*/
+
+#pragma once
+
+//---------- INCLUDES ---------
 #include "BearAttackAction.h"
 
+//-------- 前方宣言 ---------
 class AnimationInstance;
 
-/** 熊の敵の威嚇攻撃(衝撃は出したい パーティクルの機能を作成予定) */
+/**
+* @class BearRoarAttack
+* @brief 熊の敵の威嚇攻撃
+*/
 class BearRoarAttack : public BearAttackAction
 {
 public:
@@ -42,13 +53,6 @@ public:
 	 * @return bool true : 実行可能 false 実行不可
 	*/
 	virtual bool IsExecuteAble();
-
-	/**
-	 * @fn IsValidAction
-	 * @brief この行動が有効かどうかを返す
-	 * @return bool true : 有効 false 無効
-	*/
-	//virtual bool IsValidAction();
 
 	/**
 	 * @fn DuplicateFromSelfType

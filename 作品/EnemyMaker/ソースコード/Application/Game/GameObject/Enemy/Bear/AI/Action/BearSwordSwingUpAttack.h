@@ -1,9 +1,17 @@
-﻿#pragma once
+﻿/**
+* @file BearSwordSwingUpAttack.h
+* @brief BearSwordSwingUpAttackクラスの定義
+*/
+
+#pragma once
+
+//---------- INCLUDES -----------
 #include "BearAttackAction.h"
 
-
-
-/** 熊の敵の剣振り上げ攻撃 */
+/**
+* @class BearSwordSwingUpAttack
+* @brief 熊の敵の振り上げ攻撃
+*/
 class BearSwordSwingUpAttack : public BearAttackAction
 {
 public:
@@ -42,13 +50,6 @@ public:
 	 * @return bool true : 実行可能 false 実行不可
 	*/
 	virtual bool IsExecuteAble();
-
-	/**
-	 * @fn IsValidAction
-	 * @brief この行動が有効かどうかを返す
-	 * @return bool true : 有効 false 無効
-	*/
-	//virtual bool IsValidAction();
 
 	/**
 	 * @fn DuplicateFromSelfType

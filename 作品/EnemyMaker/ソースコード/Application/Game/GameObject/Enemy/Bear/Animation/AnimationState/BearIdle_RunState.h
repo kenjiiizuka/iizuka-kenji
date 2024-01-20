@@ -13,8 +13,9 @@ class CharacterMovementComponent;
 class BlendAnimationClip;
 
 /** 
-* 熊の敵のIdleとRunのアニメーションステート 
-* 熊の敵の移動コンポーネントの速度の値を参照し現在の速度にあったアニメーションを再生する
+* @class BearIdle_RunState
+* @brief 熊の敵のIdleとRunのアニメーションステート 
+*		 熊の敵の移動コンポーネントの速度の値を参照し現在の速度にあったアニメーションを再生する
 */
 class BearIdle_RunState : public AnimationStateContext
 {

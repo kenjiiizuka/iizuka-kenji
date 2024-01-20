@@ -1,7 +1,12 @@
 #pragma once
+
+//--------- INCLUDES ----------
 #include <string>
 
-//std::string wide_to_multi_winapi(std::wstring const& src);
-//std::wstring utf8_to_wide_winapi(std::string const& src);
-//std::string utf8_to_multi_winapi(std::string const& src);
+/**
+* @fn SJIS_To_Wide 
+* @brief SJIS‚©‚çWide•¶Žš‚É•ÏŠ·‚·‚é
+* @param std::string const& (src)
+* @return std::wstring
+*/
 std::wstring SJIS_To_Wide(std::string const& src);

@@ -8,7 +8,7 @@
 using namespace DirectX::SimpleMath;
 
 CollisionSystem::CollisionSystem()
-	: mbSytemActive(false)
+	: mbSystemActive(false)
 {
 	// 処理なし
 }
@@ -27,7 +27,7 @@ void CollisionSystem::Init()
 void CollisionSystem::Update()
 {
 	// コリジョンシステムが無効なら早期リターン
-	if (!mbSytemActive)
+	if (!mbSystemActive)
 	{
 		return;
 	}

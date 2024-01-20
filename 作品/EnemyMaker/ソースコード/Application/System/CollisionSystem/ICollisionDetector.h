@@ -1,9 +1,9 @@
-﻿#pragma once
-
-/**
+﻿/**
 * @file  ICollisionDetector.h
 * @brief ICollisionDetectorクラスの定義
 */
+
+#pragma once
 
 //------ 前方宣言 -------
 class PrimitiveComponent;

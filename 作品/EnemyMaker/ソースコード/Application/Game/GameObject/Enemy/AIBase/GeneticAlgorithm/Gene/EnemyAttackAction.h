@@ -1,4 +1,11 @@
-﻿#pragma once
+﻿/**
+* @file EnemyAttackAction.h
+* @brief EnemyAttackActionクラスの定義
+*/
+
+#pragma once
+
+//----------- INCLUDES ------------
 #include <numeric>
 #include "EnemyAction.h"
 #include "../GeneticInfomation.h"
@@ -6,7 +13,10 @@
 //---------- 前方宣言 ----------
 class EnemyAttackHitSensor;
 
-/** エネミーのダメージが発生する行動 */
+/**
+* @file EnemyAttackAction
+* @brief 敵の攻撃遺伝子の基底クラス
+*/
 class EnemyAttackAction : public EnemyAction
 {
 public:
@@ -196,7 +206,7 @@ public:
 	/**
 	* @fn GetExecutionTime
 	* @brief 実行時間を保持する配列を返す
-	* @return std::vectot<float>
+	* @return std::vector<float>
 	*/
 	inline std::vector<float> GetExecutionTime() const noexcept;
 

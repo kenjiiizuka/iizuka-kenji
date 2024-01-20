@@ -1,4 +1,11 @@
-﻿#pragma once
+﻿/**
+* @file IGeneticAlgorithm.h
+* @brief 遺伝学習クラスのインターフェースクラスの定義
+*/
+
+#pragma once
+
+//--------- INCLUDES ---------
 #include<memory>
 #include "GeneticInfomation.h"
 

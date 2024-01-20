@@ -1,11 +1,18 @@
-﻿#pragma once
-#include "../../../../Component/SkeletalMeshComponent/AnimationNotifyState.h"
-
-/**
+﻿/**
 * @file  PlayerComboAbleNotifyState.h
 * @brief このステートがアタッチされているフレーム間は入力受付可能にするクラス
 */
 
+#pragma once
+
+//-------- INCLUDES ----------
+#include "../../../../Component/SkeletalMeshComponent/AnimationNotifyState.h"
+
+
+/**
+* @class PlayerInputAbleNotifyState
+* @brief プレイヤー用のアニメーション設定されたフレームの間trueを返すクラス
+*/
 class PlayerInputAbleNotifyState : public AnimationNotifyState
 {
 public:

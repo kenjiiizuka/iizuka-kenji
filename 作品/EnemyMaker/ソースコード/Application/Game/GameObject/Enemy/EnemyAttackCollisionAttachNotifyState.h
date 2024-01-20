@@ -1,13 +1,17 @@
-﻿#pragma once
-#include <string>
-#include "../../Component/SkeletalMeshComponent/AnimationNotifyState.h"
-#include "../CrossCharacterData.h"
-
-/**
+﻿/**
 * @file  AnimationNotifyState.h
 * @brief 指定されたボーンに指定されたフレーム間にカプセルコリジョンをアタッチするクラスの定義
 */
 
+#pragma once
+
+//---------- INCLUDES ----------
+#include <string>
+#include "../../Component/SkeletalMeshComponent/AnimationNotifyState.h"
+#include "../CrossCharacterData.h"
+
+
+//---------- 前方宣言 ---------
 class EnemyAttackCapsuleCollisionComponent;
 
 /** 敵の攻撃コリジョンを指定されたフレーム間アタッチする通知ステート */
@@ -15,11 +19,11 @@ class EnemyAttackCollisionAttachNotifyState : public AnimationNotifyState
 {
 public:
 	/**
-	 * 値の初期化
+	 * コンストラクタ
 	 *
-	 * @param[in] SkeletalMeshAnimation* (_attachAnimation) アタッチされるアニメーション
-	 * @param[in] uint16_t (_attachStartFrame) アタッチするフレームの開始
-	 * @param[in] uint16_t (_attachEndFrame) アタッチするフレームの終了
+	 * @param SkeletalMeshAnimation* (_attachAnimation) アタッチされるアニメーション
+	 * @param uint16_t (_attachStartFrame) アタッチするフレームの開始
+	 * @param uint16_t (_attachEndFrame) アタッチするフレームの終了
 	*/
 	EnemyAttackCollisionAttachNotifyState(SkeletalMeshAnimationClip* _attachAnimation, uint16_t _attachStartFrame, uint16_t _attachEndFrame);
 
@@ -82,7 +86,7 @@ public:
 	inline void SetCapsuleHeight(const float _height);
 
 	/**
-	 * @fn　SetCasuleRadius
+	 * @fn　SetCapsuleRadius
 	 * @brief カプセルの半径のセッター
 	 * @param const float (_radius)
 	 * @return void

@@ -1,8 +1,18 @@
-﻿#pragma once
+﻿/**
+* @file LightBase.h
+* @brief LightBaseクラスの定義
+*/
+
+#pragma once
+
+//--------- INCLUDES -----------
 #include "../GameObject.h"
 #include <SimpleMath.h>
 
-/** ライト */
+/**
+* @class LightBase
+* @brief ライトのベースクラス
+*/
 class LightBase : public GameObject
 {
 public:
@@ -32,9 +42,7 @@ public:
 #endif //  _DEBUG
 
 private:
-
 	void CalucDirection();
-
 
 public:
 	/**

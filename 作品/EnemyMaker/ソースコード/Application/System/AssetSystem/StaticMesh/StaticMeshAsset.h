@@ -3,9 +3,7 @@
 * @brief StaticMeshAssetƒNƒ‰ƒX‚Ì’è‹`
 */
 
-
 #pragma once
-
 
 //----------- INCLUDES ----------
 #include <SimpleMath.h>

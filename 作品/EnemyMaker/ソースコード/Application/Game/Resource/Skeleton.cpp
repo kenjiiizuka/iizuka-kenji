@@ -34,10 +34,6 @@ void Skeleton::Initialize(const std::weak_ptr<BoneAsset> _boneAsset)
 
 void Skeleton::Update()
 {
-	if (mBoneMap.contains("SwordSocket"))
-	{
-		std::static_pointer_cast<Socket>(mBoneMap["SwordSocket"].lock())->Update();
-	}
 }
 
 void Skeleton::Draw()

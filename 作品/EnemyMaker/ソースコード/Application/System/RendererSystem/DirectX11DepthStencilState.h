@@ -16,7 +16,7 @@ class DirectX11Device;
 * @class DirectX11DepthStencilState
 * @brief DepthStencilStateをラップしたクラス
 */
-class DirectX11DepthStencilState
+class DirectX11DepthStencilState final
 {
 public:
 	/**
@@ -37,6 +37,13 @@ private:
 	D3D11_DEPTH_STENCIL_DESC mDepthStencilDesc;
 
 public:
+	/**
+	* @fn Release
+	* @brief デプスステンシルステートの解放処理
+	* @return void
+	*/
+	void Release();
+
 	/**
 	* @fn SetupDepthStencilStateDesc
 	* @brief デプスステンシルステートデスクの設定関数
@@ -62,7 +69,6 @@ public:
 	* @return ID3D11DepthStencilState*
 	*/
 	inline ID3D11DepthStencilState* GetDepthStencilState() const;
-
 };
 
 //-------------- INLINES -----------

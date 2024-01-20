@@ -1,8 +1,15 @@
-﻿#pragma once
+﻿/**
+* @file BearAnimationInstance.h
+* @brief BearAnimationInstanceクラスの定義
+*/
+
+#pragma once
+
+//------------- INCLUDES ----------
 #include "../../EnemyData.h"
 #include "../../../../Component/SkeletalMeshComponent/AnimationInstance.h"
 
-//------------- INCLUDES ----------
+//---------- 前方宣言 -----------
 class BearEnemy;
 
 /** 熊の敵のアニメーションステート */

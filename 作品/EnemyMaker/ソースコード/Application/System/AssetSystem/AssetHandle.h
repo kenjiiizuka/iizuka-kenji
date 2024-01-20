@@ -1,9 +1,9 @@
-#pragma once
-
 /**
 * @file AssetHandle.h
 * @brief AssetHandleƒNƒ‰ƒX‚Ì’è‹`
 */
+
+#pragma once
 
 //-------- INCLUDES ---------
 #include <memory>

@@ -1,10 +1,14 @@
+/**
+* @file AudioListener.h
+* @brief AudioListenerƒNƒ‰ƒX‚Ì’è‹`
+*/
+
 #pragma once
 
+//--------- INCLUDES -----------
 #include <Windows.h>
 #include <x3daudio.h>
 #include "../GameObject.h"
-
-
 
 /**
 * @class AudioListener

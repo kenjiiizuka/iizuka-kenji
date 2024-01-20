@@ -1,4 +1,11 @@
-﻿#pragma once
+﻿/**
+* @file  TransformComponent.h
+* @brief トランスフォームコンポーネントクラス
+*/
+
+#pragma once
+
+//---------- INCLUDES -----------
 #include "../Component.h"
 #include <SimpleMath.h>
 #include <DirectXMath.h>
@@ -6,10 +13,9 @@
 #include "Transform.h"
 
 /**
-* @file  TransformComponent.h
-* @brief トランスフォームコンポーネントクラス
+* @class TransformComponent
+* @brief オーナーのトランスフォームを管理する
 */
-
 class TransformComponent : public Component
 {
 public:
@@ -29,12 +35,10 @@ private:
 	DirectX::SimpleMath::Matrix mRotationMatrix;
 
 	/** 平行移動行列 */
-	DirectX::SimpleMath::Matrix mTraslationMatrix;
+	DirectX::SimpleMath::Matrix mTranslationMatrix;
 
 	/** スケール行列 */
 	DirectX::SimpleMath::Matrix mScaleMatrix;
-
-
 
 	/** 親の位置の影響を受けるか */
 	bool bPositionParentInfluence;
@@ -92,44 +96,88 @@ public:
 　　*/
 	inline DirectX::SimpleMath::Matrix GetScaleMatrix();
 
+	/**
+	* @fn GetPosition
+	* @brief 座標を返す
+	* @return DirectX::SimpleMath::Vector3
+	*/
+	inline DirectX::SimpleMath::Vector3 GetPosition() const;
 
-	DirectX::SimpleMath::Vector3 GetPosition() { return mTransform.mPosition; }
-	DirectX::SimpleMath::Vector3 GetRotation() { return mTransform.mRotation; }
-	DirectX::SimpleMath::Vector3 GetScale() { return mTransform.mScale; }
+	/**
+	* @fn GetRotation
+	* @brief 回転を返す
+	* @return DirectX::SimpleMath::Vector3
+	*/
+	inline DirectX::SimpleMath::Vector3 GetRotation() const;
+
+	/**
+	* @fn GetScale
+	* @brief スケールを返す
+	* @return DirectX::SimpleMath::Vector3
+	*/
+	inline DirectX::SimpleMath::Vector3 GetScale() const ;
 	
-	inline Transform GetTransform();
+	/**
+	* @fn GetTransform
+	* @brief トランスフォームを返す
+	* @return void
+	*/
+	inline Transform GetTransform() const;
 
-	void SetPosition(DirectX::SimpleMath::Vector3 _pos) 
-	{
-		mTransform.mPosition = _pos;
-	}
+	/**
+	* @fn SetPosition
+	* @brief 座標のセッター
+	* @param  const DirectX::SimpleMath::Vector3 (_pos)
+	* @return void
+	*/
+	inline void SetPosition(const DirectX::SimpleMath::Vector3 _pos);
+	
+	/**
+	* @fn SetScale
+	* @brief 座標のスケール
+	* @param  const DirectX::SimpleMath::Vector3 (_scale)
+	* @return void
+	*/
+	inline void SetScale(const DirectX::SimpleMath::Vector3 _scale);
 
-	void SetScale(DirectX::SimpleMath::Vector3 _scale) 
-	{
-		mTransform.mScale = _scale;
-	}
+	/**
+	* @fn SetScale
+	* @brief 座標のスケール
+	* @param  const float (_scale)
+	* @return void
+	*/
+	inline void SetScale(const float _scale);
+		
+	/**
+	* @fn SetRotation
+	* @brief 回転のセッター
+	* @param const DirectX::SimpleMath::Vector3 (_rotation)
+	* @return void
+	*/
+	inline void SetRotation(const DirectX::SimpleMath::Vector3 _rotation);
 
-	void SetScale(float _scale)
-	{
-		mTransform.mScale = { _scale,_scale,_scale };
-	}
+	/**
+	* @fn AddRotation
+	* @brief 回転の追加
+	* @param const DirectX::SimpleMath::Vector3 (_rotation)
+	* @return void
+	*/
+	inline void AddRotation(const DirectX::SimpleMath::Vector3 _rotation);
 
-	void SetRotation(DirectX::SimpleMath::Vector3 _rotation) 
-	{
-		mTransform.mRotation = _rotation;
-	}
-
-	void AddRotation(DirectX::SimpleMath::Vector3 _rotation) 
-	{
-		mTransform.mRotation += _rotation;
-	}
-
-	void AddPosition(DirectX::SimpleMath::Vector3 _vector) 
-	{
-		mTransform.mPosition += _vector;
-	}
-
-
+	/**
+	* @fn AddPosition
+	* @brief 座標加算
+	* @param const DirectX::SimpleMath::Vector3 (_vector)
+	* @return void
+	*/
+	inline void AddPosition(const DirectX::SimpleMath::Vector3 _vector);
+	
+	/**
+	* @fn CalucWorldMatrix
+	* @brief ワールド行列の計算処理
+	* @param DirectX::SimpleMath::Matrix (_parent) 親行列
+	* @return DirectX::SimpleMath::Matrix
+	*/
 	DirectX::SimpleMath::Matrix CalucWorldMatrix(DirectX::SimpleMath::Matrix _parent);
 	
 	/**
@@ -155,24 +203,25 @@ public:
 　　*/
 	inline void SetTransform(Transform _transform);
 
+	/**
+	* @fn GetTransposedWorldMatrix
+	* @brief 転置したワールド行列を返す
+	* @return DirectX::SimpleMath::Matrix
+	*/
+	inline DirectX::SimpleMath::Matrix GetTransposedWorldMatrix();
+	
+	/**
+	* @fn GetRotationMatrix
+	* @brief 回転行列を返す
+	* @return DirectX::SimpleMath::Matrix
+	*/
+	DirectX::SimpleMath::Matrix GetRotationMatrix();
 
-	DirectX::SimpleMath::Matrix GetTransposedWorldMatrix() 
-	{
-		return mWorldMatrix.Transpose();
-	}
-
-	/*--------------- 
-	  回転行列の取得
-	---------------*/
-	DirectX::SimpleMath::Matrix GetRotationMatrix() 
-	{	
-		mRotationMatrix = DirectX::SimpleMath::Matrix::CreateFromYawPitchRoll(mTransform.mRotation.y, mTransform.mRotation.x, mTransform.mRotation.z);
-		return mRotationMatrix;
-	}
-
-	/*---------------------
-      前向きベクトルの取得
-    ---------------------*/
+	/**
+	* @fn GetForwardVector
+	* @brief 前向きベクトルを返す
+	* @return DirectX::SimpleMath::Vector3
+	*/
 	DirectX::SimpleMath::Vector3 GetForwardVector()
 	{
 		GetRotationMatrix();
@@ -184,9 +233,11 @@ public:
 		return forward;
 	}
 
-	/*--------------------
-	 右向きベクトルの取得
-	--------------------*/
+	/**
+	* @fn GetRightVector
+	* @brief 右向きベクトルを返す
+	* @return DirectX::SimpleMath::Vector3
+	*/
 	DirectX::SimpleMath::Vector3 GetRightVector()
 	{
 		DirectX::SimpleMath::Matrix rot = GetRotationMatrix();
@@ -197,9 +248,11 @@ public:
 		return right;
 	}
 
-	/*-------------------
-	 上向きベクトルの取得
-	--------------------*/
+	/**
+	* @fn GetUpVector
+	* @brief 上向きベクトル
+	* @return DirectX::SimpleMath::Vector3
+	*/
 	DirectX::SimpleMath::Vector3 GetUpVector()
 	{
 		DirectX::SimpleMath::Matrix rot = GetRotationMatrix();
@@ -213,14 +266,60 @@ public:
 
 //------------------- INLINES -------------------------
 
-inline Transform TransformComponent::GetTransform()
+inline DirectX::SimpleMath::Vector3 TransformComponent::GetScale() const
+{
+	return mTransform.mScale;
+}
+
+inline Transform TransformComponent::GetTransform() const
 {
 	return mTransform;
+}
+
+inline void TransformComponent::SetPosition(const DirectX::SimpleMath::Vector3 _pos)
+{	
+	mTransform.mPosition = _pos;
+}
+
+inline void TransformComponent::SetScale(const DirectX::SimpleMath::Vector3 _scale)
+{
+	mTransform.mScale = _scale;
+}
+
+inline void TransformComponent::SetScale(const float _scale)
+{
+	mTransform.mScale = { _scale,_scale,_scale };
+}
+
+inline void TransformComponent::SetRotation(const DirectX::SimpleMath::Vector3 _rotation)
+{
+	mTransform.mRotation = _rotation;
+}
+
+inline void TransformComponent::AddRotation(const DirectX::SimpleMath::Vector3 _rotation)
+{
+	mTransform.mRotation += _rotation;
+}
+
+inline void TransformComponent::AddPosition(const DirectX::SimpleMath::Vector3 _vector)
+{
+	mTransform.mPosition += _vector;
 }
 
 inline void TransformComponent::SetTransform(Transform _transform)
 {
 	mTransform = _transform;
+}
+
+inline DirectX::SimpleMath::Matrix TransformComponent::GetTransposedWorldMatrix()
+{
+	return mWorldMatrix.Transpose();
+}
+
+inline DirectX::SimpleMath::Matrix TransformComponent::GetRotationMatrix()
+{
+	mRotationMatrix = DirectX::SimpleMath::Matrix::CreateFromYawPitchRoll(mTransform.mRotation.y, mTransform.mRotation.x, mTransform.mRotation.z);
+	return mRotationMatrix;
 }
 
 inline void TransformComponent::SetPositionParentInfluence(bool _influence)
@@ -243,7 +342,6 @@ inline void TransformComponent::SetParentTransformInfluence(bool _influence)
 	bScaleParentInfluence = _influence;
 	bRotationParentInfluence = _influence;
 	bPositionParentInfluence = _influence;
-
 }
 
 inline DirectX::SimpleMath::Matrix TransformComponent::GetTranslationMatrix()
@@ -254,6 +352,16 @@ inline DirectX::SimpleMath::Matrix TransformComponent::GetTranslationMatrix()
 inline DirectX::SimpleMath::Matrix TransformComponent::GetScaleMatrix()
 {
 	return DirectX::SimpleMath::Matrix::CreateScale(mTransform.mScale.x, mTransform.mScale.y, mTransform.mScale.z);
+}
+
+inline DirectX::SimpleMath::Vector3 TransformComponent::GetPosition() const
+{
+	return mTransform.mPosition;
+}
+
+inline DirectX::SimpleMath::Vector3 TransformComponent::GetRotation() const
+{
+	return mTransform.mRotation;
 }
 
 inline DirectX::SimpleMath::Matrix TransformComponent::GetWorldMatrix()

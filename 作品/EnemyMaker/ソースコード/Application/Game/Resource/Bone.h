@@ -3,16 +3,14 @@
 * @brief BoneƒNƒ‰ƒX‚Ì’è‹`
 */
 
-
 #pragma once
+
 //------------ INCLUDES -----------
 #include <memory>
 #include <SimpleMath.h>
 #include "../Component/TransformComponent/Transform.h"
 #include "../../System/AssetSystem/SkeletalMesh/BoneAsset.h"
 #include "SkeletalMesh.h"
-
-
 
 /**
 * @class Bone

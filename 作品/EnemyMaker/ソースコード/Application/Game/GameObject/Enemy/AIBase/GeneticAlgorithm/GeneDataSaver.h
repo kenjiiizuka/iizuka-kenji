@@ -3,15 +3,12 @@
 * @brief GeneDataSeverクラスの定義
 */
 
-
 #pragma once
-
 
 //--------- INCLUDES ----------
 #include <vector>
 #include <string>
 #include "GeneticInfomation.h"
-
 
 /**
 * @class GeneDataSever
@@ -77,8 +74,6 @@ class GeneDataSaver final
 		*/
 		SituationGeneArchive();
 	};
-
-	
 
 	// 遺伝子のアーカイブ型
 	using GeneArchive = std::vector<SituationGeneArchive>;

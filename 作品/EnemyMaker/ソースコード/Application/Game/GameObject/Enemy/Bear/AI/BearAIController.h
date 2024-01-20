@@ -1,11 +1,25 @@
-﻿#pragma once
+﻿/**
+* @file BearAIController.h
+* @brief BearAIControllerクラスの定義
+*/
+
+#pragma once
+
+//--------- INCLUDES ---------
 #include "../../AIBase/EnemyAIController.h"
 
-/** 熊の敵のAIコントローラー */
+/**
+* @class BearAIController
+* @brief 熊の敵の用のAIController
+*/
 class BearAIController : public EnemyAIController 
 {
 public:
-	
+	/**
+	* コンストラクタ
+	* 
+	* @param EnemyBase* (_controlledEnemy)
+	*/
 	BearAIController(EnemyBase* _controlledEnemy);
 
 private:

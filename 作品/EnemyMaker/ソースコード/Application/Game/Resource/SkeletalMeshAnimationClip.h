@@ -25,7 +25,6 @@ concept DerivedAnimationNotify = std::is_base_of<Base, Derived>::value;
 template<typename Derived, typename Base>
 concept DerivedAnimationNotifyState = std::is_base_of<Base, Derived>::value;
 
-
 /**
 * @class SkeletalMeshAnimationClip
 * @brief アニメーションを制御、再生するために必要なデータへのアクセスをしやすくする為に

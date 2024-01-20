@@ -3,7 +3,6 @@
 * @brief 各形状の情報を持つクラスの基底クラス
 */
 
-
 #pragma once
 
 //---------- INCLUDES ------------
@@ -12,7 +11,6 @@
 #include "../Component.h"
 #include "../TransformComponent/Transform.h"
 #include "../../../System/CollisionSystem/Collision.h"
-
 
 //------------前方宣言 --------------
 class TransformComponent;

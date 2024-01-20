@@ -25,8 +25,8 @@ class EnemyAIController
 {
 public:
 	/**
-	* 値の初期化
-	* @param[in] EnemyBase* (_controlledEnemy)
+	* コンストラクタ
+	* @param EnemyBase* (_controlledEnemy)
 	*/
 	EnemyAIController(EnemyBase* _controlledEnemy);
 

@@ -1,16 +1,26 @@
-﻿#pragma once
+﻿/**
+* @file VertexShader.h
+* @brief VertexShaderクラスの定義
+*/
+
+#pragma once
+
+//----------- INCLUDES -------------
 #include "../Shader.h"
 
 /** 頂点データ */
 struct Vertex
 {
-    DirectX::SimpleMath::Vector3 mPosition;
-    DirectX::SimpleMath::Vector3 mNormal;
-    DirectX::SimpleMath::Vector2 mTexCoord;
-    DirectX::SimpleMath::Vector4 mDiffuse;
+    DirectX::SimpleMath::Vector3 mPosition; /**< 頂点座標 */
+    DirectX::SimpleMath::Vector3 mNormal;   /**< 法線 */
+    DirectX::SimpleMath::Vector2 mTexCoord; /**< UV座標 */
+    DirectX::SimpleMath::Vector4 mDiffuse;  /**< 頂点カラー */
 };
 
-/** 頂点シェーダー */
+/**
+* @class VertexShader
+* @brief 頂点シェーダークラス
+*/
 class VertexShader : public Shader
 {
 public:
@@ -55,7 +65,7 @@ protected:
     HRESULT MakeBuffer(void* _pData, UINT _fileSize) override;
 
     /**
-　　 * @fn CheackDuplication
+　　 * @fn CheckDuplication
      * @brief 二重読み込みチェック
      * @param std::string (_shaderName)
 　　 * @return bool

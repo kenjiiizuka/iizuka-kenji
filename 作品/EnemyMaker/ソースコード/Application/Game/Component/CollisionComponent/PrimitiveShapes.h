@@ -1,6 +1,17 @@
-﻿#pragma once
+﻿/**
+* @file PrimitiveShape.h
+* @brief 形状等の構造体などを定義している
+*/
+
+#pragma once
+
+//--------- INCLUDES ----------
 #include <SimpleMath.h>
 
+/**
+* @namespace PrimitiveShape
+* @brief 形状の情報をもつ構造体などを定義している
+*/
 namespace PrimitiveShape
 {
 	/**
@@ -18,7 +29,7 @@ namespace PrimitiveShape
 		/**
 		 * @fn GetVector
 		 * @brief 始点から終点へのベクトルを返す
-		 * @return DirectX::SimpleMaht::Vector3 始点から終点へのベクトル
+		 * @return DirectX::SimpleMath::Vector3 始点から終点へのベクトル
 		*/
 		inline DirectX::SimpleMath::Vector3 GetVector() const noexcept;
 	};

@@ -5,7 +5,6 @@
 
 #pragma once
 
-
 //---------- INCLUDES --------
 #include "../GameObject.h"
 

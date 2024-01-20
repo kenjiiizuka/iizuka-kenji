@@ -169,10 +169,15 @@ void Renderer::Uninitialize()
 {
 	mSamplerState->Release();
 	mDeviceContext->GetContext()->ClearState();
-	//mRenderTargetView->Release();
 	mSwapChain->Release();
 	mDeviceContext->GetContext()->Release();
 	mDevice->GetDevice()->Release();
+	mDepthStencilDisable->Release();
+	mDepthStencilEnable->Release();
+	mBlendState->Release();
+	mRasterizerFrame->Release();
+	mRasterizerSolidBack->Release();
+	mRasterizerSolidFront->Release();
 }
 
 void Renderer::BeginRenderer()

@@ -1,14 +1,16 @@
-﻿#pragma once
+﻿/**
+* @file  CollisionManager.h
+* @brief 当たり判定の処理をするクラス
+*/
+
+#pragma once
+
+//----------- INCLUDES ------------
 #include <vector>
 #include <memory>
 #include <SimpleMath.h>
 #include "Collision.h"
 #include "../Singleton.h"
-
-/**
-* @file  CollisionManager.h
-* @brief 当たり判定の処理をするクラス
-*/
 
 //------------- 前方宣言 -------------
 class PrimitiveComponent;
@@ -50,7 +52,7 @@ private:
 	 * 代入演算子のオーバーロード
 	 * 代入禁止のため = delete 指定
 	 * 
-	 * @paramn const CollisionSystem& (_from)
+	 * @param const CollisionSystem& (_from)
 	*/
 	void operator = (const CollisionSystem& _from) = delete;
 
@@ -59,7 +61,7 @@ private:
 	std::vector<PrimitiveComponent*> mRegisterdCollisions;
 
 	/** 当たり判定が有効なのか */
-	bool mbSytemActive;
+	bool mbSystemActive;
 
 	/** コリジョン検出クラス */
 	std::unique_ptr<ICollisionDetector> mCollisionDetector;
@@ -125,9 +127,9 @@ inline void CollisionSystem::UnRegistrationCollision(PrimitiveComponent* _collis
 
 inline void CollisionSystem::SwitchActive(bool _active)
 {
-	mbSytemActive = _active;
+	mbSystemActive = _active;
 	// オフになるならコリジョンを登録しているリストをクリア
-	if (!mbSytemActive)
+	if (!mbSystemActive)
 	{
 		mRegisterdCollisions.clear();
 	}

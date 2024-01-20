@@ -75,8 +75,6 @@ void BearAnimationInstance::MainStateMachine()
 		if (mEnemy->GetStatus().mCurrentHp <= 0)
 		{
 			mState = BearEnemyAnimationState::Death;
-			AnimationPlaySetting setting = 0;
-			setting |= AnimationInf::AnimationPlayType::PlayType_LastFrameFreesze;
 			PlayAnimationClip("Death");
 		}
 	
@@ -98,8 +96,6 @@ void BearAnimationInstance::MainStateMachine()
 		if (mEnemy->GetStatus().mCurrentHp <= 0)
 		{
 			mState = BearEnemyAnimationState::Death;
-			AnimationPlaySetting setting = 0;
-			setting |= AnimationInf::AnimationPlayType::PlayType_LastFrameFreesze;
 			PlayAnimationClip("Death");
 		}
 
@@ -129,8 +125,6 @@ void BearAnimationInstance::MainStateMachine()
 		if (mEnemy->GetStatus().mCurrentHp <= 0)
 		{
 			mState = BearEnemyAnimationState::Death;
-			AnimationPlaySetting setting = 0;
-			setting |= AnimationInf::AnimationPlayType::PlayType_LastFrameFreesze;
 			PlayAnimationClip("Death");
 		}
 		break;

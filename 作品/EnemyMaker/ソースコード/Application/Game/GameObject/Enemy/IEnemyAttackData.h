@@ -5,7 +5,6 @@
 
 #pragma once
 
-
 //---------- INCLUDES -----------
 #include "EnemyData.h"
 
@@ -57,7 +56,6 @@ public:
 	*/
 	inline virtual EnemyAttack GetAttack(const uint8_t _attackID) const noexcept;
 
-
 	/**
 	* @fn SetAttackInformation
 	* @brief 攻撃のセッター
@@ -78,8 +76,7 @@ inline EnemyAttack IEnemyAttackData::GetAttack(const uint8_t _attackID) const no
 		return EnemyAttack();
 	}
 
-	return mAttackInformation[_attackID];
-	
+	return mAttackInformation[_attackID];	
 }
 
 inline void IEnemyAttackData::SetAttackInformation(const uint8_t _attackID, const EnemyAttack _newAttack) noexcept

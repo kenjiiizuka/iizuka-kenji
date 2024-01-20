@@ -72,5 +72,3 @@ public:
 	void SetPosition(DirectX::SimpleMath::Vector3 _position) override;
 
 };
-
-//----------- INLINES -----------

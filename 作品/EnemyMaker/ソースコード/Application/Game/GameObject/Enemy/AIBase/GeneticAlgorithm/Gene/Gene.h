@@ -9,7 +9,6 @@
 #include "DecisionData.h"
 #include "Situation.h"
 
-
 /**
 * @class Gene
 * @brief ˆâ“`q ó‹µˆâ“`q‚ÌW‡

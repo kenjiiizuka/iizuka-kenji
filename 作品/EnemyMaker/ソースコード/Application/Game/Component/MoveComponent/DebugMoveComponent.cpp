@@ -7,11 +7,6 @@
 
 using namespace DirectX::SimpleMath;
 
-DebugMoveComponent::~DebugMoveComponent()
-{
-	Cout<std::string>("DebugMoveComponent解放");
-}
-
 void DebugMoveComponent::Move()
 {	
 	SetMoveSpeed(20.f);

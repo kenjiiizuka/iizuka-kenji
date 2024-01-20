@@ -25,8 +25,6 @@ public:
 	*/
 	~AnimationInstanceTest();
 
-private:
-
 public:
 	/**
 	 * @fn@AnimationInit

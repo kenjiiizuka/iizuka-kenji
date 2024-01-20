@@ -1,4 +1,11 @@
-﻿#pragma once
+﻿/**
+* @file  EnemyActionSelector.h
+* @brief EnemyActionSelectorクラス定義
+*/
+
+#pragma once
+
+//----------- INCLUDES ----------
 #include <type_traits>
 #include <memory>
 #include <vector>
@@ -7,11 +14,7 @@
 #include "../EnemyData.h"
 #include "GeneticAlgorithm/GeneticInfomation.h"
 
-/**
-* @file  EnemyActionSelector.h
-* @brief EnemyActionSelectorクラス定義
-*/
-
+//------------ 前方宣言 -----------
 class EnemyAction;
 class BlackBoard;
 
@@ -50,7 +53,6 @@ protected:
 	std::shared_ptr<BlackBoard> mBlackBoard;
 
 public:
-
 	/**
 	 * @fn Update
 	 * @brief 更新処理
@@ -154,7 +156,6 @@ public:
 	* @return void
 	*/
 	inline std::weak_ptr<Gene> GetGene() const noexcept;
-
 };
 
 // ------------------------ INLINES --------------------------

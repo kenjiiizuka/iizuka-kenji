@@ -161,7 +161,7 @@ private:
     std::shared_ptr<StaticMesh> mHalfCircleMesh;
 
     /** デバッグ表示する半球の配列 */
-    std::vector<DebugDrawHalfCircle> mDrawHalfCircels;
+    std::vector<DebugDrawHalfCircle> mDrawHalfCircles;
 
     /** デバッグ表示用板オブジェクト */
     std::shared_ptr<StaticMesh> mPlaneMesh;
@@ -221,7 +221,7 @@ public:
      * @param const float                        (_radius)
      * @param const DirectX::SimpleMath::Vector3 (_position)
      * @param const uint16_t                     (_drawFrame) デフォルトは1フレーム
-     * @param consr DirectX::SimpleMath::Vector4 (_color)     デフォルトは {1,0,0,1} 赤
+     * @param const DirectX::SimpleMath::Vector4 (_color)     デフォルトは {1,0,0,1} 赤
      * @return void
     */
     void DrawHalfCircle(const float _radius, const DirectX::SimpleMath::Vector3 _position, const uint16_t _drawFrame = 1, const DirectX::SimpleMath::Vector4 _color = {1,0,0,1});
@@ -233,7 +233,7 @@ public:
      * @param const DirectX::SimpleMath::Vector3 (_scale)
      * @param const DirectX::SimpleMath::Vector3 (_rotation)
      * @param const uint16_t                     (_drawFrame) デフォルトは1フレーム
-     * @param consr DirectX::SimpleMath::Vector4 (_color)     デフォルトは {1,0,0,1} 赤
+     * @param const DirectX::SimpleMath::Vector4 (_color)     デフォルトは {1,0,0,1} 赤
      * @return void
     */
     void DrawPlane(const DirectX::SimpleMath::Vector3 _position, const DirectX::SimpleMath::Vector3 _scale, const DirectX::SimpleMath::Vector3 _rotation, const uint16_t _drawFrame = 1, const DirectX::SimpleMath::Vector4 _color = { 1,0,0,1 });

@@ -1,7 +1,7 @@
 //--------- INCLUDES ----------
 #include "BlackPanel.h"
-#include "../../Component/SpriteComponent/SliderSpriteComponent.h"
 #include "../../../Utility/MathLibrary.h"
+#include "../../Component/SpriteComponent/SpriteComponent.h"
 #include "../../../System/AssetSystem/Texture/TextureAssetInclude.h"
 
 BlackPanel::BlackPanel()

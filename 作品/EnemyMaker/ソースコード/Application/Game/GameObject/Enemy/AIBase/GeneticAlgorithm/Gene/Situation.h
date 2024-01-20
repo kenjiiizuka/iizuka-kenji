@@ -1,18 +1,29 @@
-﻿#pragma once
+﻿/**
+* @file Situation.h
+* @brief Situationクラスの定義
+*/
+
+#pragma once
+
+//----------- INCLUDES -----------
 #include <functional>
 #include "DecisionData.h"
 #include "../GeneticInfomation.h"
 
+//----------- 前方宣言 ------------
 class EnemyAttackAction;
 class EnemyMoveAction;
 class BlackBoard;
 
-/** シチュエーション 意思決定をする際の特定の状況を表す */
+/**
+* @class Situation
+* @brief 状況遺伝子 意思決定する際の特定の状況を表す
+*/
 class Situation final : public DecisionData 
 {
 public:
 	/**
-	 * 値の初期化
+	* コンストラクタ
 	*/
 	Situation();
 

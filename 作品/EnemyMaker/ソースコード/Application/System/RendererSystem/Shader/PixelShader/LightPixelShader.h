@@ -1,9 +1,20 @@
-﻿#pragma once
+﻿/**
+* @file LightPixelShader.h
+* @brief LightPixelShaderクラス定義
+*/
+
+#pragma once
+
+//--------- INCLUDES ---------
 #include "PixelShader.h"
 
+//------ 前方宣言 --------
 class AssetHandle;
 
-/** セルフシャドウのピクセルシェーダー */
+/**
+* @class LightPixelShader
+* @brief ライティングありのピクセルシェーダー
+*/
 class LightPixelShader : public PixelShader
 {
 public:

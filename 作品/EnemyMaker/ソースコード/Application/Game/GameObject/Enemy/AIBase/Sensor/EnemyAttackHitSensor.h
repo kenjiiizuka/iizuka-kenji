@@ -1,9 +1,9 @@
-#pragma once // インクルードガード
-
 /**
 * @file EnemyAttackHitSensor.h
 * @brief EnemyAttackHitSensorクラスの定義
 */
+
+#pragma once 
 
 //-------- INCLUDES ---------
 #include <memory>

@@ -10,8 +10,6 @@
 #include <memory>
 #include "../AssetSystem/SkeletalMesh/SkeletalMeshAnimationData.h"
 #include "../../Game/Component/TransformComponent/Transform.h"
-#include "../../Game/Component/SkeletalMeshComponent/AnimationInformation.h"
-
 
 //----------- 前方宣言 ----------
 class SkeletalMeshAnimation;

@@ -1,13 +1,14 @@
-﻿#pragma once
-#include <SimpleMath.h>
-#include "ICollisionDetector.h"
-#include "../../Game/Component/CollisionComponent/PrimitiveShapes.h"
-
-/**
+﻿/**
 * @file  CollisionDetector3D.h
 * @brief CollisionDetector3Dクラスの定義とコリジョン検出に使用する構造体の定義
 */
 
+#pragma once
+
+//----------- INCLUDES -----------
+#include <SimpleMath.h>
+#include "ICollisionDetector.h"
+#include "../../Game/Component/CollisionComponent/PrimitiveShapes.h"
 
 //------------ 前方宣言 ------------
 class CapsuleCollisionComponent;
@@ -34,7 +35,7 @@ public:
 	/**
 　　 * @fn DetectorOverlap
 	 * @brief 渡されたコリジョン同士で重なりを検出する
-	 * @dettails 渡されコリジョンの形状を判別し、組み合わせにあった重なり検出用の関数実行
+	 * @details 渡されコリジョンの形状を判別し、組み合わせにあった重なり検出用の関数実行
 	 *           これ以上のオーバーライドを禁止するために final 指定
 	 * @param PrimitiveComponent* (_subject1)
 	 * @param PrimitiveComponent* (_subject2)

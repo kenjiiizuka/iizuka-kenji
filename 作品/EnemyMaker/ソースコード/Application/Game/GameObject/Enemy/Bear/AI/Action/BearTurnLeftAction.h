@@ -1,20 +1,15 @@
 ﻿/**
 * @file  BearTurnLeftAction.h
 * @brief BearTurnLeftActionクラスの定義をしている
-* @details デバッグ機能なので、DebugBuildのみ使用可能
 */
 
-
 #pragma once
-
 
 //---------- INCLUDES -----------
 #include "../../../AIBase/GeneticAlgorithm/Gene/EnemyMoveAction.h"
 
-
 //---------- 前方宣言 -----------
 class AnimationInstance;
-
 
 /**
 * @class BearTurnLeftAction

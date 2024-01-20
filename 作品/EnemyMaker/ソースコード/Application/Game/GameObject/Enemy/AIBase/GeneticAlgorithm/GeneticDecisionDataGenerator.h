@@ -1,4 +1,9 @@
-﻿#pragma once
+﻿/**
+* @file GeneticDecisionDataGenerator.h
+* @brief GeneticDecisionDataGeneratorクラスの定義
+*/
+
+#pragma once
 
 //---------- INCLUDES ----------
 #include <type_traits>
@@ -12,7 +17,12 @@ class Situation;
 class BlackBoard;
 class Gene;
 
-/** エネミーの遺伝子(意思決定データ)を評価の得点から次世代の遺伝子(意思決定データ)を生成するクラス */
+/**
+* @class GeneticDecisionDataGenerator
+* @brief 遺伝子を生成するクラス
+* @detail 初期遺伝子生成
+* 　　　　遺伝させて次世代の遺伝子の生成をする
+*/
 class GeneticDecisionDataGenerator
 {
 public:

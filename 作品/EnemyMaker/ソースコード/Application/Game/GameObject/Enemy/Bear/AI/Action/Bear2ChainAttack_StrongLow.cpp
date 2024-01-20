@@ -5,7 +5,6 @@
 #include "../../../../../../Utility/MathLibrary.h"
 #include "../../../AIBase/BlackBoard.h"
 
-
 Bear2ChainAttack_StrongLow::Bear2ChainAttack_StrongLow(std::shared_ptr<BlackBoard> _blackBoard)
 	: BearAttackAction(_blackBoard)
 {

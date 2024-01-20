@@ -9,7 +9,6 @@
 #include <string>
 #include "GeneticInfomation.h"
 
-
 /**
 * @class GeneDataLoader
 * @brief 遺伝子データをファイルから読み込む機能を持つクラス

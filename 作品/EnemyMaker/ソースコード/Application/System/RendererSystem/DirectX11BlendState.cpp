@@ -14,6 +14,11 @@ DirectX11BlendState::~DirectX11BlendState()
 	// ˆ—‚È‚µ
 }
 
+void DirectX11BlendState::Release()
+{
+	mBlendState->Release();
+}
+
 void DirectX11BlendState::SetupBlendDesc(const BOOL _alphaToCoverageEnable)
 {
 	mBlendDesc.AlphaToCoverageEnable = _alphaToCoverageEnable;

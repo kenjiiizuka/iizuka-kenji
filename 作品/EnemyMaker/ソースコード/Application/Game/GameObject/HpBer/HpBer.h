@@ -10,7 +10,11 @@
 //---------- 前方宣言 ----------
 class SpriteComponent;
 
-/** Hpberオブジェクト */
+/**
+* @class HpBer
+* @brief HbBerUIオブジェクト
+* @detail 最大Hpを設定し、HPが減るたびに現在のHpをセットすることで機能する
+*/
 class HpBer : public GameObject
 {
 public:

@@ -32,7 +32,6 @@ class DamageUI : public GameObject
 		* デフォルトコンストラクタ
 		*/
 		DamageBillboard();
-
 	};
 
 public:

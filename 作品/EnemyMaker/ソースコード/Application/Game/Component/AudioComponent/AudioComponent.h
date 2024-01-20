@@ -13,7 +13,6 @@
 //--------- 前方宣言 --------
 class AudioClip;
 
-
 /**
 * @class AudioComponent
 * @brief AudioClipを持ち、Audioの2D再生、3D再生をしやすいようにしたクラス

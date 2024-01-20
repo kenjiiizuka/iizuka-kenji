@@ -1,9 +1,9 @@
-﻿#pragma once
-
-/**
+﻿/**
 * @file Collision.h
 * @brief 当たり判定に関する名前空間、列挙型が定義されている
 */
+
+#pragma once
 
 /** 当たり判定に関するenumを定義してある名前空間 */
 namespace Collision 

@@ -91,8 +91,7 @@ float MathLibrary::ClampMinus1Plus1(float _value)
 
 float MathLibrary::Atan2(float _x, float _y)
 {
-    float radian = std::atan2(_y, _x);
-    return radian;
+    return std::atan2(_y, _x); 
 }
 
 float MathLibrary::Abs(float _value)
@@ -152,7 +151,7 @@ bool MathLibrary::VectorIsNearyZero(DirectX::SimpleMath::Vector3 _vector, float 
         && (-_near < _vector.z && _vector.z < _near);
 }
 
-DirectX::SimpleMath::Vector3 MathLibrary::CalculateRotationDiffrence(DirectX::SimpleMath::Vector3 _rotation1, DirectX::SimpleMath::Vector3 _rotation2)
+DirectX::SimpleMath::Vector3 MathLibrary::CalculateRotationDifference(DirectX::SimpleMath::Vector3 _rotation1, DirectX::SimpleMath::Vector3 _rotation2)
 { 
     return DirectX::SimpleMath::Vector3();
 }

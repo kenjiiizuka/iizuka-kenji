@@ -16,7 +16,7 @@ class DirectX11SamplerState;
 * @fn DirectX11Device
 * @brief ID3D11Deviceをラップしたクラス
 */
-class DirectX11Device
+class DirectX11Device final
 {
 public:
 	/**

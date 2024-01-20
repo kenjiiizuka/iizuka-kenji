@@ -3,7 +3,6 @@
 * @brief GeneticAlgorithmDebuggerクラスの定義
 */
 
-
 #pragma once
 
 //--------- INCLUDES -----------
@@ -13,7 +12,6 @@
 #include "../../../../../System/Singleton.h"
 #include "GeneticInfomation.h"
 #include "../GeneticAlgorithm/EnemyGeneticAlgorithm.h"
-
 
 //--------- 前方宣言 -----------
 class EnemyAttackAction;

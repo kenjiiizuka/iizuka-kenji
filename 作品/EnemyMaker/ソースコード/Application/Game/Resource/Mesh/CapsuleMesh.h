@@ -81,14 +81,6 @@ private:
 	void MakeIndexData(VisualEntityData::Description& _desc);
 
 	/**
-	* @fn MakeCylinder
-	* @brief シリンダーメッシュを作成する
-	* @param std::vector<Vertex>& (_vertices)
-	* @return void
-	*/
-	void MakeCylinder(std::vector<Vertex>& _vertices);
-
-	/**
 	* @fn CalucCapsuleVertexPosition
 	* @brief カプセルの頂点位置を計算する
 	* @return std::vector<Vertex>

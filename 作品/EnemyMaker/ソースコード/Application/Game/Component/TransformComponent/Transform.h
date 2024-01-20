@@ -1,8 +1,13 @@
 #pragma once
+
+//----------- INCLUDES ---------- 
 #include <SimpleMath.h>
 
-// TODO: Transform のクラス化
 
+/**
+* @struct Transform
+* @brief トランスフォーム
+*/
 struct Transform
 {
 	DirectX::SimpleMath::Vector3 mPosition{};

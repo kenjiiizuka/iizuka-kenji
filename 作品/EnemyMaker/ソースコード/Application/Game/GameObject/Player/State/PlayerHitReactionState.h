@@ -30,12 +30,14 @@ public:
 	/**
 	* @fn Entry
 	* @brief ステートの開始処理
+	* @return void
 	*/
 	void Entry() override;
 
 	/**
 	* @fn Update
 	* @brief 更新処理
+	* @return void
 	*/
 	void Update() override;
 

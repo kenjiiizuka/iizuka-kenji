@@ -12,6 +12,7 @@
 #include <SimpleMath.h>
 #include "AudioClip.h"
 
+//----------- ‘O•ûéŒ¾ -----------
 class AudioSource;
 
 /**

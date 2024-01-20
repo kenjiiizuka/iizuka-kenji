@@ -1,4 +1,9 @@
-﻿#pragma once
+﻿/**
+* @file SpriteComponent.h
+* @brief SpriteComponentクラスの定義
+*/
+
+#pragma once
 
 //---------- INCLUDES ------------
 #include <SimpleMath.h>

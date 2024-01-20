@@ -35,7 +35,6 @@ class CinematicCamera : public Camera
 		* デフォルトコンストラクタ
 		*/
 		CameraAnimationKey();
-
 	};
 
 public:

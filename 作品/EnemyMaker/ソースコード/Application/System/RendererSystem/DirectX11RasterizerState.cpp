@@ -13,6 +13,11 @@ DirectX11RasterizerState::~DirectX11RasterizerState()
 	// ˆ—‚È‚µ
 }
 
+void DirectX11RasterizerState::Release()
+{
+	mRasterizerState->Release();
+}
+
 void DirectX11RasterizerState::SetupRasterizerDesc(const D3D11_FILL_MODE& _fillMode, const D3D11_CULL_MODE& _cullMode)
 {
 	mRasterizerDesc.FillMode = _fillMode;

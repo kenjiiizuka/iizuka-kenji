@@ -13,7 +13,7 @@
 * @class DirectX11SamplerState
 * @brief ID3D11SamplerStateをラップしたクラス
 */
-class DirectX11SamplerState
+class DirectX11SamplerState final
 {
 public:
 	/**

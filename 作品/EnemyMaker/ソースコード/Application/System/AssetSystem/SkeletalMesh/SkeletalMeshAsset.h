@@ -3,9 +3,7 @@
 * @brief SkeletalMeshAssetƒNƒ‰ƒX‚Ì’è‹`
 */
 
-
 #pragma once
-
 
 //---------- INCLUDES ---------
 #include <SimpleMath.h>

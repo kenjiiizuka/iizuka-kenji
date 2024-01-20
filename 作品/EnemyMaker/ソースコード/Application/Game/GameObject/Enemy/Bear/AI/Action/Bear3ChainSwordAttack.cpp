@@ -21,7 +21,6 @@ void Bear3ChainSwordAttack::BeginActionExecution(EnemyBase* _enemy)
 	BearAttackAction::BeginActionExecution(_enemy);// 親クラスで実行回数の加算と配列の拡張しているので呼び出す
 
 	// アニメーションの再生	
-	AnimationPlaySetting setting = 0;
 	mAnimInstance.lock()->PlayAnimationClip(mAnimationClipName,1.0f,0.2f);
 	mAnimInstance.lock()->SetAttack(true);
 }

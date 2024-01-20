@@ -10,7 +10,6 @@
 #include "../GameObject.h"
 #include "../../Component/SpriteComponent/SpriteComponent.h"
 
-
 /**
 * @class Fade
 * @brief フェードイン、フェードアウト用のオブジェクト
@@ -112,7 +111,6 @@ public:
 	* @return bool true フェード中 false フェードしていない
 	*/
 	inline bool IsFading() const noexcept;
-
 };
 
 //--------- INLINES -----------

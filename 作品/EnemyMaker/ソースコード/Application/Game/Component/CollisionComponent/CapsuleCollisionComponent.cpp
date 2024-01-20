@@ -61,7 +61,8 @@ void CapsuleCollisionComponent::CalucCollisionTransform()
 	// ボーンにアタッチされていない場合
 	else
 	{
-		mOwnerWorldMatrix = mOwnerTransform.lock()->CalucWorldMatrix(Matrix::Identity);
+		Matrix identity = Matrix::Identity;
+		mOwnerWorldMatrix = mOwnerTransform.lock()->CalucWorldMatrix(identity);
 		mWorldMatrix = mOffsetMatrix * mOwnerWorldMatrix;
 	}
 	MathLibrary::DecomposeMatrix(mWorldMatrix, mTransform);

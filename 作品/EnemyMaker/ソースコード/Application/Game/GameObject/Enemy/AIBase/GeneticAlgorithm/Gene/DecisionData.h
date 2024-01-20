@@ -1,12 +1,23 @@
-﻿#pragma once
+﻿/**
+* @file DecisionData.h
+* @brief DecisionDataクラスの定義
+*/
+
+#pragma once
+
+//---------- INCLUDES -----------
 #include <vector>
 #include <algorithm>
 #include <memory>
 #include <string>
 
+//---------- 前方宣言 -----------
 class BlackBoard;
 
-/** 意思決定データ 敵のAIの遺伝学習においての遺伝子となる */
+/**
+* @class DecisionData
+* @brief 遺伝子の基底クラス
+*/
 class DecisionData
 {
 public:

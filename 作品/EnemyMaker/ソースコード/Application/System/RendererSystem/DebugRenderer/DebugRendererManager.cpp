@@ -43,14 +43,14 @@ void DebugRendererManager::Update()
 	// 配列にあるデバッグ描画オブジェクトの描画したフレーム数カウントを進める
 
 	// 半球
-	for (auto halfCircle_it = mDrawHalfCircels.begin(); halfCircle_it != mDrawHalfCircels.end();)
+	for (auto halfCircle_it = mDrawHalfCircles.begin(); halfCircle_it != mDrawHalfCircles.end();)
 	{
 		// 描画したフレーム数が、指定されたフレーム数を描画されたか判断する
 		if (halfCircle_it->mCurrentDrewFrameCount >= halfCircle_it->mDrawFrame)
 		{
 			// メッシュを解放して配列からも除外
 			halfCircle_it->mMesh.reset();
-			halfCircle_it = mDrawHalfCircels.erase(halfCircle_it);
+			halfCircle_it = mDrawHalfCircles.erase(halfCircle_it);
 		}
 		else
 		{
@@ -107,7 +107,7 @@ void DebugRendererManager::Update()
 void DebugRendererManager::Draw()
 {
 	// 配列にあるデバッグ描画オブジェクトの描画したフレーム数カウントを進める
-	for (DebugDrawHalfCircle& halfCircle : mDrawHalfCircels)
+	for (DebugDrawHalfCircle& halfCircle : mDrawHalfCircles)
 	{
 		halfCircle.mCurrentDrewFrameCount++;
 	}
@@ -170,7 +170,7 @@ void DebugRendererManager::DrawHalfCircle(const float _radius, const DirectX::Si
 	DrawSetup(transform, visualEntity.lock(), _color);
 
 	// デバッグ描画配列に追加
-	mDrawHalfCircels.emplace_back(halfCircle);
+	mDrawHalfCircles.emplace_back(halfCircle);
 }
 
 void DebugRendererManager::DrawPlane(const DirectX::SimpleMath::Vector3 _position, const DirectX::SimpleMath::Vector3 _scale, const DirectX::SimpleMath::Vector3 _rotation, const uint16_t _drawFrame, const DirectX::SimpleMath::Vector4 _color)

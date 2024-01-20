@@ -1,15 +1,29 @@
-﻿#pragma once
+﻿/**
+* @file View.h
+* @brief Viewクラスの定義
+*/
+
+#pragma once
+
+//--------- INCLUDES ----------
 #include <d3d11.h>
 #include <stdint.h>
 
+/**
+* @class View
+* @brief デプスステンシル、レンダーターゲットの基底クラス
+*/
 class View
 {
 public:
 	/**
-	* 値の初期化
+	* コンストラクタ
 	*/
 	View();
 
+	/**
+	* デストラクタ
+	*/
 	virtual ~View();
 
 protected:
@@ -24,9 +38,6 @@ protected:
 
 	/** Texture2D */
 	ID3D11Texture2D* mTexture2D;
-
-public:
-	//HRESULT Create();
 
 protected:
 	/**
@@ -47,7 +58,6 @@ protected:
 	 * @return HRESULT
 	*/
 	virtual HRESULT CreateResource(D3D11_TEXTURE2D_DESC& _desc, const void* pData);
-
 
 public:
 	/**

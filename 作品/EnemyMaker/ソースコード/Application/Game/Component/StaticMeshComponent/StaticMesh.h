@@ -1,4 +1,11 @@
+/**
+* @file StaticMesh.h
+* @brief StaticMeshクラスの定義
+*/
+
 #pragma once
+
+
 //------------- INCLUDES ------------
 #include <SimpleMath.h>
 #include <memory>
@@ -11,7 +18,7 @@
 #include "../../../System/AssetSystem/AssetHandle.h"
 #include "../TransformComponent/Transform.h"
 
-
+//---------- 前方宣言 -----------
 class GameObject;
 
 /**

@@ -3,17 +3,14 @@
 * @brief アニメ－ションの特定のフレームでの処理をするクラス
 */
 
-
 #pragma once
 
 //----------- INCLUDES --------
 #include <memory>
 
-
 //-------- INCLUDES ---------
 class SkeletalMeshAnimationClip;
 class SkeletalMesh;
-
 
 /**
 * @class AnimationNotify
@@ -24,7 +21,7 @@ class AnimationNotify
 {
 public:
 	/**
-	* 値の初期化
+	* コンストラクタ
 	* 
 	* @param[in] std::weak_ptr<SkeletalMeshAnimation> (_attachAnimation) アタッチされるアニメーション
 	*/

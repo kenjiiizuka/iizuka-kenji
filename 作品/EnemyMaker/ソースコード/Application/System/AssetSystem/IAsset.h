@@ -1,8 +1,9 @@
-#pragma once
 /**
 * @file IAsset.h
 * @brief IAssetƒNƒ‰ƒX‚Ì’è‹`
 */
+
+#pragma once
 
 //--------- INCLUDES --------
 #include <typeinfo>

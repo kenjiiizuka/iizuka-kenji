@@ -1,7 +1,17 @@
-﻿#pragma once
+﻿/**
+* @file DepthStencil.h
+* @brief DepthStencilクラスの定義
+*/
+
+#pragma once
+
+//----------- INCLUDES -----------
 #include "View.h"
 
-/** デプスステンシル */
+/**
+* @class DepthStencil
+* @brief デプスステンシルをラップしたクラス
+*/
 class DepthStencil : public View
 {
 public:

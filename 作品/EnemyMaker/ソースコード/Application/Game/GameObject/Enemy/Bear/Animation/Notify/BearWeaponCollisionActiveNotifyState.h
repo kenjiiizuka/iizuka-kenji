@@ -23,9 +23,9 @@ public:
 	/**
 	 * コンストラクタ
 	 *
-	 * @param[in] SkeletalMeshAnimation* (_attachAnimation) アタッチされるアニメーション
-	 * @param[in] float (_attachStartFrame) アタッチするフレームの開始
-	 * @param[in] float (_attachEndFrame) アタッチするフレームの終了
+	 * @param SkeletalMeshAnimation* (_attachAnimation) アタッチされるアニメーション
+	 * @param float (_attachStartFrame) アタッチするフレームの開始
+	 * @param float (_attachEndFrame) アタッチするフレームの終了
 	*/
 	BearWeaponCollisionActiveNotifyState(SkeletalMeshAnimationClip* _attachAnimation, uint16_t _attachStartFrame, uint16_t _attachEndFrame);
 

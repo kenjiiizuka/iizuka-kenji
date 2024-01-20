@@ -1,18 +1,21 @@
-﻿#pragma once
-#include <array>
-#include "../../../Component/SkeletalMeshComponent/AnimationInstance.h"
-#include "../PlayerData.h"
-
-/**
+﻿/**
 * @file  PlayerAnimationInstance.h
 * @brief Playerのアニメーションインスタンス
 */
 
+#pragma once
+
+//---------- INCLUDES ---------
+#include <array>
+#include "../../../Component/SkeletalMeshComponent/AnimationInstance.h"
+#include "../PlayerData.h"
+
+//--------- 前方宣言 ---------
 class Player;
 class CharacterMovementComponent;
 class AnimationStateContext;
 
-/** プレイヤーアニメーションのメインステートを表す */
+/** プレイヤーアニメーションのステートを表す */
 enum class PlayerAnimationState : uint16_t
 {
 	Idle,        /**< 抜刀状態 */
@@ -23,9 +26,17 @@ enum class PlayerAnimationState : uint16_t
 	Death        /**< 死亡 */
 };
 
+/**
+* @class PlayerAnimationInstance
+* @brief プレイヤーのアニメーションインスタンス
+*        各ステートに合わせてアニメーションを遷移する
+*/
 class PlayerAnimationInstance : public AnimationInstance
 {
 public:
+	/**
+	* コンストラクタ
+	*/
 	PlayerAnimationInstance();
 
 private:

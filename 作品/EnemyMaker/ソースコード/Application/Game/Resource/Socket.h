@@ -41,10 +41,7 @@ public:
 	* @return void
 	*/
 	void Initialize(const Transform& _transform, const std::string& _socketName, const std::shared_ptr<Bone> _parentBone);
-
-	/***/
-	void Update();
-
+	
 	/**
 	 * @fn CalucBoneMatrix
 	 * @brief ボーン行列を計算する関数

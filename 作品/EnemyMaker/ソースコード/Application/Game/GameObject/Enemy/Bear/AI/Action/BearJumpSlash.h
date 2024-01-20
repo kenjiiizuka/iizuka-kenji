@@ -1,10 +1,21 @@
-﻿#pragma once
+﻿/**
+* @file BearJumpSlash.h
+* @brief BearJumpSlashクラスの定義
+*/
+
+#pragma once
+
+//--------- INCLUDES ----------
 #include "BearAttackAction.h"
 
+//-------- 前方宣言 ----------
 class AnimationInstance;
 class EnemyBase;
 
-/** 熊型の敵のジャンプ切り攻撃 */
+/**
+* @class BearJumpSlash
+* @brief 熊の敵ジャンプ攻撃
+*/
 class BearJumpSlash : public BearAttackAction
 {
 public:

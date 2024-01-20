@@ -1,8 +1,9 @@
-#pragma once
 /**
 * @file BinaryFile.h
 * @brief BinaryFileƒNƒ‰ƒX‚Ì’è‹`
 */
+
+#pragma once
 
 //----------- INCLUDES -----------
 #include <fstream>

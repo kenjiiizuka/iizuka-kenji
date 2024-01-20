@@ -1,11 +1,25 @@
-﻿#pragma once
+﻿/**
+* @file BearGeneticAlgorithm.h
+* @brief BearGeneticAlgorithmクラスの定義
+*/
+
+#pragma once
+
+//--------- INCLUDES ---------
 #include "../../AIBase/GeneticAlgorithm/EnemyGeneticAlgorithm.h"
 
+/**
+* @class BearGeneticAlgorithm
+* @brief 熊の敵用遺伝学習クラス 
+* @detail 遺伝子の型を設定する処理をしている
+*/
 class BearGeneticAlgorithm : public EnemyGeneticAlgorithm
 {
 public:
 	/**
-	* 値の初期化
+	* コンストラクタ
+	* 
+	* @param std::shared_ptr<BlackBoard>& (_blackboard) ブラックボード
 	*/
 	BearGeneticAlgorithm(std::shared_ptr<BlackBoard>& _blackboard);
 

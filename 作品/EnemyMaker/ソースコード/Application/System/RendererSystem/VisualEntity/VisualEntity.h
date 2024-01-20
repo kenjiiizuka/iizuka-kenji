@@ -1,14 +1,17 @@
-﻿#pragma once
+﻿/**
+* @file  VisualEntity.h
+* @brief VisualEntityクラスの定義
+*/
+
+#pragma once
+
+//-------------- INCLUDES ----------
 #include <d3d11.h>
 #include <memory>
 #include <SimpleMath.h>
 #include <array>
 #include <string>
 #include "VisualEntityData.h"
-/**
-* @file  VisualEntity.h
-* @brief VisualEntityクラスの定義
-*/
 
 //--------- 前方宣言 -----------
 class GameObject;

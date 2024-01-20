@@ -14,6 +14,11 @@ DirectX11DepthStencilState::~DirectX11DepthStencilState()
 	// ˆ—‚È‚µ
 }
 
+void DirectX11DepthStencilState::Release()
+{
+	mDepthStencilState->Release();
+}
+
 void DirectX11DepthStencilState::SetupDepthStencilStateDesc(const D3D11_DEPTH_WRITE_MASK& _depthWriteMask, const D3D11_COMPARISON_FUNC& _depthFunc, const BOOL _depthEnable, const BOOL _stencilEnable)
 {
 	mDepthStencilDesc.DepthWriteMask = _depthWriteMask;

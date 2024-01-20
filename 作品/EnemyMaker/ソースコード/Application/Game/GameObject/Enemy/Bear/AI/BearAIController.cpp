@@ -1,7 +1,7 @@
 ﻿//----------- INCLUDES -----------
 #include "BearAIController.h"
-#include "BearActionSelector.h"
 #include "../../EnemyBase.h"
+#include "../../AIBase/EnemyActionSelector.h"
 #include "../../AIBase/EnemyActionProcessor.h"
 #include "BearGeneticAlgorithm.h"
 #include<memory>
@@ -16,7 +16,7 @@ void BearAIController::Init()
 {
 	//セレクター、プロセッサー 遺伝学習クラスの作成
 	mActionProcessor = std::make_shared<EnemyActionProcessor>();
-	mActionSelector = std::make_shared<BearActionSelector>(mBlackBoard);
+	mActionSelector = std::make_shared<EnemyActionSelector>(mBlackBoard);
  	mGeneticAlgorithm = std::make_shared<BearGeneticAlgorithm>(mBlackBoard);
 	EnemyAIController::Init();
 }

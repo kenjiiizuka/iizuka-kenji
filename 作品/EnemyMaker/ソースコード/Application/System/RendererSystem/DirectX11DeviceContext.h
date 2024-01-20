@@ -20,7 +20,7 @@ class DirectX11ViewPort;
 * @class DirectX11DeviceContext
 * @brief ID3D11DeviceContextをラップしたクラス
 */
-class DirectX11DeviceContext
+class DirectX11DeviceContext final
 {
 public:
 	/**

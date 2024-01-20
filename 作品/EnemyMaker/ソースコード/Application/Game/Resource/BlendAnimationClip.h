@@ -48,7 +48,7 @@ private:
 
 public:
 	/**
-　　 * @fn　Begin
+　　 * @fn Begin
 　　 * @brief アニメーション開始処理
 　　 * @return void
 　　*/
@@ -57,8 +57,8 @@ public:
 	/**
 	* @fn CalucAnimationMatrix
 	* @brief チャンネルの指定された時間のアニメーションマトリックスを返す関数
-	* @param Channel& (_channel)
-	* @param const double (_time)
+	* @param Channel&                     (_channel) 
+	* @param const double                 (_time)
 	* @param DirectX::SimpleMath::Matrix& (_animationMatrix)
 	* @return void
 	*/
@@ -66,10 +66,10 @@ public:
 
 private:
 	/**
-　　 * @fn　AnimationDataNormalize
+　　 * @fn AnimationDataNormalize
 　　 * @brief アニメーションデータの正規化をする関数
-	 * @param std::vector<Channel>& (_channel) アニメーションデータ
-	 * @param const float& (_scaleFactor) 正規化する際のスケーリングの値
+	 * @param std::vector<Channel>&    (_channel) アニメーションデータ
+	 * @param const float&             (_scaleFactor) 正規化する際のスケーリングの値
 　　 * @return void
 　　*/
 	void AnimationDataNormalize(std::vector<Channel>& _channel, const float _scaleFactor);
@@ -86,7 +86,7 @@ public:
 	/** 
 	* @dn SetBlendMaxValue
 	* @brief ブレンド値を計算するの範囲の最大値をセットする
-	* @param const float _max
+	* @param const float (_max)
 	* @return void
 	*/
 	inline void SetBlendMaxValue(const float _max) noexcept;

@@ -74,9 +74,5 @@ public:
 	*/
 	void WriteLog(std::string_view _log, const size_t _logfileID = 0);
 
-private:
-
-	
-
 };
 

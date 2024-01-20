@@ -1,15 +1,23 @@
-﻿#pragma once
-#include <string>
-#include <memory>
-#include "../../../System/AnimationSystem/AnimationPlayer.h"
-
-/**
+﻿/**
 * @file  AnimationStateContext.h
 * @brief AnimationStateContextクラスの定義
 */
 
+#pragma once
+
+//-------- INCLUDES ---------
+#include <string>
+#include <memory>
+#include "../../../System/AnimationSystem/AnimationPlayer.h"
+
+
+//----------- 前方宣言 ------------
 class AnimationInstance;
 
+/**
+* @class AnimationStateContext
+* @brief アニメステートコンテキストの基底クラス
+*/
 class AnimationStateContext
 {
 public:
@@ -88,7 +96,7 @@ protected:
 	 * @return void
 	*/
 	template<typename EnumType, typename = std::enable_if_t<std::is_enum_v<EnumType>>>
-	void TransitionStateAndPlay(EnumType& _state, const EnumType _nextState,const std::string& _animationName, const float _playRate = 1.0f, const float _interpTime = 0.0f)
+	inline void TransitionStateAndPlay(EnumType& _state, const EnumType _nextState,const std::string& _animationName, const float _playRate = 1.0f, const float _interpTime = 0.0f)
 	{
 		_state = _nextState;
 		PlayAnimationClip(_animationName, _playRate, _interpTime);

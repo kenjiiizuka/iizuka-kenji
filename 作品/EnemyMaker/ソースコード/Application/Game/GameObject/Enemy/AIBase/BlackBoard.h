@@ -1,12 +1,25 @@
-﻿#pragma once
+﻿/**
+* @file BlackBoard
+* @brief BlackBoardクラスの定義
+*/
+
+#pragma once
+
+//---------- INCLUDES -----------
 #include <unordered_map>
 #include <any>
 #include <string>
 
-/** AIに必要な情報を書き込み、保持するためのクラス */
+/**
+* @class BlackBoard
+* @brief AIが使用する情報を書き込み、保持するクラス
+*/
 class BlackBoard final
 {
 public:
+	/**
+	* コンストラクタ
+	*/
 	BlackBoard() {};
 
 private:

@@ -1,4 +1,9 @@
-﻿#pragma once
+﻿/**
+* @file MathLibrary.h
+* @brief MathLibraryクラス定義
+*/
+
+#pragma once
 
 //------------ INCLUDES -------------
 #include <SimpleMath.h>
@@ -11,6 +16,10 @@ constexpr double PI = 3.14159265359;
 /** 円周率 float */
 constexpr float PIFloat = 3.14159265f;
 
+/**
+* @class MathLibrary
+* @brief 数学、乱数関連の関数をまとめたクラス
+*/
 class MathLibrary
 {
 private:
@@ -67,13 +76,49 @@ private:
 	*/
 	static double Clamp01(const double _value);
 
-
+	/**
+	* @fn ClampMinus1Plus1
+	* @brief -1 ～ 1の範囲でクランプする関数
+	* @param float (_value)
+	* @return float クランプ後の値
+	*/
 	static float ClampMinus1Plus1(float _value);
+
+	/**
+	* @fn Atan2
+	* @brief atan2関数をラップした関数
+	* @param float (_x)
+	* @param float (_y)
+	* @return float 
+	*/
 	static float Atan2(float _x, float _y);
+
+	/**
+	* @fn Abs
+	* @brief 絶対値を返す
+	* @param float (_value)
+	* @return float 絶対値
+	*/
 	static float Abs(float _value);
+
+	/**
+	* @fn AbsVector
+	* @brief ベクトルの各要素を絶対値にしたベクトルを返す
+	* @param DirectX::SimpleMath::Vector3 (_vector)
+	* @return DirectX::SimpleMath::Vector3 各要素を絶対値にしたベクトル
+	*/
 	static DirectX::SimpleMath::Vector3 AbsVector(DirectX::SimpleMath::Vector3 _vector);
 	
-	static DirectX::SimpleMath::Vector3 RotationInterpTo(DirectX::SimpleMath::Vector3 _currnet, DirectX::SimpleMath::Vector3 _target, float _deltaTime, float _interpSpeed);
+	/**
+	* @fn RotationInterpTo
+	* @brief 回転を補完する
+	* @param DirectX::SimpleMath::Vector3 (_current) 補間元
+	* @param DirectX::SimpleMath::Vector3 (_target)  補間先
+	* @param float (_deltaTime)                      デルタタイム
+	* @param float (_interpSpeed)                    補間速度
+	* @return DirectX::SimpleMath::Vector3 補完した回転
+	*/
+	static DirectX::SimpleMath::Vector3 RotationInterpTo(DirectX::SimpleMath::Vector3 _current, DirectX::SimpleMath::Vector3 _target, float _deltaTime, float _interpSpeed);
 
 	/**
 	* @fn LerpQuaternion
@@ -85,10 +130,32 @@ private:
 	* @return DirectX::SimpleMath::Vector3 補間後の回転
 	*/
 	static DirectX::SimpleMath::Vector3 LerpQuaternion(DirectX::SimpleMath::Quaternion _quat1, DirectX::SimpleMath::Quaternion _quat2, float _deltaTime, float _interpSpeed);
+
+	/**
+	* @fn VectorIsZero
+	* @brief ベクトルがゼロかを返す
+	* @param DirectX::SimpleMath::Vector3 (_vector)
+	* @return bool true 0 false 0ではない 
+	*/
 	static bool VectorIsZero(DirectX::SimpleMath::Vector3 _vector);
+
+	/**
+	* @fn VectorIsNearyZero
+	* @brief ベクトルがしてした値以内になっているかを返す
+	* @param DirectX::SimpleMath::Vector3 (_vector)
+	* @param float                        (_near)   範囲
+	* @return bool true 範囲内 false 範囲外
+	*/
 	static bool VectorIsNearyZero(DirectX::SimpleMath::Vector3 _vector, float _near = 10.f);
 
-	static DirectX::SimpleMath::Vector3 CalculateRotationDiffrence(DirectX::SimpleMath::Vector3 _rotation1, DirectX::SimpleMath::Vector3 _rotation2);
+	/**
+	* @fn CalculateRotationDifference
+	* @brief 回転の差分を計算する
+	* @param DirectX::SimpleMath::Vector3 (_rotation1) 
+	* @param DirectX::SimpleMath::Vector3 (_rotation2)
+	* @return DirectX::SimpleMath::Vector3 差分
+	*/
+	static DirectX::SimpleMath::Vector3 CalculateRotationDifference(DirectX::SimpleMath::Vector3 _rotation1, DirectX::SimpleMath::Vector3 _rotation2);
 
 	/**
 	 * @fn MakeWorldMatrix

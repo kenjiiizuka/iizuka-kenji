@@ -3,7 +3,6 @@
 * @brief SkeletalMeshのアニメーションを管理するクラス
 */
 
-
 #pragma once
 
 //---------- INCLUDES ---------
@@ -106,7 +105,7 @@ protected:
 	inline void TransitionStateAndPlay(EnumType& _state, EnumType _nextState, const std::string _animationName, bool _loop = false);
 
 	/**
-     * @fn　TransitionStateContext
+     * @fn　TransitionContext
      * @brief ステートコンテキストの遷移関数
      * @return std::shared_ptr<T> 遷移先のステートコンテキスト
     */
@@ -159,14 +158,14 @@ public:
 	GameObject* GetOwner();
 
 	/**
-	 * @fn　GetCurrnetAnimation
+	 * @fn　GetAnimationPlayer
 	 * @brief 現在再生しているアニメーションのゲッター
 	 * @return std::shared_ptr<SkeletalMeshAnimation> 現在再生しているアニメーション
 	*/
 	std::shared_ptr<AnimationPlayer> GetAnimationPlayer() const;
 
 	/**
-	 * @fn　GetAnimationByName
+	 * @fn　GetAnimationClipByName
 	 * @brief アニメーションを名前で取得する
 	 * @return std::shared_ptr<SkeletalMeshAnimationClip>
 	 */

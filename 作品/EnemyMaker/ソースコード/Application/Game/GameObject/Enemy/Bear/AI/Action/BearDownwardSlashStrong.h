@@ -1,6 +1,6 @@
 /**
 * @file BearDownwardSlashStrong.h
-* @brief BearDownwardSlashStrong
+* @brief BearDownwardSlashStrongƒNƒ‰ƒX‚Ì’è‹`
 */
 
 #pragma once

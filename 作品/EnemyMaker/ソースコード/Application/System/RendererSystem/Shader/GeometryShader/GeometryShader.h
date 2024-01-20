@@ -95,10 +95,5 @@ protected:
 　　* @return bool true 重複なし false 重複
 　　*/
 	bool CheckDuplication(std::string _shaderName) override;
-
-private:
-
-
-
 };
 

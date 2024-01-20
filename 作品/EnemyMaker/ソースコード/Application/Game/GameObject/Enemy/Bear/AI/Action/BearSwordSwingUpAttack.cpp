@@ -21,7 +21,6 @@ void BearSwordSwingUpAttack::BeginActionExecution(EnemyBase* _enemy)
 	// 親クラスで実行回数の加算と配列の拡張しているので呼び出す
 	BearAttackAction::BeginActionExecution(_enemy);
 
-	AnimationPlaySetting setting = AnimationInf::AnimationPlayType::PlayType_PositionSynchro;
 	mAnimInstance.lock()->PlayAnimationClip(mAnimationClipName, 1.0f, 0.2f);
 	mAnimInstance.lock()->SetAttack(true);
 }

@@ -12,7 +12,7 @@
 * @class DirectX11ViewPort
 * @brief ビューポートクラス
 */
-class DirectX11ViewPort
+class DirectX11ViewPort final
 {
 public:	
 	/**

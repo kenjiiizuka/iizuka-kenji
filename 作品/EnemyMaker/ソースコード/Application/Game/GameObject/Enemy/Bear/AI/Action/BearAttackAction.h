@@ -1,8 +1,9 @@
-#pragma once
 /**
 * @file BearAttackAction.h
 * @brief BearAttackActionƒNƒ‰ƒX‚Ì’è‹`
 */
+
+#pragma once
 
 //---------- INCLUDES -----------
 #include "../../../AIBase/GeneticAlgorithm/Gene/EnemyAttackAction.h"

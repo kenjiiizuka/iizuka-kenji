@@ -3,13 +3,11 @@
  * @brief Componentの基底クラス
  */
 
-
 #pragma once
 
 //---------- INCLUDES -----------
 #include <list>
 #include <memory>
-
 
 //------ 前方宣言 ---------
 class GameObject;

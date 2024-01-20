@@ -5,14 +5,11 @@
 
 #pragma once
 
-
 //----------- INCLUDES ------------
 #include <stdint.h>
 #include <string>
 #include <vector>
 #include "../CrossCharacterData.h"
-
-
 
 /** エネミーのステータスに関数するパラメーターを保持したデータ */
 struct EnemyStatus

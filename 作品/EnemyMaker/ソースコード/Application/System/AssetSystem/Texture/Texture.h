@@ -1,4 +1,11 @@
-﻿#pragma once
+﻿/**
+* @file Texture.h
+* @brief Textureクラスの定義
+*/
+
+#pragma once
+
+//------------ INCLUDES -------------
 #include "../../../System/RendererSystem/Renderer.h"
 #include <string>
 #include <unordered_map>
@@ -29,7 +36,6 @@ private:
     ID3D11ShaderResourceView* mResource;
 
 public:
- 
     /**
      * @brief テクスチャのシェーダーリソースビューを取得します。
      * @return テクスチャのシェーダーリソースビューへのポインタ。利用不可の場合はnullptr。

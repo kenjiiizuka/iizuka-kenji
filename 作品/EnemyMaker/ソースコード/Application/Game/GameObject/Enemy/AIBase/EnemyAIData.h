@@ -7,6 +7,5 @@ enum class EnemyActionResult
 	Failed,    /**< 失敗 */
 	InProgress, /**< 実行中 */
 	CanChange,  /**< 変更可能 */
-	// Aborted,    /**< 中止 */
 };
 

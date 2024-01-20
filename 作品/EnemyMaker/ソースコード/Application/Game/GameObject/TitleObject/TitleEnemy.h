@@ -25,8 +25,6 @@ public:
 	*/
 	~TitleEnemy();
 
-private:
-
 public:
 	/**
 	* @fn Init

@@ -75,7 +75,7 @@ void GeneticAlgorithmDebugger::DisplaySituation(const std::shared_ptr<Gene>& _ge
 	ImGui::SetNextWindowSize(ImVec2(500.0f, 260.0f));
 	ImGui::Begin("Situation");
 
-//	ImGui::Text(("Current Generation : " + std::to_string(mGenerationCount)).c_str());
+
 	ImGui::Text(("Current Generation : " + std::to_string(mGenerationCount)).c_str());
 
 	std::vector<std::shared_ptr<Situation>> situations = _genetic->GetSituations();

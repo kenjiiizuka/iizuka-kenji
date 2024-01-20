@@ -28,7 +28,7 @@ public:
 	 * @param DirectX::SimpleMath::Vector2 (_position)
 	 * @param DirectX::SimpleMath::Vector2 (_center)
 	 * @param DirectX::SimpleMath::Vector2 (_radius)
-	 * @param DirectX::SimpleMaht::Vector4 (_color)    デフォルトは赤 {1,0,0,1}
+	 * @param DirectX::SimpleMath::Vector4 (_color)    デフォルトは赤 {1,0,0,1}
 	 * @return void
 	*/
 	static bool IsPositionInCircle2D(DirectX::SimpleMath::Vector2 _position, DirectX::SimpleMath::Vector2 _center, float _radius, DirectX::SimpleMath::Vector4 _color = { 1,0,0,1 });
@@ -40,14 +40,14 @@ public:
 	 * @param const DirectX::SimpleMath::Vector2& (_sectorCenter)
 	 * @param const DirectX::SimpleMath::Vector2& (_sectorEndPoint)
 	 * @param const float&                        (_sectorDegree)
-	 * @param const DirectX::SimpleMaht::Vector4& (_color)    デフォルトは赤 {1,0,0,1}
+	 * @param const DirectX::SimpleMath::Vector4& (_color)    デフォルトは赤 {1,0,0,1}
 	 * @return void
 	*/
 	static bool IsPositionInSector2D(DirectX::SimpleMath::Vector2 _position, DirectX::SimpleMath::Vector2 _sectorCenter, DirectX::SimpleMath::Vector2 _sectorEndPoint, float _sectorDegree, DirectX::SimpleMath::Vector4 _color);
 
 private:
 	/**
-	 * @fn InSectorCheackXZ
+	 * @fn InSectorCheckXZ
 	 * @brief 渡された座標が指定されたサイズの扇形の中に入っているかを返す関数
 	 * @param const DirectX::SimpleMath::Vector2& (_sectorCenter)
 	 * @param const DirectX::SimpleMath::Vector2& (_sectorEndPoint)
@@ -56,10 +56,10 @@ private:
 	 * @param const float&                        (length)
 	 * @return void
 	*/
-	static bool InSectorCheackXZ(const DirectX::SimpleMath::Vector2& _sectorCenter, const DirectX::SimpleMath::Vector2& _sectorEndPoint, const float& _sectorAngle, const DirectX::SimpleMath::Vector2& _position, const float& length);
+	static bool InSectorCheckXZ(const DirectX::SimpleMath::Vector2& _sectorCenter, const DirectX::SimpleMath::Vector2& _sectorEndPoint, const float& _sectorAngle, const DirectX::SimpleMath::Vector2& _position, const float& length);
 
 	/**
-	 * @fn CalucPosintSegmentDistance
+	 * @fn CalucPointSegmentDistance
 	 * @brief 渡された座標が指定されたサイズの扇形の中に入っているかを返す関数
 	 * @param const DirectX::SimpleMath::Vector3& (_position)
 	 * @param const PrimitiveShape::Segment3D& (_segment)
@@ -67,7 +67,7 @@ private:
 	 * @param float& (_t) 交点の位置がその線分どの位置にあるかの比率
 	 * @return void
 	*/
-	static float CalucPosintSegmentDistance(const DirectX::SimpleMath::Vector3& _position, const PrimitiveShape::Segment3D& _segment, DirectX::SimpleMath::Vector3& _interSectionPoint, float& _t);
+	static float CalucPointSegmentDistance(const DirectX::SimpleMath::Vector3& _position, const PrimitiveShape::Segment3D& _segment, DirectX::SimpleMath::Vector3& _interSectionPoint, float& _t);
 
 	/**
 	 * @fn CalucPointLineDist

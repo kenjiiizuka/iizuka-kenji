@@ -1,3 +1,8 @@
+/**
+* @file AudioSource.h
+* @brief AudioSourceƒNƒ‰ƒX‚Ì’è‹`
+*/
+
 #pragma once
 
 //---------- INCLUDES -----------

@@ -1,3 +1,8 @@
+/**
+* @file BearBackJumpSlash.h
+* @brief BearBackJumpSlashƒNƒ‰ƒX‚Ì’è‹`
+*/
+
 #pragma once
 
 //---------- INCLUDES -----------
