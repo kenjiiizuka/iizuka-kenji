@@ -1,6 +1,6 @@
 EnemyMakerの実行ファイルソースコードをダウンロードできるようにしてあります。
-
-制作物の紹介動画やポートフォリオをGoogleDriveに乗せています。
+お手数ですが、ダウンロードしてご確認いただけると幸いです。
+また、過去の制作物の紹介動画やポートフォリオをGoogleDriveに乗せています。
 よろしければご覧ください。  
 
 https://drive.google.com/drive/folders/1hves9S92GN-W4T33oAAAWKv8aqBl0saN?usp=drive_link
