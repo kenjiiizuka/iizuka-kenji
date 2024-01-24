@@ -1,4 +1,5 @@
-﻿#include "DebugScene.h"
+﻿//--------- INCLUDES -----------
+#include "DebugScene.h"
 #include "../../../Manager.h"
 #include "../TitleScene/TitleScene.h"
 #include "../Test/PlayerTestScene.h"
@@ -10,6 +11,7 @@
 #include "../../GameObject/Camera/CinematicCamera.h"
 #include "../../GameObject/Camera/CameraManager.h"
 #include "../../GameObject/StaticMeshObject/StaticMeshObject.h"
+#include "../../GameObject/BattleTimer/BattleTimer.h"
 #include "../../Component/MoveComponent/DebugMoveComponent.h"
 #include "../../../Utility/MathLibrary.h"
 #include "../../../ImGui/ImGuiUtility.h"

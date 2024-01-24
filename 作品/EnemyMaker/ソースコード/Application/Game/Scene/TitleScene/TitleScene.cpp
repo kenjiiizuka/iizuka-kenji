@@ -49,30 +49,37 @@ void TitleScene::Initialize()
 
 	// コマンド作成
 	std::shared_ptr<CommandObject> startCommand =  AddGameObject<CommandObject>();
+	std::shared_ptr<CommandObject> trainingCommand = AddGameObject<CommandObject>();
 	std::shared_ptr<CommandObject> endCommand = AddGameObject<CommandObject>();
 
-	// 中央下に配置
-	DirectX::SimpleMath::Vector2 startCommandPos = 
+	// Startコマンド
 	{
-		Renderer::GetInstance().GetWidth() / 2.0f - 280.0f / 2.0f,
-		Renderer::GetInstance().GetHeight() * 0.7f 
-	};
-	startCommand->Init(startCommandPos, {280.0f,90.0f}, "assets/Title/Start.png");
+		DirectX::SimpleMath::Vector2 size = { 280.0f, 90.0f };
+		DirectX::SimpleMath::Vector2 startCommandPos =
+		{
+			Renderer::GetInstance().GetWidth() / 2.0f - size.x / 2.0f, // 画面中央からサイズの半分左にずらした位置
+			Renderer::GetInstance().GetHeight() * 0.6f // 0.7f 画面を10分割した時に下から７番目の位置
+		};
+		startCommand->Init(startCommandPos, size, "assets/Title/Start.png");
 
-	// スタートコマンドよりすこし下に配置
-	DirectX::SimpleMath::Vector2 endCommandPos =
+	}
+	
+	// Endコマンド
 	{
-		Renderer::GetInstance().GetWidth() / 2.0f - 156.0f / 2.0f,
-		Renderer::GetInstance().GetHeight() * 0.8f + 10.0f
-	};
-
-	endCommand->Init(endCommandPos, {156.0f, 90.0f}, "assets/Title/End.png");
-
+		DirectX::SimpleMath::Vector2 size = { 156.0f, 90.0f };
+		DirectX::SimpleMath::Vector2 endCommandPos =
+		{
+			Renderer::GetInstance().GetWidth() / 2.0f - size.x / 2.0f, // 画面中央からサイズの半分左にずらした位置
+			Renderer::GetInstance().GetHeight() * 0.7f + 10.0f         // 0.6f + 10.0f 画面を10分割した時に下から6番目の位置で少し下にして余白を作る
+		};
+		endCommand->Init(endCommandPos, size, "assets/Title/End.png");
+	}
+	
 	// コマンドセレクターの設定
 	commandSelector->AddCommand(startCommand);	
+	// commandSelector->AddCommand(trainingCommand);
 	commandSelector->AddCommand(endCommand);
 	commandSelector->ResetCursorPosition();
-
 	mCommandSelector = commandSelector;
 
 	// フェードオブジェクトの追加
@@ -107,7 +114,7 @@ void TitleScene::Initialize()
 	std::shared_ptr<GameObject> audioObject = AddGameObject<GameObject>();
 	std::shared_ptr<AudioComponent> audioComp = audioObject->AddComponent<AudioComponent>();
 	audioComp->Init("assets/Title/Audio/TitleBGM.wav", true);
-	audioComp->PlaySound2D(0.2f, true);
+	audioComp->PlaySound2D(0.08f, true);
 	mBGM = audioComp;
 }
 

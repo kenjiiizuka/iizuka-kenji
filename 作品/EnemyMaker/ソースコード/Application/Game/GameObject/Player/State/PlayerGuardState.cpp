@@ -5,6 +5,7 @@
 #include "../../../Component/MoveComponent/PlayerMovementComponent.h"
 #include "../../../Component/SkeletalMeshComponent/SkeletalMeshComponent.h"
 #include "../../../Resource/SkeletalMeshAnimationClip.h"
+#include "../../../GameObject/Camera/CameraIncludes.h"
 
 PlayerGuardState::PlayerGuardState(Player* _player)
 	: PlayerStateContext(_player)
@@ -88,10 +89,12 @@ PlayerData::GuardResult PlayerGuardState::CheckGuard(const DirectX::SimpleMath::
 		// ジャスガできているかの確認
 		if (mGuardStartElapsedTime <= mJustGuardSuccessTime)
 		{
+			XInput::Vibration(1.0f, XInput::mMaxVibration, XInput::mMaxVibration);
 			return PlayerData::GuardResult::Result_JustGuard;
 		}
 
 		// 通常ガード
+		XInput::Vibration(0.5f, XInput::mMaxVibration / 2, XInput::mMaxVibration / 2);
 		return PlayerData::GuardResult::Result_Guard;
 	}
 

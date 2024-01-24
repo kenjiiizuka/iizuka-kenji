@@ -144,6 +144,13 @@ private:
 	*/
 	void SettingCameraShakeNotify(const uint16_t _attachFrame, const EnemyAttack& _attack, const float _shakeTime, const DirectX::SimpleMath::Vector2 _shakeVector, const uint8_t _shakeLevel = 1);
 
+	/**
+	* @fn CheckTransitionToDeath
+	* @brief 死亡ステートに遷移するかを確認して、遷移条件を満たしていれば遷移する
+	* @return void
+	*/
+	void CheckTransitionToDeath();
+
 public:
 	/**
 	 * @fn　SetAttack

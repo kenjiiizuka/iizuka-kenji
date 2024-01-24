@@ -78,7 +78,7 @@ void PlayerWeapon::Init(const std::string& _filePath, std::shared_ptr<Bone> _att
 	// カウンターSE
 	{
 		std::shared_ptr<AudioComponent> se = AddComponent<AudioComponent>();
-		se->Init("assets/Player/Audio/Counter.wav");
+		se->Init("assets/Player/Audio/Counter_2.wav");
 		mCounterSE = se;
 	}
 }
@@ -140,7 +140,7 @@ void PlayerWeapon::BeginHit(GameObject* _hitObject, PrimitiveComponent* _hitComp
 	if (!enemy)
 	{
 		return;
-	}	
+	}
 
 	// 敵にダメージを与える
 	enemy->TakenDamage(damage, _hitComp->GetImpactPosition());
@@ -149,7 +149,7 @@ void PlayerWeapon::BeginHit(GameObject* _hitObject, PrimitiveComponent* _hitComp
 void PlayerWeapon::CounterEffect()
 {
 	XInput::Vibration(0.2f, 50000, 50000);
-	SceneManager::GetInstance().GetCurrentScene().lock()->GetCameraManager()->GetMainCamera()->CameraShake(1, { 0.4f,0.7f }, 0.3);
+	SceneManager::GetInstance().GetCurrentScene().lock()->GetCameraManager()->GetMainCamera()->CameraShake(1, { 0.7f,1.0f }, 0.5);
 	mCounterEffect.lock()->PlayEffect(mCounterEffectPosition, { 2,2,2 });
 	mCounterSE.lock()->PlaySound3D(mTransform.lock()->GetPosition(), { 0,0,0 }, 1.0f);
 }

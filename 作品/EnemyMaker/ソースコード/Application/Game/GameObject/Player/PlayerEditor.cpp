@@ -310,6 +310,11 @@ void PlayerEditor::EffectNotifyNode(const PlayerData::AttackID _attackID)
 	// エフェクト発生通知を取得
 	std::shared_ptr<PlayEffectNotify> notify = animClip->GetAnimnotify<PlayEffectNotify>();
 
+	if (!notify)
+	{
+		return;
+	}
+
 	// 編集したいパラメーターを取得
 	float attachFrame = notify->GetAttachFrame();
 	DirectX::SimpleMath::Vector3 offset = notify->GetOffset();

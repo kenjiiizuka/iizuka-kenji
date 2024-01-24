@@ -85,8 +85,7 @@ void EnemyAIController::Update()
 	Vector3 enemyPosition = mControlledEnemy->GetComponent<TransformComponent>()->GetPosition();
 	Vector3 vectorToTarget = targetPosition - enemyPosition;
 	mBlackBoard->SetValue<Vector3>(vectorToTarget, "VectorToTarget");	
-	
-	
+		
 	// 行動を実行していなければ行動を選択する
 	if (mActionProcessor->IsActionSettable())
 	{
@@ -95,6 +94,9 @@ void EnemyAIController::Update()
 	}
 	// セットされている行動を実行
 	mActionProcessor->Update(mControlledEnemy);
+
+	// 現在実行されている行動の種類をブラックボードに記録
+	mBlackBoard->SetValue<EnemyActionType>(mActionProcessor->GetCurrentExecuteActionType(), "CurrentExecuteActionType");
 }
 
 void EnemyAIController::StopController()

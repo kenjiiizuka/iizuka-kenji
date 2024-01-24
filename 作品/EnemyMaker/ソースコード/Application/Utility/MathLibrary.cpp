@@ -279,7 +279,7 @@ void MathLibrary::ConvRotationToQuaternion(const DirectX::SimpleMath::Vector3 _r
 
 uint8_t MathLibrary::GetDigitValue(const uint16_t _number, const uint8_t _digit) noexcept
 {
-    uint8_t deviser = static_cast<uint8_t>(std::pow(10, _digit));
+    uint16_t deviser = static_cast<uint16_t>(std::pow(10, _digit));
     return  (_number / deviser) % 10;
 }
 

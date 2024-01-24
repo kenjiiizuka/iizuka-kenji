@@ -17,7 +17,7 @@ const float XInput::mMaxStickThumb = 32767.f;
 float XInput::mVibrationTime = 0;
 bool XInput::mbVibration = false;
 float XInput::mElapsedVibrationTime = 0;
-WORD XInput::mMaxVibration = 65535;
+float XInput::mMaxVibration = 65535.0f;
 
 using namespace DirectX::SimpleMath;
 

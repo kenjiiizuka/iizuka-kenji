@@ -9,10 +9,9 @@
 #include <type_traits>
 #include <memory>
 #include "EnemyAIData.h"
-
+#include "GeneticAlgorithm/Gene/EnemyAction.h"
 
 //------- 前方宣言 ---------
-class EnemyAction;
 class EnemyBase;
 
 /**
@@ -56,6 +55,13 @@ public:
 
 public:
 	/**
+	* @fn IsCurrentPlayActionType
+	* @brief 現在実行されている行動の種類を返す
+	* @return EnemyActionType 
+	*/
+	inline EnemyActionType GetCurrentExecuteActionType();
+
+	/**
 	 * @fn SetExecutionAction
 	 * @brief 実行するアクションのセット
 	 * @param std::shared_ptr<EnemyAction> (_action) 
@@ -98,9 +104,19 @@ public:
 	* @return bool  true 終了 false 終了していない
 	*/
 	inline bool IsFinishAction() const noexcept;
+
 };
 
 //------------------- INLINES --------------------
+
+inline EnemyActionType EnemyActionProcessor::GetCurrentExecuteActionType()
+{
+	if (!mCurrentAction)
+	{
+		return EnemyActionType::None;
+	}
+	return mCurrentAction->GetActionType();
+}
 
 inline void EnemyActionProcessor::SetExecutionAction(std::shared_ptr<EnemyAction> _action)
 {

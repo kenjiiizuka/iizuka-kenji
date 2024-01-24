@@ -16,6 +16,17 @@ class EnemyBase;
 class BlackBoard;
 
 /**
+* @enum EnemyActionType
+* @brief 移動行動か、攻撃行動かを識別するためのもの
+*/
+enum class EnemyActionType : uint8_t
+{
+	None = 0, /**< 未設定 */
+	Move,     /**< 移動   */
+	Attack,   /**< 攻撃   */
+};
+
+/**
 * @class EnemyAction
 * @brief 敵の行動、攻撃遺伝子の基底クラス
 */
@@ -41,6 +52,9 @@ protected:
 	/** ブラックボード */
 	std::shared_ptr<BlackBoard> mBlackBoard;
 	
+	/** 行動の種類 */
+	EnemyActionType mActionType;
+
 public:
 	/**
 	 * @fn Evaluate
@@ -121,6 +135,14 @@ public:
 	* @return float
 	*/
 	inline float GetSuitable() const noexcept;
+
+	/**
+	* @fn GetActionType
+	* @brief 行動の種類を返す
+	* @return EnemyActionType
+	*/
+	inline EnemyActionType GetActionType() const noexcept;
+	
 };
 
 //----------------- INLINES -------------------------
@@ -148,4 +170,9 @@ inline void EnemyAction::SetSuitable(const float _suitable) noexcept
 inline float EnemyAction::GetSuitable() const noexcept
 {
 	return mSuitable;
+}
+
+inline EnemyActionType EnemyAction::GetActionType() const noexcept
+{
+	return mActionType;
 }

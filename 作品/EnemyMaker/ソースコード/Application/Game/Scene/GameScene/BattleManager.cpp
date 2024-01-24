@@ -9,6 +9,7 @@
 #include "../../GameObject/Player/Player.h"
 #include "../../GameObject/Enemy/EnemyBase.h"
 #include "../../GameObject/Camera/CameraIncludes.h"
+#include "../../GameObject/BattleTimer/BattleTimer.h"
 #include "../../Component/SkeletalMeshComponent/SkeletalMeshComponent.h"
 #include "../../Resource/SkeletalMesh.h"
 #include "../../Resource/Skeleton.h"
@@ -18,7 +19,7 @@
 
 BattleManager::BattleManager()
 	: mState(Battle_Start)
-	, mBattleElapsedTime(0.0f)
+	, mBattleTimeSec(300.0f)
 	, mResult(Result_InProgress)
 {
 	// 処理なし
@@ -34,8 +35,14 @@ void BattleManager::Init(const std::shared_ptr<Player> _player, const std::share
 	mPlayer = _player;
 	mEnemy = _enemy;
 
+	// バトルタイマー追加
+	mBattleTimer = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<BattleTimer>();
+	mBattleTimer.lock()->Init(mBattleTimeSec);
+
 	// バトル開始ステート処理をバインド	
 	mCurrentStateUpdate = std::bind(&BattleManager::StartStateUpdate, this);
+
+	// 開始ロゴ追加
 	mStartLogo = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<BattleStartLogo>();
 
 	// BGM,SEの初期化	
@@ -44,8 +51,13 @@ void BattleManager::Init(const std::shared_ptr<Player> _player, const std::share
 	mBattleBGM = battleBGM;
 
 	std::shared_ptr<AudioComponent> clear = AddComponent<AudioComponent>();
-	clear->Init("assets/Battle/Audio/Clear.wav");
+	clear->Init("assets/Battle/Audio/WinningBGM.wav");
 	mClearSE = clear;
+
+	std::shared_ptr<AudioComponent> lose = AddComponent<AudioComponent>();
+	lose->Init("assets/Battle/Audio/LosingBGM.wav");
+	mLoseSE = lose;
+
 }
 
 void BattleManager::Update(const double _deltaTime)
@@ -63,7 +75,12 @@ void BattleManager::StartStateUpdate()
 	// プレイヤーとエネミーに戦闘開始を通知する
 	mPlayer.lock()->BattleStart();
 	mEnemy.lock()->BattleStart();
+
+	// 開始ロゴ無効
 	mStartLogo.lock()->SetActive(false);
+	
+	// タイマー計測開始
+	mBattleTimer.lock()->TimerStart();
 
 	// 戦闘BGMを再生する
 	mBattleBGM.lock()->PlaySound2D(0.1f, true, 5.0);
@@ -77,9 +94,6 @@ void BattleManager::StartStateUpdate()
 
 void BattleManager::BattleStateUpdate()
 {
-	// 戦闘時間を計測
-	mBattleElapsedTime += FPSController::GetDeltaTime();
-
 	// リザルトへの遷移のチェック
 	mResult = CheckBattleResult();
 	// 勝敗がついたらResultステートに遷移
@@ -93,11 +107,6 @@ void BattleManager::BattleStateUpdate()
 
 		// BGMを止める
 		mBattleBGM.lock()->Stop();
-
-		if (mResult == Result_Win)
-		{
-			mClearSE.lock()->PlaySound2D(0.2f);
-		}
 	}
 }
 
@@ -137,12 +146,19 @@ BattleManager::BattleResult BattleManager::CheckBattleResult()
 		std::shared_ptr<SkeletalMesh> mesh = mEnemy.lock()->GetComponent<SkeletalMeshComponent>()->GetSkeletalMesh().lock();
 		mResultCamera.lock()->SetTargetBone(mesh->GetSkeleton().lock()->GetBoneByName("mixamorig:Head").lock());
 
+		// タイマー停止
+		mBattleTimer.lock()->TimerStop();
+	
 		// 再生
 		mResultCamera.lock()->Play();
 
+		// クリアSE再生
+		mClearSE.lock()->PlaySound2D(0.8f,true, 1.0);
+
 		return BattleResult::Result_Win;
 	}
-	else if (!mPlayer.lock()->IsAlive())
+	// プレイヤーが死亡 or 制限時間がなくなと敗北
+	else if (!mPlayer.lock()->IsAlive() || mBattleTimer.lock()->IsTimerEnd())
 	{	
 		// CinematicCameraの生成と再生
 		mResultCamera = SceneManager::GetInstance().GetCurrentScene().lock()->GetCameraManager()->CreateCamera<CinematicCamera>("DeathCamera");
@@ -154,6 +170,12 @@ BattleManager::BattleResult BattleManager::CheckBattleResult()
 
 		// 再生
 		mResultCamera.lock()->Play();
+
+		// タイマー停止
+		mBattleTimer.lock()->TimerStop();
+
+		// 敗北SE再生
+		mLoseSE.lock()->PlaySound2D(0.8f, true, 1.0);
 
 		return BattleResult::Result_Lose;
 	}
@@ -191,7 +213,7 @@ void BattleManager::LoseUpdate()
 void BattleManager::WinUpdate()
 {
 	std::shared_ptr<CinematicCamera> camera = mResultCamera.lock();
-	if (camera->GetCurrentPlayTime() < camera->GetDuration() * 0.6f )
+	if (camera->GetCurrentPlayTime() < camera->GetDuration() * 0.5f )
 	{
 		return;
 	}
@@ -202,9 +224,11 @@ void BattleManager::WinUpdate()
 		mResultLogo = SceneManager::GetInstance().GetCurrentScene().lock()->AddGameObject<WinLogo>();
 	}
 	
+	// アニメーション終了と同時にクリアタイム表示
 	std::shared_ptr<WinLogo> logo = std::static_pointer_cast<WinLogo>(mResultLogo.lock());
 	if (!logo->IsAnimationFinish())
 	{
+		
 		return;
 	}
 

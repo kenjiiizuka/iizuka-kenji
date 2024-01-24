@@ -156,7 +156,7 @@ void Player::BeginHit(GameObject* _hitObject, PrimitiveComponent* _hitComponent)
 	else if (mBehavior == PlayerBehaviorState::State_Guard)
 	{
 		GuardingHit(damage, _hitComponent->GetTransform().mPosition, enemyAttackCollision->GetHitReaction());
-	}	
+	}
 	// ガード中でないなら通常のヒット処理
 	else
 	{
@@ -172,6 +172,13 @@ void Player::BeginHit(GameObject* _hitObject, PrimitiveComponent* _hitComponent)
 	
 	// ダメージを貰う
 	TakenDamage(damage);
+
+	// ヒットリアクション大の場合はカメラ、コントローラー振動
+	if (mHitReaction == CrossCharacter::HitReaction_Big)
+	{
+		XInput::Vibration(0.7f, XInput::mMaxVibration, XInput::mMaxVibration);
+		SceneManager::GetInstance().GetCurrentScene().lock()->GetCameraManager()->ShakeMainCamera({ 0.5f,0.5f }, 0.4f);
+	}
 
 	// コントローラー振動処理
 	if (damage >= 13)
@@ -257,7 +264,7 @@ void Player::SetupAudio()
 	// ジャストガード
 	{
 		std::shared_ptr<AudioComponent> justGuard = AddComponent<AudioComponent>();
-		justGuard->Init("assets/Player/Audio/JustGuard.wav");
+		justGuard->Init("assets/Player/Audio/JustGuard_2.wav");
 		mJustGuardAudio = justGuard;
 	}
 }
@@ -355,6 +362,7 @@ void Player::GuardingHit(float& _damage, const DirectX::SimpleMath::Vector3 _hit
 		mJustGuardAudio.lock()->PlaySound3D(mTransform.lock()->GetPosition(), { 0,0,0 });
 		XInput::Vibration(0.7f, XInput::mMaxVibration, XInput::mMaxVibration);
 
+	
 		DirectX::SimpleMath::Vector3 effectPosition = mTransform.lock()->GetPosition() + mTransform.lock()->GetForwardVector() * 1.0f;
 		effectPosition.y = 4.0f;
 		mJustGuardEffect.lock()->PlayEffect(effectPosition, { 1,1,1 }, mTransform.lock()->GetRotation().y);

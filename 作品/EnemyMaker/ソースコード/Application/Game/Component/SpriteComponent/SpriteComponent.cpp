@@ -168,6 +168,12 @@ DirectX::SimpleMath::Vector2 SpriteComponent::GetPosition() const noexcept
 	return position;
 }
 
+void SpriteComponent::AddPosition(const DirectX::SimpleMath::Vector2 _pos)
+{
+	mTransform.mPosition += {_pos.x, _pos.y, 0.0f};
+	MapVertices();
+}
+
 void SpriteComponent::SetPositionAndMapVertices(const DirectX::SimpleMath::Vector2 _position) noexcept
 {
 	Vector2 halfSize = mSize / 2.0f;
@@ -175,6 +181,9 @@ void SpriteComponent::SetPositionAndMapVertices(const DirectX::SimpleMath::Vecto
 	mVertex[1].mPosition = { _position.x + halfSize.x, _position.y - halfSize.y, 0.0f };
 	mVertex[2].mPosition = { _position.x - halfSize.x, _position.y + halfSize.y, 0.0f };
 	mVertex[3].mPosition = { _position.x + halfSize.x, _position.y + halfSize.y, 0.0f };
+
+	mTransform.mPosition = mVertex[0].mPosition;
+
 	MapVertices(mVertex);
 }
 

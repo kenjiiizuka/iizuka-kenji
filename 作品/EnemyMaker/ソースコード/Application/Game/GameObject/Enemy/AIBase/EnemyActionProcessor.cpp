@@ -43,3 +43,4 @@ void EnemyActionProcessor::Update(EnemyBase* _enemy)
 		mCurrentAction.reset();
 	}
 }
+

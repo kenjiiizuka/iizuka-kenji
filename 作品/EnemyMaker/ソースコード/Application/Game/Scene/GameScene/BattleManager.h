@@ -16,6 +16,7 @@ class GameObject;
 class BattleStartLogo;
 class CinematicCamera;
 class AudioComponent;
+class BattleTimer;
 
 /**
 * @class BattleManager
@@ -69,6 +70,9 @@ private:
 	/** リザルトのロゴオブジェクト */
 	std::weak_ptr<GameObject> mResultLogo;
 
+	/** 時間計測タイマー */
+	std::weak_ptr<BattleTimer> mBattleTimer;
+
 	/** 戦闘開始のロゴ */
 	std::weak_ptr<BattleStartLogo> mStartLogo;
 
@@ -81,6 +85,9 @@ private:
 	/** クリアSE */
 	std::weak_ptr<AudioComponent> mClearSE;
 
+	/** 負けSE */
+	std::weak_ptr<AudioComponent> mLoseSE;
+
 	/** バトルステート */
 	BattleState mState;
 
@@ -88,7 +95,7 @@ private:
 	std::function<void()> mCurrentStateUpdate;
 
 	/** 戦闘の経過時間 */
-	double mBattleElapsedTime;
+	double mBattleTimeSec;
 
 	/** 戦闘の勝敗 */
 	BattleResult mResult;

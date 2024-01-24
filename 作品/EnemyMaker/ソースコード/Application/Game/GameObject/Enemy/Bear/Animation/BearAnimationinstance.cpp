@@ -92,12 +92,8 @@ void BearAnimationInstance::MainStateMachine()
 		 	mState = BearEnemyAnimationState::Idle_Run;
 		}
 	
-		// Hpが0以下なら死亡アニメーションに遷移
-		if (mEnemy->GetStatus().mCurrentHp <= 0)
-		{
-			mState = BearEnemyAnimationState::Death;
-			PlayAnimationClip("Death");
-		}
+		// 死亡ステートに遷移するか
+		CheckTransitionToDeath();
 
 		// 攻撃アニメーションが終了したらIdleに行く
 		if (!mAnimPlayer.lock()->IsPlay())
@@ -121,12 +117,9 @@ void BearAnimationInstance::MainStateMachine()
 			mState = BearEnemyAnimationState::Idle_Run;
 		}
 
-		// Hpが0以下なら死亡アニメーションに遷移
-		if (mEnemy->GetStatus().mCurrentHp <= 0)
-		{
-			mState = BearEnemyAnimationState::Death;
-			PlayAnimationClip("Death");
-		}
+		// 死亡ステートに遷移するか
+		CheckTransitionToDeath();
+		
 		break;
 
 	case BearEnemyAnimationState::Flinch:
@@ -138,11 +131,14 @@ void BearAnimationInstance::MainStateMachine()
 			mState = BearEnemyAnimationState::Idle_Run;
 			mEnemy->ResetFlinch();
 		}
+
+		// 死亡ステートに遷移するか
+		CheckTransitionToDeath();
+
 		break;
 
 	case BearEnemyAnimationState::Death:
 		// 死亡しているのでどのステートにも遷移しない
-
 		break;
 	}
 }
@@ -361,7 +357,7 @@ void BearAnimationInstance::SetupNotifies()
 			attackData->GetAttack(BearEnemyAttackData::ArmUpperSmash).mAnimationClipName,
 			"assets/Enemy/Effect/ArmSmashUp.efkefc",
 			55,
-			{ 0.0f,0.3f,-8.0f },
+			{ 0.0f,7.0f,-8.0f },
 			{ 3,3,3 }
 		);
 	}
@@ -446,7 +442,7 @@ void BearAnimationInstance::SetupNotifies()
 			attackData->GetAttack(BearEnemyAttackData::DownwardSlash).mAnimationClipName,
 			"assets/Enemy/Effect/SlashVerticle_2.efkefc",
 			52,
-			{ 0.0f,1.0f,13.0f },
+			{ 3.0f,5.0f,13.0f },
 			{ 2.0f,2.0f,2.0f }
 		);
 	}
@@ -605,4 +601,14 @@ void BearAnimationInstance::SettingCameraShakeNotify(const uint16_t _attachFrame
 	notify->SetShakeLevel(_shakeLevel);
 	notify->SetShakeTime(_shakeTime);
 	notify->SetShakeVector(_shakeVector);
+}
+
+void BearAnimationInstance::CheckTransitionToDeath()
+{
+	// Hpが0以下なら死亡アニメーションに遷移
+	if (mEnemy->GetStatus().mCurrentHp <= 0)
+	{
+		mState = BearEnemyAnimationState::Death;
+		PlayAnimationClip("Death");
+	}
 }

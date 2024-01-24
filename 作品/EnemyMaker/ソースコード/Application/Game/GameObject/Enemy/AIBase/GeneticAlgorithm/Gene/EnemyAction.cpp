@@ -8,6 +8,7 @@ EnemyAction::EnemyAction(std::shared_ptr<BlackBoard> _blackBoard)
 	, mEnemy(nullptr)
 	, mExecuteCount(0)
 	, mSuitable(0.0f)
+	, mActionType(EnemyActionType::None)
 {
 }
 

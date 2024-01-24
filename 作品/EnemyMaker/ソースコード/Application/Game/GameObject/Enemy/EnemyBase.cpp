@@ -1,15 +1,16 @@
 ﻿//---------- INCLUDES ------------
 #include "EnemyBase.h"
 #include "AIBase/EnemyAIController.h"
+#include "AIBase/BlackBoard.h"
+#include "AIBase/GeneticAlgorithm/GeneticAlgorithmDebugger.h"
+#include "AIBase/GeneticAlgorithm/Gene/EnemyAction.h"
+#include "../HpBer/HpBer.h"
 #include "../../Component/SkeletalMeshComponent/SkeletalMeshComponent.h"
 #include "../../Component/AIComponent/EnemyAIComponent.h"
-#include "../HpBer/HpBer.h"
-#include "AIBase/GeneticAlgorithm/GeneticAlgorithmDebugger.h"
 #include "../../../ImGui/ImGuiUtility.h"
 #include "../../../System/RendererSystem/Shader/VertexShader/OutlineSkeletalMeshVertexShader.h"
 #include "../../../System/RendererSystem/Shader/PixelShader/OutlinePixelShader.h"
 #include "../../../Utility/MathLibrary.h"
-#include "../DamageUI/DamageUI.h"
 
 EnemyBase::EnemyBase()
 	: mStatus({})
@@ -20,7 +21,7 @@ EnemyBase::EnemyBase()
 	, mTakenDamageElapsedTime(0.0f)
 	, mFlinchDecreaseDelayTime(2.0f)
 	, mFlinchDecreaseSpeed(1.0f)
-	, mFlinchUpRate(1.5f)
+	, mFlinchUpRate(1.05f)
 {
 	// 処理なし
 }
@@ -112,6 +113,13 @@ void EnemyBase::TakenDamage(const float _damage, const DirectX::SimpleMath::Vect
 
 	// 怯み値を加算
 	mFlinch += _damage;
+
+	// 移動行動中なら怯み値が超過しないようにする 
+	EnemyActionType currentActionType = mAIComponent.lock()->GetAIController().lock()->GetBlackboard().lock()->GetValue<EnemyActionType>("CurrentExecuteActionType");
+	if (currentActionType == EnemyActionType::Move)
+	{
+		mFlinch = mMaxFlinch - 1;
+	}
 
 	// ダメージを受けてからの経過時間をリセット
 	mTakenDamageElapsedTime = 0.0f;

@@ -156,6 +156,14 @@ public:
 	DirectX::SimpleMath::Vector2 GetPosition() const noexcept;
 
 	/**
+	* @fn AddPosition
+	* @brief 座標を加算する
+	* @param const DirectX::SimpleMath::Vector2 (_pos)
+	* @return void
+	*/
+	void AddPosition(const DirectX::SimpleMath::Vector2 _pos);
+
+	/**
 	* @fn SetPositionAndMapVertices
 	* @brief 渡された座標を中心にスプライトの4頂点をリマップする
 	* @param const DirectX::SimpleMath::Vector2 (_position)

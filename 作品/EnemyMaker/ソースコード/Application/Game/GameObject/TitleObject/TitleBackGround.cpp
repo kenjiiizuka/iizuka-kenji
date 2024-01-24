@@ -35,7 +35,7 @@ void TitleBackGround::Init()
 	// ÉåÉCÉÑÅ[2
 	{		
 		std::shared_ptr<SpriteComponent> sprite = AddComponent<SpriteComponent>();
-		sprite->Init({ 0.0f,0.0f }, { 1280.0f, 720.0f });
+		sprite->Init({ 0.0f,-40.0f }, { 1280.0f, 720.0f });
 		std::shared_ptr<AssetHandle> texture = AssetManager::GetInstance().Load<TextureProvider>("assets/Title/TitleLayer2.png");
 		if (texture->IsValid())
 		{
@@ -53,7 +53,7 @@ void TitleBackGround::Init()
 		std::shared_ptr<SpriteComponent> sprite = AddComponent<SpriteComponent>();
 
 		
-		sprite->Init({ 160.0f,80.0f }, { 960, 540 });
+		sprite->Init({ 160.0f,20.0f }, { 960, 540 });
 
 		std::shared_ptr<AssetHandle> texture = AssetManager::GetInstance().Load<TextureProvider>("assets/Title/TitleLogo.png");
 		if (texture->IsValid())

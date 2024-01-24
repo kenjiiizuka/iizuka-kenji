@@ -14,6 +14,7 @@ EnemyAttackAction::EnemyAttackAction(std::shared_ptr<BlackBoard> _blackBoard)
 {
 	mHitSensor = std::make_shared<EnemyAttackHitSensor>();
 	ResizeNumberOfEvaluationItems(3); // 3 攻撃遺伝子の評価項目は３つだから
+	mActionType = EnemyActionType::Attack;
 }
 
 void EnemyAttackAction::Evaluate(std::shared_ptr<BlackBoard> _blackboard)

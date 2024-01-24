@@ -52,7 +52,7 @@ private:
 
 public:
 	/** 最大振動値 */
-	static WORD mMaxVibration;
+	static float mMaxVibration;
 
 public:
 	/**

@@ -70,7 +70,6 @@ public:
 
 inline bool AssetHandle::IsValid() const
 {
-	// reutrn !!mAsset.lock() ‚Å‚à‚¢‚¢‚ªŒ©ŠÔˆá‚¦‚»‚¤‚È‚Ì‚ÅˆÈ‰º‚Ì‘‚«•û
 	if (mAsset.lock())
 	{
 		return true;

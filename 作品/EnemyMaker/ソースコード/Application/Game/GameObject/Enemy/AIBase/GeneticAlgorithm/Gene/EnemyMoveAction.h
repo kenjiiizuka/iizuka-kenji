@@ -16,6 +16,11 @@
 class EnemyMoveAction : public EnemyAction
 {
 public:
+	/**
+	* コンストラクタ
+	* 
+	* @param std::shared_ptr<BlackBoard> (_blackBoard)
+	*/
 	EnemyMoveAction(std::shared_ptr<BlackBoard> _blackBoard);
 
 
