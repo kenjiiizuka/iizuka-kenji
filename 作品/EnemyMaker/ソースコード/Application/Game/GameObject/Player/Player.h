@@ -335,9 +335,19 @@ public:
 	* @param CrossCharacter::HitReaction (_hitReaction)
 	* @return void
 	*/
-	void HitReaction(CrossCharacter::HitReaction _hitReaction);
+	void HitReaction_debug(CrossCharacter::HitReaction _hitReaction);
 
 	/**
+	* @fn InputAble_debug
+	* @brief デバッグ用の入力可能状態ならプレイヤーの色がかわる
+	* @return void
+	*/
+	void InputAble_debug();
+	
+	/**
+	* @fn Recovery_debug
+	* @brief デバッグ用の回復関数
+	* @return void
 	*/
 	inline void Recovery_debug();
 
@@ -347,6 +357,8 @@ public:
 	* @return void
 	*/
 	void Death_debug();
+
+	
 
 	/**
 	* @fn SetCurrentAttack

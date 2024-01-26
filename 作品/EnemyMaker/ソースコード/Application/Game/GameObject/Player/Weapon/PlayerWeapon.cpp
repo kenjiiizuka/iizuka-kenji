@@ -40,7 +40,7 @@ void PlayerWeapon::Init(const std::string& _filePath, std::shared_ptr<Bone> _att
 	collision->Init(mCapsuleHeight,mCapsuleRadius, 0.0f);
 	collision->SetOffSetTransform(mCollisionOffsetTransform);
 
-// 	collision->SetDebugDraw(true);
+ 	collision->SetDebugDraw(true);
 
 	// “–‚½‚è”»’è‚ÌƒŒƒCƒ„[Ý’è
 	collision->SetCollisionChannel(Collision::Channel_PlayerAttack);

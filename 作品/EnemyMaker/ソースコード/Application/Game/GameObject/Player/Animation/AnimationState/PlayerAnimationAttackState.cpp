@@ -32,13 +32,16 @@ void PlayerAnimationAttackState::Entry(AttackID _entryState)
 	PlayerAttack playerAttack = mPlayer->GetCurrentAttack();
 	mOldState = mState = playerAttack.mAttackID;
 
-	float playRate = 1.0f;
+
 	if (mState == PlayerData::AttackID_Counter)
 	{
-		playRate = 0.9f;
+		PlayAnimationClip(playerAttack.mAnimationClipName, 0.8f, 0.0f, 0.0f);
 	}
-
-	PlayAnimationClip(playerAttack.mAnimationClipName, playRate, mPlayer->GetNextAttackInterpTime(), mPlayer->GetNextAttackInterpStartTime());
+	else
+	{
+		// アニメーションが全体敵に遅いので少し再生速度を上げて再生する
+		PlayAnimationClip(playerAttack.mAnimationClipName, 1.2f, mPlayer->GetNextAttackInterpTime(), mPlayer->GetNextAttackInterpStartTime());
+	}	
 }
 
 void PlayerAnimationAttackState::Update()
@@ -55,7 +58,7 @@ void PlayerAnimationAttackState::Update()
 	// 別の攻撃に移っていたら対応したアニメーションを流す
 	if (mOldState != mState && mOldState != AttackID_NoAttack)
 	{	
-		PlayAnimationClip(playerAttack.mAnimationClipName, 1.0f, mPlayer->GetNextAttackInterpTime(), mPlayer->GetNextAttackInterpStartTime());
+		PlayAnimationClip(playerAttack.mAnimationClipName, 1.2f, mPlayer->GetNextAttackInterpTime(), mPlayer->GetNextAttackInterpStartTime());
 	}
 	mOldState = mState;
 }

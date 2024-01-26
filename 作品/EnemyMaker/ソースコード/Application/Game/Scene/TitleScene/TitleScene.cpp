@@ -52,7 +52,7 @@ void TitleScene::Initialize()
 	std::shared_ptr<CommandObject> trainingCommand = AddGameObject<CommandObject>();
 	std::shared_ptr<CommandObject> endCommand = AddGameObject<CommandObject>();
 
-	// Startコマンド
+	// 中央下に配置
 	{
 		DirectX::SimpleMath::Vector2 size = { 280.0f, 90.0f };
 		DirectX::SimpleMath::Vector2 startCommandPos =
@@ -63,8 +63,19 @@ void TitleScene::Initialize()
 		startCommand->Init(startCommandPos, size, "assets/Title/Start.png");
 
 	}
-	
-	// Endコマンド
+
+	//// スタートコマンドよりすこし下に配置
+	//{
+	//	DirectX::SimpleMath::Vector2 size = { 280.0f, 90.0f };
+	//	DirectX::SimpleMath::Vector2 pos =
+	//	{
+	//		Renderer::GetInstance().GetWidth() / 2.0f - size.x / 2.0f, // 画面中央からサイズの半分左にずらした位置
+	//		Renderer::GetInstance().GetHeight() * 0.7f + 10.0f // 0.7f 画面を10分割した時に下から７番目の位置
+	//	};
+	//	trainingCommand->Init(pos, size, "assets/Title/End.png");
+	//}
+
+	// トレーニングモードコマンドよりすこし下に配置
 	{
 		DirectX::SimpleMath::Vector2 size = { 156.0f, 90.0f };
 		DirectX::SimpleMath::Vector2 endCommandPos =

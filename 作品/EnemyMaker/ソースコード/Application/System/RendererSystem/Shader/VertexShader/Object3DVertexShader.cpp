@@ -23,7 +23,6 @@ void Object3DVertexShader::UpdateBuffer(uint8_t _dataID)
 	Matrix world = mVisualEntity->GetWorldMatrix();
 
 	VisualEntityData::Material mat = mVisualEntity->GetVisualEntityData(_dataID)->GetMaterial();
-
 	MATERIAL material;
 	material.Ambient = mat.mAmbient;
 	material.Diffuse = mat.mDiffuse;

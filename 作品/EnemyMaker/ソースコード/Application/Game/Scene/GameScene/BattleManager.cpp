@@ -57,7 +57,6 @@ void BattleManager::Init(const std::shared_ptr<Player> _player, const std::share
 	std::shared_ptr<AudioComponent> lose = AddComponent<AudioComponent>();
 	lose->Init("assets/Battle/Audio/LosingBGM.wav");
 	mLoseSE = lose;
-
 }
 
 void BattleManager::Update(const double _deltaTime)
@@ -153,7 +152,7 @@ BattleManager::BattleResult BattleManager::CheckBattleResult()
 		mResultCamera.lock()->Play();
 
 		// ƒNƒŠƒASEÄ¶
-		mClearSE.lock()->PlaySound2D(0.8f,true, 1.0);
+		mClearSE.lock()->PlaySound2D(0.5f,true, 1.0);
 
 		return BattleResult::Result_Win;
 	}
@@ -175,7 +174,7 @@ BattleManager::BattleResult BattleManager::CheckBattleResult()
 		mBattleTimer.lock()->TimerStop();
 
 		// ”s–kSEÄ¶
-		mLoseSE.lock()->PlaySound2D(0.8f, true, 1.0);
+		mLoseSE.lock()->PlaySound2D(0.5f, true, 1.0);
 
 		return BattleResult::Result_Lose;
 	}

@@ -57,7 +57,7 @@ Player::Player()
 	, mNextAttackInterpStartTime(0.0f)
 	, mNextAttackInterpTime(0.0f)
 	, mCounterAbleTime(0.5f)
-	, mJustGuardElapsedTime(0.0f)
+	, mJustGuardElapsedTime(0.5f)
 {
 	// 処理なし
 }
@@ -134,7 +134,6 @@ void Player::Update(const double _deltaTime)
 	if (mJustGuardElapsedTime <= mCounterAbleTime)
 	{
 		mJustGuardElapsedTime += _deltaTime;
-		mMeshComp.lock()->GetSkeletalMesh().lock()->SetMaterialDiffuse({ 1,0,0,1 });
 	}
 }
 
@@ -462,7 +461,7 @@ void Player::CalcuBlowVector(const DirectX::SimpleMath::Vector3& _hitPosition)
 	mBlowVector = mTransform.lock()->GetPosition() - _hitPosition;
 }
 
-void Player::HitReaction(CrossCharacter::HitReaction _hitReaction)
+void Player::HitReaction_debug(CrossCharacter::HitReaction _hitReaction)
 {
 	float damage = 10.0f;
 
@@ -507,6 +506,7 @@ void Player::HitReaction(CrossCharacter::HitReaction _hitReaction)
 
 		// この攻撃のヒットリアクションの取得
 		mHitReaction = _hitReaction;
+		mBlowVector = -mTransform.lock()->GetForwardVector();
 	}
 
 	// コントローラー振動処理
@@ -516,6 +516,18 @@ void Player::HitReaction(CrossCharacter::HitReaction _hitReaction)
 	}
 
 	CheckHP();
+}
+
+void Player::InputAble_debug()
+{
+	if (mStateController->IsInputAble())
+	{
+		mMeshComp.lock()->GetSkeletalMesh().lock()->SetMaterialDiffuse({1, 1, 1, 1});
+	}
+	else
+	{
+		mMeshComp.lock()->GetSkeletalMesh().lock()->SetMaterialDiffuse({0,0,0,1});
+	}	
 }
 
 std::weak_ptr<PlayerWeapon> Player::GetWeapon()

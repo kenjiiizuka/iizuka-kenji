@@ -4,6 +4,7 @@
 #include "../../../GameObject.h"
 #include "../../../../Resource/BlendAnimationClip.h"
 #include "../../../../GameObject/Player/Player.h"
+#include "../../../../../Utility/MathLibrary.h"
 
 
 PlayerAnimationPulledState::PlayerAnimationPulledState(AnimationInstance* _animInstance)
@@ -31,6 +32,7 @@ void PlayerAnimationPulledState::Entry()
 
 void PlayerAnimationPulledState::Update()
 {
-	mIdleToRun.lock()->InputBlendValue(mMoveComp.lock()->GetCurrentVelocity().Length());
+	float speed = mMoveComp.lock()->GetCurrentVelocity().Length();
+	mIdleToRun.lock()->InputBlendValue(speed);
 }
 

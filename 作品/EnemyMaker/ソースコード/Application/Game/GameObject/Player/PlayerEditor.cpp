@@ -63,7 +63,7 @@ void PlayerEditor::Update()
 {
 	ImGui::Begin("PlayerEditor");
 	// MovementHeader();
-	StepHeader();
+	// StepHeader();
 	AttackHeader();
 	HitReactionHeader();
 
@@ -85,6 +85,9 @@ void PlayerEditor::Update()
 	{
 		mAttackData.lock()->SaveJsonFile();
 	}
+
+	mPlayer.lock()->InputAble_debug();
+
 }
 
 void PlayerEditor::AttackHeader()
@@ -149,12 +152,12 @@ void PlayerEditor::HitReactionHeader()
 
 	if (ImGui::Button("HitReaction Small"))
 	{
-		mPlayer.lock()->HitReaction(CrossCharacter::HitReaction_Small);
+		mPlayer.lock()->HitReaction_debug(CrossCharacter::HitReaction_Small);
 		mPlayer.lock()->Recovery_debug();
 	}
 	if (ImGui::Button("HitRection Big"))
 	{
-		mPlayer.lock()->HitReaction(CrossCharacter::HitReaction_Big);
+		mPlayer.lock()->HitReaction_debug(CrossCharacter::HitReaction_Big);
 		mPlayer.lock()->Recovery_debug();
 	}
 
@@ -306,10 +309,13 @@ void PlayerEditor::EffectNotifyNode(const PlayerData::AttackID _attackID)
 
 	// アニメーションクリップの取得
 	std::shared_ptr<SkeletalMeshAnimationClip> animClip = mSkeletalMeshComp.lock()->GetAnimationInstance()->GetAnimationClipByName(attack.mAnimationClipName);
+	if (!animClip)
+	{
+		return;
+	}
 
 	// エフェクト発生通知を取得
 	std::shared_ptr<PlayEffectNotify> notify = animClip->GetAnimnotify<PlayEffectNotify>();
-
 	if (!notify)
 	{
 		return;
