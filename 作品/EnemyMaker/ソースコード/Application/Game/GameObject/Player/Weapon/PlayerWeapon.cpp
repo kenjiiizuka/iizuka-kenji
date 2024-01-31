@@ -110,13 +110,17 @@ void PlayerWeapon::BeginHit(GameObject* _hitObject, PrimitiveComponent* _hitComp
 		return;
 	}
 
-	// している攻撃のIDを取得　カウンターなのかを判断する
-	if (mPlayer->GetCurrentAttackID() == PlayerData::AttackID_Counter)
+	// カウンターなのか判断する
+	bool isCounter = mPlayer->GetCurrentAttackID() == PlayerData::AttackID_Counter;
+
+	// カウンター用の処理
+	if (isCounter)
 	{
 		mbHitCounter = true;
 		mCounterEffectPosition = _hitComp->GetImpactPosition();
 		mCounterHitElapsedTime = 0.0f;
 	}
+	// 通常攻撃の処理
 	else
 	{
 		// ヒットエフェクト
@@ -126,11 +130,12 @@ void PlayerWeapon::BeginHit(GameObject* _hitObject, PrimitiveComponent* _hitComp
 		mHitSE.lock()->PlaySound3D(mTransform.lock()->GetPosition(), { 0,0,0 }, 1.0f);
 	}
 
+	// ダメージの取得
 	float damage = mPlayer->GetCurrentAttackDamage();
 
 	// ヒットストップをかける
 	mPlayer->GetHitStopComponent().lock()->SetAttackDamage(damage);
-	mPlayer->GetHitStopComponent().lock()->HitStop();
+	mPlayer->GetHitStopComponent().lock()->HitStop(isCounter);
 
 	// 連続で当たることを防ぐためにコリジョンをオフにする
 	mCapsuleCollision.lock()->SetActiveCollision(false);

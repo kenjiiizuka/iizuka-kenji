@@ -31,18 +31,33 @@ private:
 	/** 敵に与えるダメージ */
 	float mDamage;
 
-	/** ヒットストップの重み　ダメージ * 重みでヒットストップの時間を決める */
+	/** ヒットストップによってアニメーションのフレームをスキップする重み */
+	float mHitStopSkipSecondWeight;
+
+	/** ヒットスストップによって停止するアニメーションの重み */
 	float mHitStopSecondWeight;
 
+	/** 停止するアニメーションの秒数 */
+	float mStopAnimationSecond;
+
 public:
+	/**
+	* @fn Update
+	* @brief 更新処理
+	* @param const double (_deltaTime)
+	* @return void
+	*/
+	void Update(const double _deltaTime) override;
+
 	/**
 	* @HitStop
 	* @brief ヒットストップをかける関数
 	* @detail 連続使用するとヒットストップがかかり続けるので注意
 	*         設定されているダメージからヒットストップの強さ、長さを設定する
+	* @param const bool (_isCounter)
 	* @return void
 	*/
-	void HitStop();
+	void HitStop(const bool _isCounter);
 
 	/**
 	* @fn SetAttackDamage

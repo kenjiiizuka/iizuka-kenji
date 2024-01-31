@@ -87,7 +87,7 @@ void PlayerEditor::Update()
 	}
 
 	mPlayer.lock()->InputAble_debug();
-
+	mPlayer.lock()->Counter_debug();
 }
 
 void PlayerEditor::AttackHeader()

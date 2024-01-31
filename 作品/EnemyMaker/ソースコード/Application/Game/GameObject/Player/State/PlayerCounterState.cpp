@@ -2,11 +2,14 @@
 #include "PlayerCounterState.h"
 #include "../Player.h"
 #include "../../../Component/SkeletalMeshComponent/SkeletalMeshComponent.h"
+#include "../../../Resource/SkeletalMeshAnimationClip.h"
 #include "../Weapon/PlayerWeapon.h"
 
 PlayerCounterState::PlayerCounterState(Player* _player)
 	: PlayerStateContext(_player)
 	, mbFirstFrame(false)
+	, mCollisionSizeChangeFrame(6)
+	, mbChangeCollisionSize(false)
 {
 	// 処理なし
 }
@@ -19,14 +22,11 @@ PlayerCounterState::~PlayerCounterState()
 void PlayerCounterState::Entry()
 {
 	mbIsInputAble = false;
+	mbChangeCollisionSize = false;
 
 	// カウンター攻撃にセットする
 	PlayerAttack attack = mPlayer->GetAttackData().lock()->GetAttack(PlayerData::AttackID_Counter);
-	mPlayer->SetCurrentAttack(attack);
-
-	// 武器の当たり判定を大きくする
-	mPlayer->GetWeapon().lock()->SetCapsuleCollisionSize(6.0f,2.0f);
-
+	mPlayer->SetCurrentAttack(attack);	
 }
 
 void PlayerCounterState::Update()
@@ -39,6 +39,14 @@ void PlayerCounterState::Update()
 
 	std::shared_ptr<AnimationInstance> animIns = mPlayer->GetComponent<SkeletalMeshComponent>()->GetAnimationInstance();
 	std::shared_ptr<AnimationPlayer> animPlayer = animIns->GetAnimationPlayer();
+
+	// カウンターアニメーションの再生フレーム指定されたフレーム以上で、コリジョンのサイズを変更前なら、当たり判定を大きくする
+	if (mCollisionSizeChangeFrame <= animPlayer->GetPlayAnimation().lock()->GetCurrentPlayTime() && !mbChangeCollisionSize)
+	{
+		// 武器の当たり判定を大きくする
+		mPlayer->GetWeapon().lock()->SetCapsuleCollisionSize(6.0f, 2.0f);
+		mbChangeCollisionSize = true;
+	}
 
 	// カウンターアニメーションが終了しているかを確認する
 	if (animPlayer->IsEndOnNextFrame() || !animPlayer->IsPlay())

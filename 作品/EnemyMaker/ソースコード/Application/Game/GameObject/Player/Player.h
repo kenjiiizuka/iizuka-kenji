@@ -352,6 +352,13 @@ public:
 	inline void Recovery_debug();
 
 	/**
+	* @fn Counter_debug
+	* @brief カウンターをデバッグようにいつでも発動できるようにする処理
+	* @return void
+	*/
+	inline void Counter_debug();
+
+	/**
 	* @fn Death_debug
 	* @brief デバッグ用の死亡関数
 	* @return void
@@ -682,6 +689,11 @@ public:
 inline void Player::Recovery_debug()
 {
 	mCurrentHp = mMaxHp;
+}
+
+inline void Player::Counter_debug()
+{
+	mJustGuardElapsedTime = 0.0f;
 }
 
 inline void  Player::SetCurrentAttack(const PlayerAttack& _attack) noexcept

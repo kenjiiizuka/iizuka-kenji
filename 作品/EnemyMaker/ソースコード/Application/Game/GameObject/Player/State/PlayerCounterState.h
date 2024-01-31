@@ -31,6 +31,12 @@ private:
 	/** 初回フレームを示す */
 	bool mbFirstFrame;
 
+	/** 当たり判定のサイズを変更したか */
+	bool mbChangeCollisionSize;
+
+	/** コリジョンの大きさを変更するフレーム */
+	uint8_t mCollisionSizeChangeFrame;
+
 public:
 	/**
 	* @fn Entry
